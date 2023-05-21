@@ -14,3 +14,6 @@
     X-Frame-Options = "DENY"
     Cache-Control = "public, max-age=3600"
 
+[build]
+  command = "npm run build"
+  publish = "build/"
