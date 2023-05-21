@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/Site/index.html"
   status = 200
 
 [[headers]]
