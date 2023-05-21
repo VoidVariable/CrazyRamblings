@@ -11,14 +11,11 @@
             "id": "f06533e3290f9bed",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Gaster Master.canvas",
-                "viewState": {
-                  "x": -755.310503035576,
-                  "y": -1529.01102364181,
-                  "zoom": -1.4286366115757758
-                }
+                "file": "Spamton/Hyperlink Blocked.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -88,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Gaster Master.canvas",
+                "file": "Spamton/Hyperlink Blocked.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Gaster Master.canvas",
+                "file": "Spamton/Hyperlink Blocked.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Gaster Master.canvas"
+                "file": "Spamton/Hyperlink Blocked.md"
               }
             }
           }
@@ -150,22 +147,33 @@
   },
   "active": "f06533e3290f9bed",
   "lastOpenFiles": [
-    "README.md",
-    "CrazyRamblings/README.md",
-    "CrazyRamblings",
-    "Things/Resources.md",
     "Gaster Master.canvas",
     "Goats are bad.canvas",
+    "home.md",
     "Kris Cross Apllesauce.canvas",
+    "README.md",
     "Other Stuff.canvas",
-    "Things/Gaster Master/Spamton Dialogue.md",
+    "Spamton/Hyperlink Blocked.md",
     "Deltarune and Undertale.canvas",
+    "DONTSHIP/Ideias.md",
+    "Spamton/HyperlinkBlocked/Untitled",
+    "DONTSHIP",
+    "Resources/Gaster Master/Spamton Dialogue.md",
+    "DONTSHIP/Untitled.md",
+    "Spamton/HyperlinkBlocked",
+    "Spamton",
+    "Ideias (copy).md",
+    "Things/Ideias (copy).md",
+    "netlify.toml",
+    "README (copy).md",
+    "CrazyRamblings/README.md",
+    "CrazyRamblings",
+    "Resources/Links to good shit.md",
     "Images/Other Stuff/Pasted image 20230521012828.png",
     "Images/Other Stuff/Gaster Master/Hyperlink Blocked/Ch-Ch-Ch-Choices.png",
     "Untitled.md",
     "Hyperlink Blocked.md",
-    "Things/Gaster Master",
-    "Things/Ideias.md",
+    "Resources/Gaster Master",
     "Images/Other Stuff/Gaster Master/Hyperlink Blocked/Link Blocked 9.png",
     "Images/Other Stuff/Gaster Master/Hyperlink Blocked/Link Blocked 8.png",
     "Images/Other Stuff/Gaster Master/Hyperlink Blocked/Link Blocked 7.png",
@@ -181,11 +189,6 @@
     "Untitled/Things.md",
     "Images/Other Stuff/Gaster Master.md",
     "Images/Other Stuff/Gaster Master",
-    "Images/Other Stuff/The Past",
-    "Images/Other Stuff/Undertale",
-    "Images/Other Stuff/Kris",
-    "Images/Goats are Bad/THEY KNOW",
-    "Images/Undertale Deltarune",
     "Images/Untitled.md"
   ]
 }
