@@ -1,0 +1,37 @@
+{
+	"nodes":[
+		{"type":"text","text":"### Controlled by the Player\n\nWe know there's a disconnect between us, the playes, and Kris. \n\nThere are multiple times where Kris either refuses to act, or demonstrates they don't like what we select for them to do.\n\n","id":"7ed8997102a2c63e","x":180,"y":-300,"width":500,"height":230},
+		{"type":"text","text":"## What's the deal with Kris\n\nKris, the main character of the game, as a lot going on. \n\nThey are being semingly controlled by the entity \"Player\".\n\nWhat do we know about their situation and about who they are separated from the player?","id":"fd0d1069f0e6ee3e","x":-380,"y":-221,"width":500,"height":302},
+		{"type":"text","text":"### Who are they?\n\nWe don't know a lot of things about them but can discover some things by analysing the game.","id":"c8028a32c2c3c3c8","x":-940,"y":-150,"width":500,"height":160},
+		{"type":"text","text":"### Susie\n\nWe know for sure tha Kris really cares about Susie","id":"92fe98bf9bbf0bd4","x":-1140,"y":-400,"width":500,"height":141},
+		{"type":"text","text":"There's also some mentions of Kris behaving diferently that they usually do.\n\nToriel mentions Kris doesn't look like themselves.\n\n![[Your're not yourself when you are hungry.png]]\n\nNoelle also mentions this and asks why Kris went to visit Rudy.\n\n![[Kris is normally talkative.png]]","id":"1ef62d272426a31f","x":200,"y":-1405,"width":517,"height":970},
+		{"type":"text","text":"Kris seems anoying when monster kid insultes Susie.\n\n![[Kris cares about Susie 1.png]]\n\n![[Kris Cares about Susie 2.png]]\n\n![[Kris cares about Susie 3.png]]","id":"27454c44dd560480","x":-1720,"y":-1080,"width":507,"height":725},
+		{"type":"text","text":"Kris already has a savefile in the darkworld before the start of the game\n\n![[Before Save.png]]","id":"6752f1229a293006","x":-560,"y":-995,"width":486,"height":475},
+		{"type":"text","text":"Wierd way to describe this. \n\nCONTAINS a human Soul.\n\n\n\n![[Just the description.png]]","id":"276c4a2d73b17946","x":161,"y":18,"width":519,"height":502},
+		{"type":"text","text":"At the end of chapter 1, Kris, during a cutscene, grabs their soul -- a representation of us the player -- and throws it inside the cage at the corner of the room.\n\n![[Heart in hand.png]]\n\nWe know we are the heart, because we can actually move the soul inside the cage.\n\n![[Heart in cage.png]]","id":"4a24f6b9bf89eff2","x":1399,"y":-201,"width":520,"height":940},
+		{"type":"text","text":"There's the possible implication that this happens more then once before.\n\n![[Cage foreshadowing.png]]","id":"4c2652ee813ad74d","x":779,"y":269,"width":520,"height":460},
+		{"type":"text","text":"### Piano\n\nKris is described to be good at the piano. When we play the piano at the hospital is sound awful.\n\n![[Kris used to play piano.png]]\n\nThe same NPC says Kris used to come to the hospital to play.\n\nThey also seem to want to play if we say \"No\" when prompted by the narrator.\n\n![[Kris and pianos.png]]\n","id":"029c8695d30cee30","x":-1440,"y":81,"width":500,"height":980},
+		{"type":"text","text":"## Is Kris the Knight??\n\nKris beingKris is a leading candidate for the Knight position. People believe this because, in chapter 2, Kris extracts their soul and creates a dark fountain.","id":"4148792c23a62873","x":-560,"y":269,"width":519,"height":161},
+		{"type":"text","text":"### TV\nIt is implied that Kris, during their nightly escapades, plugged in the TV in their livingroom.\n\n\n#### Chapter 1 description\n![[TV Plugged in.png]]\n\n#### Chapter 2 descrption\n![[Kris plugged on the TV.png]]\n\nThis seems important due to the fact that chapter 3 will probably take place inside the TV. \n\nDid they plan to create the darkfountain in chapter 1? Even before that?","id":"bede0f9c5f1567ba","x":-819,"y":571,"width":519,"height":1089},
+		{"type":"text","text":"Susie mentions Kris looking like a corpse and like a zombie.\n\n![[Kris is Zombie.png]]\n\n![[Kris is corpse.png]]\n","id":"127bc8d56c41c97c","x":840,"y":-1165,"width":517,"height":799},
+		{"type":"text","text":"There's also some mentions of Kris looking sick or like a corpse.\n\n![[They seem sick.png]]","id":"c49d7142b5f4e6bc","x":840,"y":-1680,"width":517,"height":480},
+		{"id":"b9c7921916ae2109","x":-560,"y":-1540,"width":486,"height":489,"type":"text","text":"This also happens at the start of chapter 2.\n\n![[Kris Save in Chapter 2.png]]\n\nWitch kinda makes it seems it doesn't really mean anything and its just a placeholder."}
+	],
+	"edges":[
+		{"id":"3d5c4f4e8b62bb84","fromNode":"fd0d1069f0e6ee3e","fromSide":"right","toNode":"7ed8997102a2c63e","toSide":"left"},
+		{"id":"021f6559e7b07586","fromNode":"4a24f6b9bf89eff2","fromSide":"left","toNode":"4c2652ee813ad74d","toSide":"right"},
+		{"id":"9953f485e5360829","fromNode":"fd0d1069f0e6ee3e","fromSide":"left","toNode":"c8028a32c2c3c3c8","toSide":"right"},
+		{"id":"c4bea71ef8515871","fromNode":"c8028a32c2c3c3c8","fromSide":"top","toNode":"92fe98bf9bbf0bd4","toSide":"bottom"},
+		{"id":"d95c85d3d5f3d2e0","fromNode":"c8028a32c2c3c3c8","fromSide":"bottom","toNode":"029c8695d30cee30","toSide":"top"},
+		{"id":"c93df6a1affb6e75","fromNode":"7ed8997102a2c63e","fromSide":"top","toNode":"1ef62d272426a31f","toSide":"bottom"},
+		{"id":"6b357355f92ff187","fromNode":"92fe98bf9bbf0bd4","fromSide":"top","toNode":"27454c44dd560480","toSide":"right"},
+		{"id":"b682791d530c02e2","fromNode":"1ef62d272426a31f","fromSide":"right","toNode":"c49d7142b5f4e6bc","toSide":"left"},
+		{"id":"5637cce6204733f1","fromNode":"fd0d1069f0e6ee3e","fromSide":"top","toNode":"6752f1229a293006","toSide":"bottom"},
+		{"id":"086b66e7106b254f","fromNode":"7ed8997102a2c63e","fromSide":"right","toNode":"4a24f6b9bf89eff2","toSide":"top"},
+		{"id":"4a3431dfac44d1c7","fromNode":"7ed8997102a2c63e","fromSide":"bottom","toNode":"276c4a2d73b17946","toSide":"top"},
+		{"id":"55fd98e4f9c6b5b3","fromNode":"fd0d1069f0e6ee3e","fromSide":"bottom","toNode":"4148792c23a62873","toSide":"top"},
+		{"id":"01683d6a0570d857","fromNode":"4148792c23a62873","fromSide":"bottom","toNode":"bede0f9c5f1567ba","toSide":"top"},
+		{"id":"6842f84ebee35dd6","fromNode":"c49d7142b5f4e6bc","fromSide":"bottom","toNode":"127bc8d56c41c97c","toSide":"top"},
+		{"id":"c92aba42d1aff108","fromNode":"6752f1229a293006","fromSide":"top","toNode":"b9c7921916ae2109","toSide":"bottom"}
+	]
+}
