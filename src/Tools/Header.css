@@ -1,0 +1,44 @@
+/* styles.css */
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+:root{
+  --background-color :#f89c9c;
+}
+
+.dark{
+  --background-color :#d700f300;
+}
+
+.header {
+  display: flex;
+  background-color: var(--background-color);
+  color: #fff;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  align-items: center;
+}
+
+.header-title {
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.header-button {
+  margin-right: 2%;
+}
+
+.moon-icon-button {
+  background: none;
+  border: none;
+  color: #f0f0f0;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 2%;
+}
+
+
+
+
