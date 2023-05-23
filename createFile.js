@@ -1,8 +1,11 @@
 const fs = require('fs-extra');
 
-const filePath = 'path/to/file.txt';
-const fileContent = 'Hello';
+const filePath = 'sc/Tools/file.md';
+const headerContent = '# Hello';
 
-fs.outputFileSync(filePath, fileContent);
-
-console.log(`File created: ${filePath}`);
+try {
+    fs.outputFileSync(filePath, headerContent);
+    console.log(`File created: ${filePath}`);
+} catch (error) {
+    console.error('Error creating file:', error);
+}
