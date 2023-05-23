@@ -1,8 +1,8 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 
-const filePath = '/src/Tools';
+const filePath = 'path/to/file.txt';
 const fileContent = 'Hello';
 
-fs.writeFileSync(filePath, fileContent);
+fs.outputFileSync(filePath, fileContent);
 
 console.log(`File created: ${filePath}`);
