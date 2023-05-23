@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 
-const filePath = 'sc/Tools/file.md';
+const filePath = 'src/Tools/file.md';
 const headerContent = '# Hello';
 
 try {
