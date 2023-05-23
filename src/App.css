@@ -16,25 +16,26 @@
 
 .left-section {
   flex: 0 0 15%;
-  background-color: rgb(233, 226, 232);
+  background-color: #282c34; /* Obsidian sidebar background color */
   border: 1px solid black;
 }
 
 .middle-markdown {
-  margin-top: 60px;
   padding: 10px;
-  flex: 0 0 70%; 
-  background-color: rgb(202, 173, 198);
+  flex: 0 0 68.80%; 
+  background-color: #1f2329;  /* Obsidian editor background color */
+  color: #c8d1e2; /* Obsidian editor text color */
 }
 
 .right-section {
   flex: 0 0 15%;
-  background-color: rgb(233, 226, 232);
+  background-color: #282c34; /* Obsidian sidebar background color */
   border: 1px solid black;
 }
 
 .footer {
-  background-color: #f89c9c;
+  background-color: #2b343d;/* Dark purple footer background color */
   flex: 0 0 5%;
   width: 100%;
+  color: #abb2bf; /* Obsidian footer text color */
 }

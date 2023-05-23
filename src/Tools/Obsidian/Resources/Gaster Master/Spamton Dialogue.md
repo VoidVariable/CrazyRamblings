@@ -99,8 +99,6 @@ FOR MORE
 * EVERY [Big], EVERY [Shot], EVERY [Hyperlink Blocked], ALL YOURS, KRIS.
 ```
 
-^4f633a
-
 > Before normal Spamton NEO I think
 
 ```
@@ -121,8 +119,6 @@ FOR MORE
 
 * [[Hyperlink blocked.]]
 ```
-
-^facdf1
 
 > Somewhere in the Snowgrave route
 
