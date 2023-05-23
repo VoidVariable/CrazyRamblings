@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import termsFrPath from './Obsidian/Resources/Gaster Master/Spamton Dialogue.md';
+import termsFrPath from './file.md';
 
 class MarkdownDisplay extends Component {
   constructor(props) {
