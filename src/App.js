@@ -5,19 +5,31 @@ import MarkdownDisplay from './Tools/MarkdownDisplay';
 
 const App = () => {
   return (
-    <div>
+    <div className="container">
+    
+    <div className='Header'>
+      <Header />
+    </div>
 
-      <Header /> 
-        
-      <div className="markdown-container">
+    <div className="middle-section">
+      <div className="left-section">
+        {/* Left section content */}
+      </div>
+  
+      <div className="middle-markdown">
         <MarkdownDisplay />
       </div>
-      
-      <footer className="footer">
-        {/* Footer content */}
-      </footer>
-
+  
+      <div className="right-section">
+        {/* Right section content */}
+      </div>
     </div>
+  
+    <footer className="footer">
+      {/* Footer content */}
+    </footer>
+    
+  </div>
   );
 };
 export default App;

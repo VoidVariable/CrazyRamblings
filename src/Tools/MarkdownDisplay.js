@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import termsFrPath from './Links to good shit.md';
+import termsFrPath from './Obsidian/Resources/Gaster Master/Spamton Dialogue.md';
 
 class MarkdownDisplay extends Component {
   constructor(props) {
@@ -30,10 +30,11 @@ class MarkdownDisplay extends Component {
     };
 
     return (
-      <div className="content">
-        <ReactMarkdown components={customComponents}>{this.state.terms}</ReactMarkdown>
-      </div>
-    );
+        <div className="content" style={{ overflow: 'auto', height: '800px', boxSizing: 'border-box' }}>
+          <ReactMarkdown components={customComponents}>{this.state.terms}</ReactMarkdown>
+        </div>
+      );
+      
   }
 }
 

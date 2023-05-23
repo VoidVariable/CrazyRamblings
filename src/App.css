@@ -1,27 +1,40 @@
-/* styles.css */
-
-/* Global styles */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.markdown-container {
-  margin-top: 100px; /* Adjust the margin value as needed */
-  /* Add necessary styles for the markdown container */
-}
-
-/* Footer styles */
-.footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+.Header {
+  flex: 0 0 5%;
   width: 100%;
 }
 
-/* Additional styles specific to your content */
-/* Add your own custom CSS rules here */
+.middle-section {
+  flex: 1 0 auto;
+  display: flex;
+}
+
+.left-section {
+  flex: 0 0 15%;
+  background-color: rgb(233, 226, 232);
+  border: 1px solid black;
+}
+
+.middle-markdown {
+  margin-top: 60px;
+  padding: 10px;
+  flex: 0 0 70%; 
+  background-color: rgb(202, 173, 198);
+}
+
+.right-section {
+  flex: 0 0 15%;
+  background-color: rgb(233, 226, 232);
+  border: 1px solid black;
+}
+
+.footer {
+  background-color: #f89c9c;
+  flex: 0 0 5%;
+  width: 100%;
+}
