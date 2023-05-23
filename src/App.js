@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import FolderList from './FolderList';
 import Header from './Tools/Header';
 import MarkdownDisplay from './Tools/MarkdownDisplay';
 
