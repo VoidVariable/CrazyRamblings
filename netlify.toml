@@ -1,3 +1,12 @@
 [build]
   command = "npm run build"
   publish = "build"
+  
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-custom-build-script"
+  [plugins.inputs]
+    command = "node createFile.js"  # Path to your custom build script
+    hook = "prebuild"  # Or the desired build hook

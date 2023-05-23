@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import FolderList from './FolderList';
 import Header from './Tools/Header';
 import MarkdownDisplay from './Tools/MarkdownDisplay';
 
@@ -13,7 +14,7 @@ const App = () => {
 
     <div className="middle-section">
       <div className="left-section">
-        {/* Left section content */}
+       
       </div>
   
       <div className="middle-markdown">
