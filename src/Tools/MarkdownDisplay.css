@@ -1,0 +1,17 @@
+.links {
+  color: #2196f3; /* Purple color */
+  text-decoration: none;
+  position: relative;
+}
+
+.links::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #2196f3; /* Purple color */
+}
+
+
