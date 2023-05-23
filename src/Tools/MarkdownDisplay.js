@@ -10,10 +10,14 @@ class MarkdownDisplay extends Component {
   }
 
   componentDidMount() {
+    // Read the file created during the build
     fetch(termsFrPath)
       .then((response) => response.text())
       .then((text) => {
         this.setState({ terms: text });
+      })
+      .catch((error) => {
+        console.error('Error fetching file:', error);
       });
   }
 
