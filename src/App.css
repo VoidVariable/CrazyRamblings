@@ -22,6 +22,7 @@
 
 .middle-markdown {
   padding: 10px;
+  padding-top: 2%;
   flex: 0 0 68.80%; 
   background-color: #1f2329;  /* Obsidian editor background color */
   color: #c8d1e2; /* Obsidian editor text color */

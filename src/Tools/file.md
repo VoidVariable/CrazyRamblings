@@ -6,7 +6,7 @@ I like code blocks
 
 Very quirky
 
-> This is a quote block. Wow
+> This is a quote block. Wowz
 > nothe one
 
 > asda
