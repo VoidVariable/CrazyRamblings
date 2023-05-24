@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 
 const filePath = 'src/Tools/file.md';
-const path = '/Tools';
+const path = './src/Tools';
 
 try {
     const folders = fs.readdirSync(path, { withFileTypes: true })

@@ -71,7 +71,6 @@ class MarkdownDisplay extends Component {
             color: '#555',
             marginLeft: '0',
             marginRight: '0',
-            marginTop: '0',
             marginBottom: '0',
             marginTop: '1em', // Use '1em' instead of '1px' to create space between blockquotes
             borderTop: 'none', // Add this line to remove the top border of the current blockquote
