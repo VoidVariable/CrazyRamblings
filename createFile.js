@@ -4,19 +4,24 @@ const directoryPath = './src/Tools/Obsidian';
 const filePath = 'src/Tools/file.md';
 
 try {
-  const items = fs.readdirSync(directoryPath, { withFileTypes: true });
-  const folders = items
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => `- ${dirent.name}`);
+  const getAllItems = (path, indentation = '') => {
+    const items = fs.readdirSync(path, { withFileTypes: true });
+    let content = '';
 
-  const files = items
-    .filter(dirent => dirent.isFile())
-    .map(dirent => `- ${dirent.name}`);
+    items.forEach((dirent) => {
+      if (dirent.isDirectory()) {
+        const folderPath = `${path}/${dirent.name}`;
+        const subContent = getAllItems(folderPath, `${indentation}\t`);
+        content += `${indentation}- ${dirent.name}\n${subContent}`;
+      } else if (dirent.isFile()) {
+        content += `${indentation}- ${dirent.name}\n`;
+      }
+    });
 
-  const folderList = folders.join('\n');
-  const fileList = files.join('\n');
+    return content;
+  };
 
-  const content = `${folderList}\n${fileList}`;
+  const content = getAllItems(directoryPath);
 
   fs.writeFileSync(filePath, content);
 
