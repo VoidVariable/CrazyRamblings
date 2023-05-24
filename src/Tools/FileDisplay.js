@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import termsFrPath from './file.md';
 import './FileDisplay.css';
+import { handleButtonClick } from './buttonUtils';
 
 class MarkdownDisplay extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { terms: null };
+    this.state = { 
+      terms: null,
+      hiddenItems: [],
+      closed: [] };
   }
 
   componentDidMount() {
@@ -22,13 +26,21 @@ class MarkdownDisplay extends Component {
   }
 
   logSpaces = (line) => {
-    const spacesBeforeDash = line.search(/\S/);
-    return spacesBeforeDash;
+    const trimmedLine = line.replace('-',' ')
+    const spacesBeforeDash = trimmedLine.search(/\S/);
+    return spacesBeforeDash - 2;
   };
   
+  handleButtonClick(spacesCount, text) {
+  
+    const newState = handleButtonClick(this.state, spacesCount, text);
+
+    this.setState(newState);
+  }
+
   render() {
 
-   const { terms } = this.state;
+   const { terms, hiddenItems } = this.state;
 
 if (!terms) {
   return <div>Loading...</div>;
@@ -44,19 +56,26 @@ return (
       const spacesCount = this.logSpaces(line);
       const trimmedLine = line.replace(/-/g, '');
 
-      const buttonClassName = spacesCount === 0 ? 'fileButton darker' : 'fileButton';
+      const buttonClassName = trimmedLine.includes('.') ? 'fileButton' : 'fileButton darker';
+
       const spacePadding = '\u00A0'.repeat(spacesCount);
+      
+      const shouldDisplayButton = !hiddenItems.some((item) => 
+        item.lineSpacesCount === spacesCount && item.newText === line);
+
 
       return (
         <div key={index} className="button-line">
-          <button
-            className={buttonClassName}
-            onClick={() => this.logSpaces(line)}
-          >  
-            {spacePadding}
-            {trimmedLine}
-          </button>
-        </div>
+              {shouldDisplayButton && (
+                <button
+                  className={buttonClassName}
+                  onClick={() => this.handleButtonClick(spacesCount, trimmedLine)}
+                >
+                  {spacePadding}
+                  {trimmedLine}
+                </button>
+              )}
+            </div>
       );
     })}
   </div>

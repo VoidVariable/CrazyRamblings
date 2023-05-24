@@ -20,12 +20,12 @@
 }
 
 .fileButton.darker {
-  background-color: #333;
+  background-color: #8080803d;
   color: #fff;
 }
 
 .fileButton.darker:hover {
-  background-color: #333;
+  background-color: #14141457;
   color: #fff;
 }
 
