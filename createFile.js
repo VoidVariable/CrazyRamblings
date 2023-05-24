@@ -1,26 +1,17 @@
 const fs = require('fs-extra');
 
 const filePath = 'src/Tools/file.md';
-const headerContent = `
-# Test This File
-
-\`\`\`
-I like code blocks
-\`\`\`
-
-Very quirky
-
-> This is a quote block. Wow
-> not the one
-
-> asda
-
-https://www.youtube.com
-`;
+const path = '/Tools';
 
 try {
-    fs.outputFileSync(filePath, headerContent);
-    console.log(`File created: ${filePath}`);
+    const folders = fs.readdirSync(path, { withFileTypes: true })
+        .filter(dirent => dirent.isDirectory())
+        .map(dirent => dirent.name);
+        
+    const folderList = folders.join('\n');
+    fs.writeFileSync(filePath, folderList);
+    
+    console.log(`List of folders saved to ${outputFile}`);
 } catch (error) {
-    console.error('Error creating file:', error);
+    console.error('Error reading directory:', error);
 }
