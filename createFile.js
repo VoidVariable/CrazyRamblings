@@ -9,12 +9,14 @@ try {
     let content = '';
 
     items.forEach((dirent) => {
-      if (dirent.isDirectory()) {
-        const folderPath = `${path}/${dirent.name}`;
-        const subContent = getAllItems(folderPath, `${indentation}\t`);
-        content += `${indentation}- ${dirent.name}\n${subContent}`;
-      } else if (dirent.isFile()) {
-        content += `${indentation}- ${dirent.name}\n`;
+      if (!dirent.name.startsWith('.')) { // Ignore hidden files
+        if (dirent.isDirectory()) {
+          const folderPath = `${path}/${dirent.name}`;
+          const subContent = getAllItems(folderPath, `${indentation}\t`);
+          content += `${indentation}- ${dirent.name}\n${subContent}`;
+        } else if (dirent.isFile()) {
+          content += `${indentation}- ${dirent.name}\n`;
+        }
       }
     });
 
