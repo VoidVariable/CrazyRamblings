@@ -22,33 +22,45 @@ class MarkdownDisplay extends Component {
   }
 
   logSpaces = (line) => {
-    const spacesCount = line.search(/\S/); // Get the index of the first non-space character
-    console.log(`${spacesCount} - ${line}`);
+    const spacesBeforeDash = line.search(/\S/);
+    return spacesBeforeDash;
   };
-
+  
   render() {
 
-    const { terms } = this.state;
+   const { terms } = this.state;
 
-    if (!terms) {
-      return <div>Loading...</div>;
-    }
+if (!terms) {
+  return <div>Loading...</div>;
+}
 
-    const lines = terms.split('\n');
+const lines = terms.split('\n');
 
-    const nonEmptyLines = lines.filter((line) => line !== ''); // Filter out empty lines
+const nonEmptyLines = lines.filter((line) => line !== ''); // Filter out empty lines
 
-    return (
-      <div className="button-contents">
-      {nonEmptyLines.map((line, index) => (
+return (
+  <div className="button-contents">
+    {nonEmptyLines.map((line, index) => {
+      const spacesCount = this.logSpaces(line);
+      const trimmedLine = line.replace(/-/g, '');
+
+      const buttonClassName = spacesCount === 0 ? 'fileButton darker' : 'fileButton';
+      const spacePadding = '\u00A0'.repeat(spacesCount);
+
+      return (
         <div key={index} className="button-line">
-          <button className = "fileButton" onClick={() => this.logSpaces(line)}>
-            {line.replace(/-/g, '')}
+          <button
+            className={buttonClassName}
+            onClick={() => this.logSpaces(line)}
+          >  
+            {spacePadding}
+            {trimmedLine}
           </button>
         </div>
-      ))}
-    </div>
-    );
+      );
+    })}
+  </div>
+);
   }
 }
 

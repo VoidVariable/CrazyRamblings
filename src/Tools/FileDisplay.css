@@ -19,6 +19,17 @@
   text-align: left;
 }
 
+.fileButton.darker {
+  background-color: #333;
+  color: #fff;
+}
+
+.fileButton.darker:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+
 .fileButton:hover {
   background-color: #1414148f;
 }
