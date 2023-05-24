@@ -1,0 +1,24 @@
+.button-contents {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+/* .button-line {
+
+} */
+
+.fileButton {
+  background-color: transparent;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  width: 100%;
+  height: 40px;
+  color: white;
+  text-align: left;
+}
+
+.fileButton:hover {
+  background-color: #1414148f;
+}

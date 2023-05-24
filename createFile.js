@@ -9,7 +9,7 @@ try {
     let content = '';
 
     items.forEach((dirent) => {
-      if (!dirent.name.startsWith('.')) { // Ignore hidden files
+      if (!dirent.name.startsWith('.') && dirent.name !== 'DONTSHIP') { // Ignore hidden files and folders with the name 'DONTSHIP'
         if (dirent.isDirectory()) {
           const folderPath = `${path}/${dirent.name}`;
           const subContent = getAllItems(folderPath, `${indentation}\t`);

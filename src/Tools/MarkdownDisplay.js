@@ -23,9 +23,6 @@ class MarkdownDisplay extends Component {
   }
 
   renderTextWithLinks = (text) => {
-
-    console.log(text);
-
     const linkRegex = /(https?:\/\/[^\s]+)/g;
     return text[0].split(linkRegex).map((part, index) => {
       if (part.match(linkRegex)) {
