@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import termsFrPath from './temp.md';
+import termsFrPath from './file.md';
 import './MarkdownDisplay.css';
 
 class MarkdownDisplay extends Component {

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './Tools/Header';
 import MarkdownDisplay from './Tools/MarkdownDisplay';
+import FileDisplay from './Tools/FileDisplay';
 
 const App = () => {
   return (
@@ -13,7 +14,7 @@ const App = () => {
 
     <div className="middle-section">
       <div className="left-section">
-       
+        <FileDisplay />
       </div>
   
       <div className="middle-markdown">

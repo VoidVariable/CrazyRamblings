@@ -7,11 +7,11 @@ try {
   const items = fs.readdirSync(directoryPath, { withFileTypes: true });
   const folders = items
     .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name);
+    .map(dirent => `- ${dirent.name}`);
 
   const files = items
     .filter(dirent => dirent.isFile())
-    .map(dirent => dirent.name);
+    .map(dirent => `- ${dirent.name}`);
 
   const folderList = folders.join('\n');
   const fileList = files.join('\n');
