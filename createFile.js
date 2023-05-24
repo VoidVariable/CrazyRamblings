@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 
-const directoryPath = './src/Tools';
+const directoryPath = './src/Tools/Obsidian';
 const filePath = 'src/Tools/file.md';
 
 try {
@@ -16,7 +16,7 @@ try {
   const folderList = folders.join('\n');
   const fileList = files.join('\n');
 
-  const content = `Folders:\n${folderList}\n\nFiles:\n${fileList}`;
+  const content = `${folderList}\n${fileList}`;
 
   fs.writeFileSync(filePath, content);
 
