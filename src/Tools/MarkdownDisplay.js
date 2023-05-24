@@ -41,7 +41,7 @@ class MarkdownDisplay extends Component {
   fetchMarkdownData = async () => {
     try {
       const response = await axios.get(
-        'https://cors-anywhere.herokuapp.com/https://github.com/VoidVariable/CrazyRamblings/main/src/Tools/Test/Test.md',
+        'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools/file.md',
         { 
           responseType: 'text' 
         }
