@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import termsFrPath from './temp.md';
 import './MarkdownDisplay.css';
+import axios from 'axios';
+
 
 class MarkdownDisplay extends Component {
   constructor(props) {
@@ -11,15 +13,7 @@ class MarkdownDisplay extends Component {
   }
 
   componentDidMount() {
-    // Read the file created during the build
-    fetch(termsFrPath)
-      .then((response) => response.text())
-      .then((text) => {
-        this.setState({ terms: text });
-      })
-      .catch((error) => {
-        console.error('Error fetching file:', error);
-      });
+    this.fetchMarkdownContent(termsFrPath);
   }
 
   renderTextWithLinks = (text) => {
@@ -36,6 +30,50 @@ class MarkdownDisplay extends Component {
     });
   };
   
+  componentDidUpdate(prevProps) {
+    console.log("2s");
+    if (prevProps.path !== this.props.path) {
+      // Fetch the new markdown content based on the updated path
+      this.fetchMarkdownContent(this.props.path);
+    }
+  }
+
+  fetchMarkdownData = async () => {
+    try {
+      const response = await axios.get(
+        'https://cors-anywhere.herokuapp.com/https://github.com/VoidVariable/CrazyRamblings/main/src/Tools/Test/Test.md',
+        { 
+          responseType: 'text' 
+        }
+      );
+      
+      const markdownData = response.data;
+      console.log(markdownData);
+      this.setState({ terms: markdownData });
+      // Do something with the markdownData, such as displaying it in the component state or rendering it.
+    } catch (error) {
+      // Handle any errors that occur during the fetch.
+      console.error('Error fetching Markdown data:', error);
+    }
+  };
+  
+
+  fetchMarkdownContent(path) {
+    if (path) {
+      // Fetch the markdown content
+      fetch(path)
+        .then((response) => response.text())
+        .then((text) => {
+          this.setState({ terms: text });
+        })
+        .catch((error) => {
+          console.error('Error fetching markdown content:', error);
+        });
+    } else {
+      this.setState({ terms: null });
+    }
+  }
+
 
   render() {
     
@@ -84,7 +122,10 @@ class MarkdownDisplay extends Component {
   
     return (
       <div className="content" style={{ overflow: 'auto', height: '800px', boxSizing: 'border-box' }}>
+        
         <ReactMarkdown components={customComponents}>{this.state.terms}</ReactMarkdown>
+
+        <button onClick={this.fetchMarkdownData}>Fetch Markdown</button>
       </div>
       );
       

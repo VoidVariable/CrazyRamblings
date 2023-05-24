@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import termsFrPath from './file.md';
 import './FileDisplay.css';
-import { handleButtonClick } from './buttonUtils';
+import { handleButtonClick, handleFileClick } from './buttonUtils';
 
 class MarkdownDisplay extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class MarkdownDisplay extends Component {
     return spacesBeforeDash - 2;
   };
   
-  handleButtonClick(spacesCount, text) {
+  handleClick(spacesCount, text) {
   
     const newState = handleButtonClick(this.state, spacesCount, text);
 
@@ -69,7 +69,13 @@ return (
               {shouldDisplayButton && (
                 <button
                   className={buttonClassName}
-                  onClick={() => this.handleButtonClick(spacesCount, trimmedLine)}
+                  onClick={() => {
+                    if (buttonClassName === 'fileButton darker') {
+                      this.handleClick(spacesCount, trimmedLine);
+                    } else {
+                      handleFileClick(this.state, spacesCount, trimmedLine);
+                    }
+                  }}
                 >
                   {spacePadding}
                   {trimmedLine}

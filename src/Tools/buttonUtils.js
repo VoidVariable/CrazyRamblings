@@ -4,6 +4,15 @@ function logSpaces(line){
     return spacesBeforeDash - 2;
   };
 
+function getIndexInLines(lines, spacesCount ,text)
+{
+   return lines.findIndex((line) => {
+       const lineSpacesCount = logSpaces(line)
+        const btnText = line.replace(/-/g, '');
+    return lineSpacesCount === spacesCount && btnText === text;
+    });
+}
+
 // buttonUtils.js
 export function handleButtonClick(state, spacesCount, text) {
     const { closed, hiddenItems, terms } = state;
@@ -14,12 +23,7 @@ export function handleButtonClick(state, spacesCount, text) {
     // Check if the clicked button is already closed
     const isClosed = closed.some((item) => item.spacesCount === spacesCount && item.text === text);
 
-    let currentIndex = lines.findIndex((line) => {
-        const lineSpacesCount = logSpaces(line)
-        const btnText = line.replace(/-/g, '');
-      
-        return lineSpacesCount === spacesCount && btnText === text;
-    });
+    const currentIndex = getIndexInLines(lines, spacesCount, text);
 
     if (isClosed) {
       // Remove the clicked button's entry from the closed list
@@ -72,3 +76,32 @@ export function handleButtonClick(state, spacesCount, text) {
     return { closed: newClosed, hiddenItems: newHiddenItems };
   }
   
+  export function handleFileClick(state, spacesCount, text) 
+  {
+
+    const {terms} = state;
+    
+
+    const lines = terms.split('\n');
+    const nonEmptyLines = lines.filter((line) => line !== ''); // Filter out empty lines
+    const index = getIndexInLines(nonEmptyLines,spacesCount,text)
+
+    const path = [];
+
+    for (let i = index; i >= 0; i--) {
+      const line = nonEmptyLines[i]; // Remove leading empty spaces
+      // Perform any desired operations with the modified line
+      // ...
+    
+      path.push(line.replace(/-/g, '').replace(/^\s+/, ''));
+      if (logSpaces(line) === 0) break;
+      path.push('/');
+    }
+    
+    const reversedPath = path.reverse();
+    const pathString = reversedPath.join('');
+    
+   
+
+    alert(pathString);
+  }

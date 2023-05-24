@@ -1,10 +1,20 @@
-import React from 'react';
+import {useState} from 'react';
 import './App.css';
 import Header from './Tools/Header';
 import MarkdownDisplay from './Tools/MarkdownDisplay';
 import FileDisplay from './Tools/FileDisplay';
 
 const App = () => {
+  const [selectedPath, setSelectedPath] = useState(null);
+
+  const handlePathChange = () => {
+    console.log("hmm");
+    // Logic to change the path based on your requirements
+    const newPath = '.temp.md';
+    setSelectedPath(newPath);
+  };
+
+
   return (
     <div className="container">
     
@@ -18,11 +28,13 @@ const App = () => {
       </div>
   
       <div className="middle-markdown">
-        <MarkdownDisplay />
+          <MarkdownDisplay path={selectedPath} />
       </div>
   
       <div className="right-section">
-        {/* Right section content */}
+      <button onClick={handlePathChange} style={{ marginTop: '50px' }}>
+            Change Path
+          </button>
       </div>
     </div>
   
