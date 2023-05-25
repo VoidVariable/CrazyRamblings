@@ -3,3 +3,4 @@
 - Resources
     - Gaster Master
         - Spamton Dialogue.md
+    - Links to good shit.md

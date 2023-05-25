@@ -92,7 +92,9 @@ export function handleButtonClick(state, spacesCount, text) {
       const line = nonEmptyLines[i]; // Remove leading empty spaces
       // Perform any desired operations with the modified line
       // ...
-    
+      if(logSpaces(line.replace(/-/g, '')) >= logSpaces(text) &&
+      i !== index) continue;
+
       path.push(line.replace(/-/g, '').replace(/^\s+/, ''));
       if (logSpaces(line) === 0) break;
       path.push('/');

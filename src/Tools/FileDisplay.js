@@ -64,7 +64,12 @@ return (
 
       const buttonClassName = trimmedLine.includes('.') ? 'fileButton' : 'fileButton darker';
 
-      const spacePadding = '\u00A0'.repeat(spacesCount);
+      var spacePadding = '\u00A0'.repeat(Math.max(spacesCount - 4, 0) 
+      );
+
+      if(spacesCount !== 0)
+          spacePadding += "| \u00A0 \u00A0 \u00A0";
+
       
       const shouldDisplayButton = !hiddenItems.some((item) => 
         item.lineSpacesCount === spacesCount && item.newText === line);
