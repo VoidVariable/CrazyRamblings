@@ -5,13 +5,11 @@ import MarkdownDisplay from './Tools/MarkdownDisplay';
 import FileDisplay from './Tools/FileDisplay';
 
 const App = () => {
-  const [selectedPath, setSelectedPath] = useState(null);
+  const [path, setPath] = useState('null');
 
-  const handlePathChange = () => {
-    console.log("hmm");
-    // Logic to change the path based on your requirements
-    const newPath = '.temp.md';
-    setSelectedPath(newPath);
+  const handlePathChange = (newPath) => {
+    console.log("Ch -CH");
+    setPath(newPath);
   };
 
 
@@ -24,11 +22,11 @@ const App = () => {
 
     <div className="middle-section">
       <div className="left-section">
-        <FileDisplay />
+        <FileDisplay handlePathChange={handlePathChange} />
       </div>
   
       <div className="middle-markdown">
-          <MarkdownDisplay path={selectedPath} />
+          <MarkdownDisplay path={path} />
       </div>
   
       <div className="right-section">

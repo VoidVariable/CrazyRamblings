@@ -31,18 +31,16 @@ class MarkdownDisplay extends Component {
   };
   
   componentDidUpdate(prevProps) {
-    console.log("2s");
     if (prevProps.path !== this.props.path) {
-      // Fetch the new markdown content based on the updated path
-      this.fetchMarkdownContent(this.props.path);
+      this.fetchMarkdownData();
     }
   }
-
   fetchMarkdownData = async () => {
     try {
       const response = await axios.get(
-        'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools/file.md',
+        'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools' + this.props.path,
         { 
+          
           responseType: 'text' 
         }
       );
@@ -124,8 +122,6 @@ class MarkdownDisplay extends Component {
       <div className="content" style={{ overflow: 'auto', height: '800px', boxSizing: 'border-box' }}>
         
         <ReactMarkdown components={customComponents}>{this.state.terms}</ReactMarkdown>
-
-        <button onClick={this.fetchMarkdownData}>Fetch Markdown</button>
       </div>
       );
       

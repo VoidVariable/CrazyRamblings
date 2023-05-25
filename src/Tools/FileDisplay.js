@@ -31,11 +31,17 @@ class MarkdownDisplay extends Component {
     return spacesBeforeDash - 2;
   };
   
-  handleClick(spacesCount, text) {
-  
-    const newState = handleButtonClick(this.state, spacesCount, text);
+  handleClick(type,spacesCount, text) {  
+    if (type === 'fileButton darker') {
+      const newState = handleButtonClick(this.state, spacesCount, text);
+      this.setState(newState);
+    } else {
+      
+      const path = handleFileClick(this.state, spacesCount, text);
 
-    this.setState(newState);
+      const newPath = '/Obsidian' + path;
+      this.props.handlePathChange(newPath);
+    }
   }
 
   render() {
@@ -70,11 +76,7 @@ return (
                 <button
                   className={buttonClassName}
                   onClick={() => {
-                    if (buttonClassName === 'fileButton darker') {
-                      this.handleClick(spacesCount, trimmedLine);
-                    } else {
-                      handleFileClick(this.state, spacesCount, trimmedLine);
-                    }
+                    this.handleClick(buttonClassName, spacesCount, trimmedLine);
                   }}
                 >
                   {spacePadding}

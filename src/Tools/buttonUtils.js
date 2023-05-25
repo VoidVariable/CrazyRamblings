@@ -103,5 +103,5 @@ export function handleButtonClick(state, spacesCount, text) {
     
    
 
-    alert(pathString);
+    return "/" + pathString;
   }
