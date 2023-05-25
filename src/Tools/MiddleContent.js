@@ -1,6 +1,7 @@
 import MarkdownDisplay from './MarkdownDisplay';
 import PNGDisplay from './PNGDisplay';
 import CanvasFileDisplay from './CanvasFileDisplay';
+import GIFDisplay from './GIFDisplay';
 
 
 const MiddleContent = ({ path }) => {
@@ -13,6 +14,8 @@ const MiddleContent = ({ path }) => {
           return 'canvas';
         } else if (path.endsWith('.png')) {
           return 'png';
+        } else if (path.endsWith('.gif')) {
+            return 'gif';
         } else if (!path.includes('.')) {
           return 'No file extension';
         } else {
@@ -29,6 +32,8 @@ const MiddleContent = ({ path }) => {
         <MarkdownDisplay path={path} />
       ) : fileExtension === 'png' ? (
         <PNGDisplay path={path} />
+        ) : fileExtension === 'gif' ? (
+            <GIFDisplay path={path} />
       ) : fileExtension === 'canvas' ? (
         <CanvasFileDisplay path={path} />
       ) : fileExtension === 'No file extension' ? (

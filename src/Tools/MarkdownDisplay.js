@@ -91,7 +91,7 @@ class MarkdownDisplay extends Component {
   };
   
     return (
-      <div className="content" style={{ overflow: 'auto', height: '83.1vh', boxSizing: 'border-box' }}>       
+      <div className="content" style={{ overflow: 'auto', height: '88.1vh', boxSizing: 'border-box' }}>       
         <ReactMarkdown components={customComponents}>{this.state.terms}</ReactMarkdown>
       </div>
       );

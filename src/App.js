@@ -28,12 +28,7 @@ const App = () => {
       <div className="middle-markdown">
           <MiddleContent path={path} />
       </div>
-    </div>
-  
-    <footer className="footer">
-      {/* Footer content */}
-    </footer>
-    
+    </div>   
   </div>
   );
 };

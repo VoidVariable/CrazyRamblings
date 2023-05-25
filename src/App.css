@@ -4,13 +4,9 @@
   flex-direction: column;
 }
 
-.Header {
-  flex: 0 0 5%;
-  width: 100%;
-}
-
 .middle-section {
-  flex: 1 0 auto;
+  height: 100%;
+  margin-top: 2.5%;
   display: flex;
 }
 
@@ -23,15 +19,8 @@
 .middle-markdown {
   padding: 10px;
   padding-top: 2%;
-  width: 83.83%;
+  width: 85%;
   background-color: #1f2329;  /* Obsidian editor background color */
   color: #c8d1e2; /* Obsidian editor text color */
 }
 
-
-.footer {
-  background-color: #2b343d;/* Dark purple footer background color */
-  flex: 0 0 5%;
-  width: 100%;
-  color: #abb2bf; /* Obsidian footer text color */
-}
