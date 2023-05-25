@@ -12,8 +12,8 @@
 } */
 
 .fileButton {
-  background-color: transparent;
-  border: none;
+  border: 0.5px solid #00000033;
+  background-color: #0000003f;
   padding: 5px 10px;
   cursor: pointer;
   width: 100%;
@@ -23,7 +23,7 @@
 }
 
 .fileButton.darker {
-  background-color: #8080803d;
+  background-color: transparent;
   color: #fff;
 }
 
@@ -32,7 +32,13 @@
   color: #fff;
 }
 
-
 .fileButton:hover {
   background-color: #1414148f;
+}
+
+.fileButton.selected {
+  font-weight: bold;
+  background-color: #88888849;
+  border: 1px solid #b8d4f3;
+  color: #dfdfdf;
 }

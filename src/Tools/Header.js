@@ -14,7 +14,7 @@ const Header = () => {
             {/* Header content */}
           </div>
           <div className="header-title">
-            Title
+            Crazy Ramblings Of a Mad Mind
           </div>
           <div className="header-button">
             <button className="moon-icon-button" onClick={toggleDarkMode}>

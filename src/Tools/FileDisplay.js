@@ -10,7 +10,8 @@ class MarkdownDisplay extends Component {
     this.state = { 
       terms: null,
       hiddenItems: [],
-      closed: [] };
+      closed: [],
+      selected: null  };
   }
 
   componentDidMount() {
@@ -30,7 +31,9 @@ class MarkdownDisplay extends Component {
       const newState = handleButtonClick(this.state, spacesCount, text);
       this.setState(newState);
     } else {
-      
+      const newState = { selected: { spacesCount: spacesCount, text: text } };
+      this.setState(newState);
+  
       const path = handleFileClick(this.state, spacesCount, text);
 
       const newPath = '/Obsidian' + path;
@@ -56,7 +59,13 @@ return (
     const spacesCount = logSpaces(line);
     const trimmedLine = removeLeadingHyphens(line);
 
-    const buttonClassName = trimmedLine.includes('.') ? 'fileButton' : 'fileButton darker';
+    var buttonClassName = trimmedLine.includes('.') ? 'fileButton' : 'fileButton darker';
+
+    if(this.state.selected?.spacesCount === spacesCount && this.state.selected?.text === trimmedLine)
+    { 
+    
+      buttonClassName = 'fileButton selected';
+    }
 
     var spacePadding = '\u00A0'.repeat((Math.max(spacesCount - 1, 0) * 4));
     var arrow = '';
@@ -100,10 +109,6 @@ return (
     );
   })}
 </div>
-
-
-
-
 );
   }
 }
