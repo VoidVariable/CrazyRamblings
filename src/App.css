@@ -5,12 +5,14 @@
 }
 
 .middle-section {
+
   height: 100%;
   margin-top: 2.5%;
   display: flex;
 }
 
 .left-section {
+  z-index: 2;
   width: 15%;
   background-color: #282c34; /* Obsidian sidebar background color */
   border: 1px solid black;

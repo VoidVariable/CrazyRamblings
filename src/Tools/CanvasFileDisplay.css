@@ -1,11 +1,14 @@
 .canvas-file-display{
-  background-size: 40px 40px;
+  background-size: 20px 20px;
   background-image: radial-gradient(circle, #353535 1px, rgba(0, 0, 0, 0) 1px);
   background-color: black;
-  height: 90.6vh;
+  margin-top: 20px;
+  height: 88.5vh;
   width: 98.8%;
+  position: relative;
   padding: 10px;
   padding-top: 2%;
+  overflow: hidden;
 }
 
 .canvas-warning{
