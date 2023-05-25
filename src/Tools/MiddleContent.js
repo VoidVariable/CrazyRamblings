@@ -41,7 +41,6 @@ const MiddleContent = ({ path }) => {
       ) : (
         <div>Other file extension component</div>
       )}
-      <label>File Type: {fileExtension} file</label>
     </div>
   );
 };

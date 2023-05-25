@@ -1,0 +1,19 @@
+.canvas-file-display{
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, #353535 1px, rgba(0, 0, 0, 0) 1px);
+  background-color: black;
+  height: 90.6vh;
+  width: 98.8%;
+  padding: 10px;
+  padding-top: 2%;
+}
+
+.canvas-warning{
+  width: 250px;
+  height: 50px;
+  margin: 25px;
+  text-align: center;
+  padding-top: 23px;
+  border: 1px solid #971c1c;
+  background-color: rgb(27, 28, 31);
+}

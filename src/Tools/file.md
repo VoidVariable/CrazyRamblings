@@ -15,3 +15,4 @@
   - Who is C.png
   - Susie gets chalk.png
 - Test.md
+- Deltarune and Undertale.canvas

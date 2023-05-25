@@ -1,0 +1,46 @@
+.moon-icon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.moon-icon-button i {
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.fa-sun {
+  color: #FFCE00; /* Yellow color for sun icon */
+}
+
+.fa-moon {
+  color: #CCCCCC; /* Gray color for moon icon */
+}
+
+.moon-icon-button.animate i {
+  animation: morphIcon 0.3s forwards infinite;
+}
+
+@keyframes morphIcon {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(0.8) rotate(90deg);
+  }
+  50% {
+    transform: scale(0.2) rotate(180deg);
+  }
+  75% {
+    transform: scale(0.8) rotate(270deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}

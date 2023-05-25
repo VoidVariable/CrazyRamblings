@@ -52,7 +52,9 @@ class PNGDisplay extends Component {
             overflowY: 'auto',
             maxWidth: '100%',
             maxHeight: '800px',
-            boxSizing: 'border-box'
+            boxSizing: 'border-box',
+            padding: '10px',
+            paddingTop: '2%'
           }}
           src={`data:image/png;base64,${base64Image}`}
           alt=""

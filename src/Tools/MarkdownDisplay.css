@@ -15,3 +15,11 @@
 }
 
 
+.mdContent {
+  overflow: auto;
+  height: 88.1vh;
+  box-sizing: border-box;
+  background-color: #1f2329; 
+  padding: 10px;
+  padding-top: 2%;
+}

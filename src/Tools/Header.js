@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
-
+import DarkModeButton from './DarkModeButton';
 const Header = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -17,10 +17,8 @@ const Header = () => {
             Crazy Ramblings Of a Mad Mind
           </div>
           <div className="header-button">
-            <button className="moon-icon-button" onClick={toggleDarkMode}>
-              <i className={`fas ${isDarkMode ? 'fa-sun' : 'fa-moon'}`}></i>
-            </button>
-          </div>
+          <DarkModeButton isDarkMode={isDarkMode} onClick={toggleDarkMode} />
+      </div>
         </header>
     );
   };
