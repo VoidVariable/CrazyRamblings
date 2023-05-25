@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import termsFrPath from './temp.md';
 import './MarkdownDisplay.css';
 import fetchingData from './dataFetcher';
 
@@ -12,7 +11,7 @@ class MarkdownDisplay extends Component {
   }
 
   componentDidMount() {
-    this.fetchMarkdownContent(termsFrPath);
+    this.fetchMarkdownData();
   }
 
   renderTextWithLinks = (text) => {
@@ -47,24 +46,6 @@ class MarkdownDisplay extends Component {
     }
   };
   
-
-  fetchMarkdownContent(path) {
-    if (path) {
-      // Fetch the markdown content
-      fetch(path)
-        .then((response) => response.text())
-        .then((text) => {
-          this.setState({ terms: text });
-        })
-        .catch((error) => {
-          console.error('Error fetching markdown content:', error);
-        });
-    } else {
-      this.setState({ terms: null });
-    }
-  }
-
-
   render() {
     
     const customComponents = {
@@ -110,7 +91,7 @@ class MarkdownDisplay extends Component {
   };
   
     return (
-      <div className="content" style={{ overflow: 'auto', height: '800px', boxSizing: 'border-box' }}>       
+      <div className="content" style={{ overflow: 'auto', height: '83.1vh', boxSizing: 'border-box' }}>       
         <ReactMarkdown components={customComponents}>{this.state.terms}</ReactMarkdown>
       </div>
       );
