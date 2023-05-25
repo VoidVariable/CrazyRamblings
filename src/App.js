@@ -8,7 +8,7 @@ const App = () => {
   const [path, setPath] = useState('null');
 
   const handlePathChange = (newPath) => {
-    console.log("Ch -CH");
+
     setPath(newPath);
   };
 
@@ -27,12 +27,6 @@ const App = () => {
   
       <div className="middle-markdown">
           <MarkdownDisplay path={path} />
-      </div>
-  
-      <div className="right-section">
-      <button onClick={handlePathChange} style={{ marginTop: '50px' }}>
-            Change Path
-          </button>
       </div>
     </div>
   

@@ -46,7 +46,6 @@ class MarkdownDisplay extends Component {
       );
       
       const markdownData = response.data;
-      console.log(markdownData);
       this.setState({ terms: markdownData });
       // Do something with the markdownData, such as displaying it in the component state or rendering it.
     } catch (error) {
