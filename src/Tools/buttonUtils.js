@@ -1,7 +1,7 @@
-function logSpaces(line){
+export function logSpaces(line){
     const trimmedLine = line.replace('-',' ')
     const spacesBeforeDash = trimmedLine.search(/\S/);
-    return spacesBeforeDash - 2;
+    return Math.max(spacesBeforeDash - 2, 0);
   };
 
 export function removeLeadingHyphens(str) {

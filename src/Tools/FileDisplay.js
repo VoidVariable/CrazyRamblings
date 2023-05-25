@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import termsFrPath from './file.md';
 import './FileDisplay.css';
-import { handleButtonClick, handleFileClick, removeLeadingHyphens } from './buttonUtils';
+import { handleButtonClick, handleFileClick, removeLeadingHyphens, logSpaces } from './buttonUtils';
 
 class MarkdownDisplay extends Component {
   constructor(props) {
@@ -25,12 +25,6 @@ class MarkdownDisplay extends Component {
       });
   }
 
-  logSpaces = (line) => {
-    const trimmedLine = line.replace('-',' ')
-    const spacesBeforeDash = trimmedLine.search(/\S/);
-    return spacesBeforeDash - 2;
-  };
-  
   handleClick(type,spacesCount, text) {  
     if (type === 'fileButton darker') {
       const newState = handleButtonClick(this.state, spacesCount, text);
@@ -57,41 +51,59 @@ const lines = terms.split('\n');
 const nonEmptyLines = lines.filter((line) => line !== ''); // Filter out empty lines
 
 return (
-  <div className="button-contents">
-    {nonEmptyLines.map((line, index) => {
-      const spacesCount = this.logSpaces(line);
-      const trimmedLine = removeLeadingHyphens(line);
+<div className="button-contents">
+  {nonEmptyLines.map((line, index) => {
+    const spacesCount = logSpaces(line);
+    const trimmedLine = removeLeadingHyphens(line);
 
-      const buttonClassName = trimmedLine.includes('.') ? 'fileButton' : 'fileButton darker';
+    const buttonClassName = trimmedLine.includes('.') ? 'fileButton' : 'fileButton darker';
 
-      var spacePadding = '\u00A0'.repeat((Math.max(spacesCount - 1, 0) * 4) 
-      );
+    var spacePadding = '\u00A0'.repeat((Math.max(spacesCount - 1, 0) * 4));
+    var arrow = '';
+    console.log(spacesCount);
+    if(spacesCount !== 0){
+      spacePadding += "\u00A0\u00A0\u00A0\u00A0"
+    }
 
+    if (buttonClassName === 'fileButton darker') {
+      arrow = this.state.closed.some((item) => item.spacesCount === spacesCount && item.text === trimmedLine) ? '▶' : '▼';
+      spacePadding = "\u00A0".concat(spacePadding);
+    }
+    else
+    {
       if(spacesCount !== 0)
-          spacePadding += "| \u00A0 \u00A0 \u00A0";
+      {
+        spacePadding = spacePadding.substring(0, spacePadding.length-4);
+        spacePadding = (spacePadding) + ("|\u00A0\u00A0\u00A0");
+      }
+    }
 
-      
-      const shouldDisplayButton = !hiddenItems.some((item) => 
-        item.lineSpacesCount === spacesCount && item.newText === line);
+    const shouldDisplayButton = !hiddenItems.some(
+      (item) => item.lineSpacesCount === spacesCount && item.newText === line
+    );
+
+    return (
+      <div key={index} className="button-line">
+        {shouldDisplayButton && (
+          <button
+            className={buttonClassName}
+            onClick={() => {
+              this.handleClick(buttonClassName, spacesCount, trimmedLine);
+            }}
+          >
+            {spacePadding}
+            {arrow && <span className="arrow">{arrow}</span>}
+            {trimmedLine}
+          </button>
+        )}
+      </div>
+    );
+  })}
+</div>
 
 
-      return (
-        <div key={index} className="button-line">
-              {shouldDisplayButton && (
-                <button
-                  className={buttonClassName}
-                  onClick={() => {
-                    this.handleClick(buttonClassName, spacesCount, trimmedLine);
-                  }}
-                >
-                  {spacePadding}
-                  {trimmedLine}
-                </button>
-              )}
-            </div>
-      );
-    })}
-  </div>
+
+
 );
   }
 }
