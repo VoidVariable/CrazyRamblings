@@ -14,7 +14,13 @@ class PNGDisplay extends Component {
     this.fetchImageData();
   }
 
-  fetchImageData = async () => {
+  componentDidUpdate(prevProps) {
+    if (prevProps.path !== this.props.path) {
+      this.fetchImageData();
+    }
+  }
+
+  fetchImageData = async () => { 
     try {
       const imageData = await fetchingData('arraybuffer', this.props.path);
       this.setState({ imageData });

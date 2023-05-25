@@ -76,7 +76,7 @@ export function handleButtonClick(state, spacesCount, text) {
     return { closed: newClosed, hiddenItems: newHiddenItems };
   }
   
-  export function handleFileClick(state, spacesCount, text) 
+export function handleFileClick(state, spacesCount, text) 
   {
 
     const {terms} = state;

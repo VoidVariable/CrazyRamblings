@@ -6,6 +6,7 @@ import CanvasFileDisplay from './CanvasFileDisplay';
 const MiddleContent = ({ path }) => {
 
     const getFileExtension = () => {
+        
         if (path.endsWith('.md')) {
           return 'md';
         } else if (path.endsWith('.canvas')) {
