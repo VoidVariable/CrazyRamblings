@@ -4,3 +4,6 @@
  - Gaster Master
   - Spamton Dialogue.md
  - Links to good shit.md
+- Images
+ - Other Stuff
+  - Who is C.png

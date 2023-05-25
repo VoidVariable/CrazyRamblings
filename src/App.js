@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import './App.css';
 import Header from './Tools/Header';
-import MarkdownDisplay from './Tools/MarkdownDisplay';
+import MiddleContent from './Tools/MiddleContent';
 import FileDisplay from './Tools/FileDisplay';
 
 const App = () => {
@@ -26,7 +26,7 @@ const App = () => {
       </div>
   
       <div className="middle-markdown">
-          <MarkdownDisplay path={path} />
+          <MiddleContent path={path} />
       </div>
     </div>
   

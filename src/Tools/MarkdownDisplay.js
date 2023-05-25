@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import termsFrPath from './temp.md';
 import './MarkdownDisplay.css';
-import axios from 'axios';
-
+import fetchingData from './dataFetcher';
 
 class MarkdownDisplay extends Component {
   constructor(props) {
@@ -35,17 +34,11 @@ class MarkdownDisplay extends Component {
       this.fetchMarkdownData();
     }
   }
+
   fetchMarkdownData = async () => {
     try {
-      const response = await axios.get(
-        'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools' + this.props.path,
-        { 
-          
-          responseType: 'text' 
-        }
-      );
-      
-      const markdownData = response.data;
+      const markdownData = await fetchingData('text', this.props.path);
+
       this.setState({ terms: markdownData });
       // Do something with the markdownData, such as displaying it in the component state or rendering it.
     } catch (error) {
@@ -113,8 +106,7 @@ class MarkdownDisplay extends Component {
       ),
       p: ({ children }) => {      
         return this.renderTextWithLinks(children); // Custom rendering for plain text with links   
-      },
-      
+      }    
   };
   
     return (
