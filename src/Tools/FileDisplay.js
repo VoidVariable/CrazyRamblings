@@ -64,7 +64,7 @@ return (
 
       const buttonClassName = trimmedLine.includes('.') ? 'fileButton' : 'fileButton darker';
 
-      var spacePadding = '\u00A0'.repeat(Math.max(spacesCount - 4, 0) 
+      var spacePadding = '\u00A0'.repeat((Math.max(spacesCount - 1, 0) * 4) 
       );
 
       if(spacesCount !== 0)

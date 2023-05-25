@@ -102,8 +102,6 @@ export function handleButtonClick(state, spacesCount, text) {
     
     const reversedPath = path.reverse();
     const pathString = reversedPath.join('');
-    
-    console.log(logSpaces(text));
-    
+        
     return "/" + pathString;
   }

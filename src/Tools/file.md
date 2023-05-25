@@ -1,6 +1,6 @@
 - Spamton
-    - Hyperlink Blocked.md
+ - Hyperlink Blocked.md
 - Resources
-    - Gaster Master
-        - Spamton Dialogue.md
-    - Links to good shit.md
+ - Gaster Master
+  - Spamton Dialogue.md
+ - Links to good shit.md
