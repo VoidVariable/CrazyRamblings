@@ -1,1 +1,13 @@
-{}
+{
+	"nodes":[
+		{"id":"434270d0bbe1d352","x":-584,"y":-252,"width":250,"height":60,"type":"text","text":"Teste 1"},
+		{"id":"525981cc6cf9ec62","x":-267,"y":-15,"width":250,"height":60,"type":"text","text":"Teste 3"},
+		{"id":"7bfa7e2868787749","x":-481,"y":139,"width":250,"height":60,"type":"text","text":"Teste 5"},
+		{"id":"2129cd70f38b2958","x":131,"y":-444,"width":250,"height":60,"type":"text","text":"Yrtr4"}
+	],
+	"edges":[
+		{"id":"933669ad8cbf1dba","fromNode":"525981cc6cf9ec62","fromSide":"top","toNode":"2129cd70f38b2958","toSide":"bottom"},
+		{"id":"199568aa03617160","fromNode":"2129cd70f38b2958","fromSide":"left","toNode":"434270d0bbe1d352","toSide":"right"},
+		{"id":"3e1dd07395a391ee","fromNode":"434270d0bbe1d352","fromSide":"bottom","toNode":"7bfa7e2868787749","toSide":"left"}
+	]
+}

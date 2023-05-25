@@ -11,8 +11,15 @@
             "id": "f06533e3290f9bed",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "canvas",
+              "state": {
+                "file": "Deltarune and Undertale.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
+              }
             }
           }
         ]
@@ -81,6 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Deltarune and Undertale.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Deltarune and Undertale.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +127,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Deltarune and Undertale.canvas"
+              }
             }
           }
         ]
@@ -139,6 +150,9 @@
   },
   "active": "f06533e3290f9bed",
   "lastOpenFiles": [
+    "Goats are bad.canvas",
+    "Kris Cross Apllesauce.canvas",
+    "Other Stuff.canvas",
     "Resources/Gaster Master/Spamton Dialogue.md",
     "DONTSHIP/Combat System V2.md",
     "Spamton/Links to good shit.md",
@@ -175,7 +189,6 @@
     "crazy/node_modules/@rollup/pluginutils/node_modules/@types/estree/README.md",
     "crazy/node_modules/@jridgewell/trace-mapping/node_modules/@jridgewell/sourcemap-codec/README.md",
     "crazy/node_modules/workbox-build/node_modules/@apideck/better-ajv-errors/README.md",
-    "crazy/node_modules/tailwindcss/src/postcss-plugins/nesting/README.md",
     "crazy/node_modules/istanbul-reports/lib/html-spa/assets/sort-arrow-sprite.png",
     "crazy/node_modules/istanbul-reports/lib/html/assets/sort-arrow-sprite.png",
     "crazy/node_modules/istanbul-reports/lib/html/assets/favicon.png",
@@ -186,9 +199,6 @@
     "crazy/node_modules/serve-index/public/icons/page_white_wrench.png",
     "crazy/node_modules/serve-index/public/icons/page_white_world.png",
     "crazy/node_modules/serve-index/public/icons/page_white_word.png",
-    "Goats are bad.canvas",
-    "Kris Cross Apllesauce.canvas",
-    "Other Stuff.canvas",
     "Deltarune and Undertale.canvas"
   ]
 }
