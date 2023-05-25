@@ -60,7 +60,7 @@ return (
 
     var spacePadding = '\u00A0'.repeat((Math.max(spacesCount - 1, 0) * 4));
     var arrow = '';
-    console.log(spacesCount);
+
     if(spacesCount !== 0){
       spacePadding += "\u00A0\u00A0\u00A0\u00A0"
     }
