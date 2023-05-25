@@ -3,14 +3,6 @@ import "./CanvasFileDisplay.css";
 import fetchingData from './dataFetcher';
 import SquareRenderer from './SquareRenderer';
 
-    
-const jsonConfig = {
-    "nodes": [
-      {"id": "434270d0bbe1d352", "x": 0, "y": 0, "width": 250, "height": 60, "type": "text", "text": "sdfd sdsd sld sm sd sdlm sdsd msld mlsdm lsdm lsmd lsmd lsmd lm sldm sldmlsdm lsmd lms"},
-      {"id": "asasdasd", "x": -20, "y": -20, "width": 250, "height": 60, "type": "text", "text": "sdfd sdsd sld sm sd sdlm sdsd msld mlsdm lsdm lsmd lsmd lsmd lm sldm sldmlsdm lsmd lms"},
-    ]
-};
-
 class CanvasFileDisplay extends React.Component {
     constructor(props) {
     super(props);
@@ -121,8 +113,9 @@ class CanvasFileDisplay extends React.Component {
       };
 
     render() {
-    const { path, } = this.props;
-     
+    
+    console.log(this.state.canvasData);
+
     return (
         <div
         className="canvas-file-display"
@@ -131,9 +124,16 @@ class CanvasFileDisplay extends React.Component {
         onTouchMove={this.handleTouchMove}
         onTouchEnd={this.handleTouchEnd}
       >
-        {/* <label>Path: {path}</label>
-        <div className='canvas-warning'>File type not Implement {this.state.canvasData}</div> */}
-        <SquareRenderer config={jsonConfig} point={this.state.visiblePoint}/>
+        {
+          
+        }
+            
+            {this.state.canvasData !== null && (
+      <SquareRenderer
+        canvasData={(this.state.canvasData)}
+        point={this.state.visiblePoint}
+      />
+    )}
       </div>
     );
   }

@@ -15,8 +15,8 @@
               "state": {
                 "file": "Deltarune and Undertale.canvas",
                 "viewState": {
-                  "x": 2.484211987853014,
-                  "y": -117.37918451070819,
+                  "x": -101.5,
+                  "y": -122.5,
                   "zoom": 0
                 }
               }
@@ -151,6 +151,7 @@
   "active": "f06533e3290f9bed",
   "lastOpenFiles": [
     "Goats are bad.canvas",
+    "Deltarune and Undertale.canvas",
     "Kris Cross Apllesauce.canvas",
     "Other Stuff.canvas",
     "Resources/Gaster Master/Spamton Dialogue.md",
@@ -198,7 +199,6 @@
     "crazy/node_modules/serve-index/public/icons/page_white_zip.png",
     "crazy/node_modules/serve-index/public/icons/page_white_wrench.png",
     "crazy/node_modules/serve-index/public/icons/page_white_world.png",
-    "crazy/node_modules/serve-index/public/icons/page_white_word.png",
-    "Deltarune and Undertale.canvas"
+    "crazy/node_modules/serve-index/public/icons/page_white_word.png"
   ]
 }

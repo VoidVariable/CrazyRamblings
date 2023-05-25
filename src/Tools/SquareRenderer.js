@@ -1,12 +1,12 @@
 import React from 'react';
 
-class SquareRenderer extends React.Component {
-  constructor(props) {
-    super(props);
-    }
-  
+class SquareRenderer extends React.Component {  
   render() {
-    const { nodes } = this.props.config;
+    const { nodes } = JSON.parse(this.props.canvasData);;
+    
+    console.log(this.props.canvasData);
+    console.log(nodes);
+
     return (
       <div>
         Tests
@@ -21,20 +21,21 @@ class SquareRenderer extends React.Component {
               position: 'absolute',
               borderStyle: 'solid', // Add this line to set the border style
              
-              left: `calc(50% + ${(this.props.point.x/20) + node.x}%)`,
-              top: `calc(50% + ${(this.props.point.y/70) + node.y}%`,
+              left: `calc(50% + ${((this.props.point.x/ 2) + node.x) / 13}%)`,
+              top: `calc(50% + ${((this.props.point.y/ 5) + node.y) / 13}%`,
               transform: 'translate(-50%, -50%)',
-        
-              width: node.width *2,
-              height: node.height * 2,
+
+              fontSize: 14,
+                         
+              width: node.width,
+              height: node.height / 1.2,
               backgroundColor: '#191721',
               color: '#aaa',
               zIndex: 0, // Set a lower z-index value for the div elements
               
             }}
           >
-            <h3>{node.id}</h3>
-            <p>{node.text}</p>
+            <h3>{node.text}</h3>
           </div>
         ))}
       </div>
