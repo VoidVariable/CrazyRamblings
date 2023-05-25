@@ -47,8 +47,17 @@ class PNGDisplay extends Component {
     );
 
     return (
-      <img style={{ overflow: 'auto', height: '800px', boxSizing: 'border-box' }} src={`data:image/png;base64,${base64Image}`} alt="" />
-    );
+        <img
+          style={{
+            overflowY: 'auto',
+            maxWidth: '100%',
+            maxHeight: '800px',
+            boxSizing: 'border-box'
+          }}
+          src={`data:image/png;base64,${base64Image}`}
+          alt=""
+        />
+      );
   }
 }
 

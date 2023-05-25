@@ -6,7 +6,11 @@
  - Links to good shit.md
 - Images
  - Goats are Bad
+  - Actually your choices do matter.png
   - nomnom.gif
  - Other Stuff
+  - Gaster Master
+   - Hyperlink Blocked
+    - Ch-Ch-Ch-Choices.png
   - Who is C.png
   - Susie gets chalk.png

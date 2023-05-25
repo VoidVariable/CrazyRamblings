@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import termsFrPath from './file.md';
 import './FileDisplay.css';
-import { handleButtonClick, handleFileClick } from './buttonUtils';
+import { handleButtonClick, handleFileClick, removeLeadingHyphens } from './buttonUtils';
 
 class MarkdownDisplay extends Component {
   constructor(props) {
@@ -60,7 +60,7 @@ return (
   <div className="button-contents">
     {nonEmptyLines.map((line, index) => {
       const spacesCount = this.logSpaces(line);
-      const trimmedLine = line.replace(/-/g, '');
+      const trimmedLine = removeLeadingHyphens(line);
 
       const buttonClassName = trimmedLine.includes('.') ? 'fileButton' : 'fileButton darker';
 

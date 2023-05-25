@@ -4,11 +4,23 @@ function logSpaces(line){
     return spacesBeforeDash - 2;
   };
 
+export function removeLeadingHyphens(str) {
+  let firstNonHyphenIndex = str.search(/[^-\s]/);
+  
+  if (firstNonHyphenIndex !== -1) {
+    let leadingHyphens = str.slice(0, firstNonHyphenIndex).replace(/-/g, '');
+    return leadingHyphens + str.slice(firstNonHyphenIndex);
+  }
+  
+  return str;
+}
+
+
 function getIndexInLines(lines, spacesCount ,text)
 {
    return lines.findIndex((line) => {
        const lineSpacesCount = logSpaces(line)
-        const btnText = line.replace(/-/g, '');
+        const btnText = removeLeadingHyphens(line);
     return lineSpacesCount === spacesCount && btnText === text;
     });
 }
@@ -94,13 +106,13 @@ export function handleFileClick(state, spacesCount, text)
       const line = nonEmptyLines[i]; // Remove leading empty spaces
       // Perform any desired operations with the modified line
       // ...
-      if(logSpaces(line.replace(/-/g, '')) >= currentlog &&
+      if(logSpaces(removeLeadingHyphens(line)) >= currentlog &&
       i !== index) continue;
 
-      currentlog = logSpaces(line.replace(/-/g, ''));
+      currentlog = logSpaces(removeLeadingHyphens(line));
 
 
-      path.push(line.replace(/-/g, '').replace(/^\s+/, ''));
+      path.push(removeLeadingHyphens(line).replace(/^\s+/, ''));
       if (logSpaces(line) === 0) break;
       path.push('/');
     }
