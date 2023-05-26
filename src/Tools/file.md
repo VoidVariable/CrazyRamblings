@@ -17,3 +17,4 @@
 - Test.md
 - Goats are bad.canvas
 - Deltarune and Undertale.canvas
+- Gaster Master.canvas

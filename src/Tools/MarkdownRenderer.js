@@ -75,7 +75,15 @@ const MarkdownRenderer = ({ terms }) => {
     ),
     p: ({ children }) => {
       return renderTextWithLinks(children); // Custom rendering for plain text with links
-    },
+    }, 
+    em: ({ children }) => (
+      <em style={{ fontStyle: 'italic' }}>{children}</em>
+    ),  
+    // Bold text component
+    strong: ({ children }) => 
+    (
+      <strong style={{ fontWeight: 'bold' }}>{children}</strong>
+    ),
   };
 
   return <ReactMarkdown components={customComponents}>{terms}</ReactMarkdown>;

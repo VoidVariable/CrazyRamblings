@@ -13,11 +13,11 @@
             "state": {
               "type": "canvas",
               "state": {
-                "file": "Deltarune and Undertale.canvas",
+                "file": "Gaster Master.canvas",
                 "viewState": {
-                  "x": -112,
-                  "y": 245.5,
-                  "zoom": 0
+                  "x": -483.987185445303,
+                  "y": -2698.6076012966587,
+                  "zoom": -0.22863661157577586
                 }
               }
             }
@@ -88,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Deltarune and Undertale.canvas",
+                "file": "Gaster Master.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Deltarune and Undertale.canvas",
+                "file": "Gaster Master.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Deltarune and Undertale.canvas"
+                "file": "Gaster Master.canvas"
               }
             }
           }
@@ -150,11 +150,11 @@
   },
   "active": "f06533e3290f9bed",
   "lastOpenFiles": [
-    "Gaster Master.canvas",
     "Kris Cross Apllesauce.canvas",
     "Other Stuff.canvas",
-    "Goats are bad.canvas",
     "Deltarune and Undertale.canvas",
+    "Gaster Master.canvas",
+    "Goats are bad.canvas",
     "Resources/Gaster Master/Spamton Dialogue.md",
     "DONTSHIP/Combat System V2.md",
     "Spamton/Links to good shit.md",
