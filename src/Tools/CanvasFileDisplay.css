@@ -19,3 +19,25 @@
   border: 1px solid #971c1c;
   background-color: rgb(27, 28, 31);
 }
+
+.floating-buttons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  /* Adjust the positioning values as needed */
+}
+
+.floating-button {
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  /* Add any other desired styles for the button */
+}
+
+.floating-button:hover {
+  background-color: #f0f0f0;
+  /* Add any other desired hover styles for the button */
+}

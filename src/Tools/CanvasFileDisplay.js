@@ -89,20 +89,23 @@ class CanvasFileDisplay extends React.Component {
 
   render() {
     return (
-      <div
-        className="canvas-file-display"
-        onMouseDown={this.handleMouseDown}
-        onMouseMove={this.handleMouseMove}
-        onMouseUp={this.handleMouseUp}
-      >
+      <div className="canvas-file-display" onMouseDown={this.handleMouseDown} onMouseMove={this.handleMouseMove} onMouseUp={this.handleMouseUp}>
         {this.state.canvasData !== null && (
-          <SquareRenderer
-            canvasData={this.state.canvasData}
-            point={this.state.visiblePoint}
-          />
-        )}
+          <SquareRenderer canvasData={this.state.canvasData} point={this.state.visiblePoint} />
+        )}   
+        <div className="floating-buttons">
+          <button className="floating-button">
+            <i className="fas fa-search"></i>
+          </button>
+          <button className="floating-button" onClick={() => alert(this.state.canvasData)}>
+            <i className="fas fa-info-circle"></i>
+          </button>
+          <button className="floating-button">
+            <i className="fas fa-expand-arrows-alt"></i>
+          </button>
+        </div>
       </div>
-    );
+    );    
   }
 }
 
