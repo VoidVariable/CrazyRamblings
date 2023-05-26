@@ -15,8 +15,8 @@
               "state": {
                 "file": "Deltarune and Undertale.canvas",
                 "viewState": {
-                  "x": -124.5,
-                  "y": -108.5,
+                  "x": -112,
+                  "y": 245.5,
                   "zoom": 0
                 }
               }
@@ -148,8 +148,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5e8c634defba1f7a",
+  "active": "f06533e3290f9bed",
   "lastOpenFiles": [
+    "Gaster Master.canvas",
     "Kris Cross Apllesauce.canvas",
     "Other Stuff.canvas",
     "Goats are bad.canvas",
@@ -158,7 +159,6 @@
     "DONTSHIP/Combat System V2.md",
     "Spamton/Links to good shit.md",
     "Spamton/Hyperlink Blocked.md",
-    "Gaster Master.canvas",
     "package-lock.json",
     "package.json",
     "crazy/node_modules/eslint-plugin-react/node_modules/resolve/test/resolver/symlinked/_/node_modules/foo.js",

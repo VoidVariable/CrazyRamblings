@@ -18,8 +18,10 @@ const MarkdownRenderer = ({ terms }) => {
   };
 
   const customComponents = {
-    h1: ({ children }) => <h1 style={{ color: 'red' }}>{children}</h1>,
-    h2: ({ children }) => <h2 style={{ color: 'blue' }}>{children}</h2>,
+    h1: ({ children }) => <h1 style={{ color: 'red',marginTop: '-5px' }}>{children}</h1>,
+    h2: ({ children }) => <h2 style={{ color: 'blue', marginTop: '-5px'}}>{children}</h2>,
+    h3: ({ children }) => <h3 style={{ marginTop: '-5px' }}>{children}</h3>,
+    h4: ({ children }) => <h4 style={{ marginTop: '-5px' }}>{children}</h4>,
     code: ({ node, inline, className, children, ...props }) => {
       if (className === 'language-') {
         // Render inline code
@@ -40,7 +42,13 @@ const MarkdownRenderer = ({ terms }) => {
         // Render code blocks
         const language = className ? className.replace('language-', '') : '';
         return (
-          <pre style={{overflowX: 'auto', backgroundColor: '#161a1f', padding: '10px', borderRadius: '4px',whiteSpace: 'pre-wrap' }}>
+          <pre style={
+            {
+              overflowX: 'auto',
+              backgroundColor: '#161a1f',
+              borderRadius: '4px',
+              whiteSpace: 'pre-wrap'  
+            }}>
             <code className={`language-${language}`} style={{ color: '#abb2bf' }} {...props}>
               {children}
             </code>
