@@ -21,14 +21,13 @@ class SquareRenderer extends React.Component {
               position: 'absolute',
               borderStyle: 'solid', // Add this line to set the border style
              
-              left: `calc(50% + ${((this.props.point.x/ 2) + node.x) / 13}%)`,
-              top: `calc(50% + ${((this.props.point.y/ 5) + node.y) / 13}%`,
+              left: `calc(50% + ${((this.props.point.x/ 2) + node.x) * 1.1}px)`,
+              top: `calc(50% + ${((this.props.point.y /8) + node.y) * 1.45}px)`,
               transform: 'translate(-50%, -50%)',
 
-              fontSize: 14,
-                         
-              width: node.width,
-              height: node.height / 1.2,
+              fontSize: 14,                        
+              width: `${node.width}px`, // Use percentage for width
+              height: `${node.height}px`, // Use percentage for height          
               backgroundColor: '#191721',
               color: '#aaa',
               zIndex: 0, // Set a lower z-index value for the div elements
