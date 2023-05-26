@@ -15,4 +15,5 @@
   - Who is C.png
   - Susie gets chalk.png
 - Test.md
-- Deltarune and Undertale.canvas
+- Goats are bad.canvas
+- Deltarune and Undertale

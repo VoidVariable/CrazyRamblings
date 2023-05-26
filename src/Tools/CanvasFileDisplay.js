@@ -4,136 +4,103 @@ import fetchingData from './dataFetcher';
 import SquareRenderer from './SquareRenderer';
 
 class CanvasFileDisplay extends React.Component {
-    constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
-        canvasData: null,
-        error: null,
-        visiblePoint: { x: 0, y: 0 }, // Initialize visiblePoint
-        isDragging: false,
-        lastMouseX: 0,
-        lastMouseY: 0,
-      };
-    }
-   
-    componentDidMount() 
-    {
-        this.fetchImageData();
-        document.addEventListener('wheel', this.handleMouseWheel);
-        document.addEventListener('touchstart', this.handleTouchStart);
-        document.addEventListener('touchmove', this.handleTouchMove);
-        document.addEventListener('touchend', this.handleTouchEnd);
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener('wheel', this.handleMouseWheel);
-        document.removeEventListener('touchstart', this.handleTouchStart);
-        document.removeEventListener('touchmove', this.handleTouchMove);
-        document.removeEventListener('touchend', this.handleTouchEnd);
-      }
-
-    handleMouseWheel = (event) => {
-    event.preventDefault();
-    const { deltaX, deltaY } = event;
-
-    // Perform necessary calculations based on deltaX and deltaY
-    // Update the visiblePoint in the state accordingly
-    this.setState((prevState) => ({
-        visiblePoint: {
-        x: prevState.visiblePoint.x - deltaX,
-        y: prevState.visiblePoint.y - deltaY,
-        },
-    }));
+      canvasData: null,
+      error: null,
+      visiblePoint: { x: 0, y: 0 },
+      isDragging: false,
+      lastMouseX: 0,
+      lastMouseY: 0,
+      lastTouch1X: 0,
+      lastTouch1Y: 0,
+      lastTouch2X: 0,
+      lastTouch2Y: 0,
     };
+  }
 
-    handleTouchStart = (event) => {
-        if (event.touches.length === 2) {
-          event.preventDefault();
-          const touch1 = event.touches[0];
-          const touch2 = event.touches[1];
-    
-          this.setState({
-            isDragging: true,
-            lastTouch1X: touch1.clientX,
-            lastTouch1Y: touch1.clientY,
-            lastTouch2X: touch2.clientX,
-            lastTouch2Y: touch2.clientY,
-          });
-        }
-    };
-    
-    handleTouchMove = (event) => {
-    if (this.state.isDragging && event.touches.length === 2) {
+  componentDidMount() {
+    this.fetchImageData();
+    document.addEventListener('mousedown', this.handleMouseDown);
+    document.addEventListener('mousemove', this.handleMouseMove);
+    document.addEventListener('mouseup', this.handleMouseUp);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleMouseDown);
+    document.removeEventListener('mousemove', this.handleMouseMove);
+    document.removeEventListener('mouseup', this.handleMouseUp);
+  }
+
+  handleMouseDown = (event) => {
+    if (event.button === 1) { // Check if middle mouse button (wheel) is clicked
       event.preventDefault();
-      const touch1 = event.touches[0];
-      const touch2 = event.touches[1];
+      this.setState({
+        isDragging: true,
+        lastMouseX: event.clientX,
+        lastMouseY: event.clientY,
+      });
+    }
+  };
 
-      const deltaX1 = touch1.clientX - this.state.lastTouch1X;
-      const deltaY1 = touch1.clientY - this.state.lastTouch1Y;
-      const deltaX2 = touch2.clientX - this.state.lastTouch2X;
-      const deltaY2 = touch2.clientY - this.state.lastTouch2Y;
+  handleMouseMove = (event) => {
+    if (this.state.isDragging) {
+      const deltaX = event.clientX - this.state.lastMouseX;
+      const deltaY = event.clientY - this.state.lastMouseY;
 
-        // Perform necessary calculations based on deltaX and deltaY
-        // Update the visiblePoint in the state accordingly
-        this.setState((prevState) => ({
-            visiblePoint: {
-            x: (prevState.visiblePoint.x - (deltaX1 + deltaX2)), 
-            y: (prevState.visiblePoint.y - (deltaY1 + deltaY2)),
-            },
-            lastTouch1X: touch1.clientX,
-            lastTouch1Y: touch1.clientY,
-            lastTouch2X: touch2.clientX,
-            lastTouch2Y: touch2.clientY,
-        }));
-      }
-    };
+      // Perform necessary calculations based on deltaX and deltaY
+      // Update the visiblePoint in the state accordingly
+      this.setState((prevState) => ({
+        visiblePoint: {
+          x: prevState.visiblePoint.x + deltaX,
+          y: prevState.visiblePoint.y + deltaY,
+        },
+        lastMouseX: event.clientX,
+        lastMouseY: event.clientY,
+      }));
+    }
+  };
 
-    handleTouchEnd = (event) => {
-        if (event.touches.length < 2) {
-        this.setState({ isDragging: false });
-        }
-    };
-    
-    componentDidUpdate(prevProps) {
+  handleMouseUp = (event) => {
+    if (event.button === 1) { // Check if middle mouse button (wheel) is released
+      event.preventDefault();
+      this.setState({ isDragging: false });
+    }
+  };
+
+  componentDidUpdate(prevProps) {
     if (prevProps.path !== this.props.path) {
-        this.fetchImageData();
+      this.fetchImageData();
     }
+  }
+
+  fetchImageData = async () => {
+    try {
+      const markdownData = await fetchingData('text', this.props.path);
+
+      this.setState({ canvasData: markdownData });
+      // Do something with the markdownData, such as displaying it in the component state or rendering it.
+    } catch (error) {
+      // Handle any errors that occur during the fetch.
+      console.error('Error fetching Markdown data:', error);
     }
+  };
 
-    fetchImageData = async () => {
-        try {
-          const markdownData = await fetchingData('text', this.props.path);
-    
-          this.setState({ canvasData: markdownData });
-          // Do something with the markdownData, such as displaying it in the component state or rendering it.
-        } catch (error) {
-          // Handle any errors that occur during the fetch.
-          console.error('Error fetching Markdown data:', error);
-        }
-      };
-
-    render() {
-    
-    console.log(this.state.canvasData);
-
+  render() {
     return (
-        <div
+      <div
         className="canvas-file-display"
-        onWheel={this.handleMouseWheel}
-        onTouchStart={this.handleTouchStart}
-        onTouchMove={this.handleTouchMove}
-        onTouchEnd={this.handleTouchEnd}
+        onMouseDown={this.handleMouseDown}
+        onMouseMove={this.handleMouseMove}
+        onMouseUp={this.handleMouseUp}
       >
-        {
-          
-        }
-            
-            {this.state.canvasData !== null && (
-      <SquareRenderer
-        canvasData={(this.state.canvasData)}
-        point={this.state.visiblePoint}
-      />
-    )}
+        {this.state.canvasData !== null && (
+          <SquareRenderer
+            canvasData={this.state.canvasData}
+            point={this.state.visiblePoint}
+          />
+        )}
       </div>
     );
   }
