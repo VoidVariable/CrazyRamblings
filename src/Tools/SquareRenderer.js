@@ -5,10 +5,12 @@ class SquareRenderer extends React.Component {
   renderEdges() {
     const { edges, nodes } = JSON.parse(this.props.canvasData);
     const { point, zoomLevel } = this.props;
-  
+
     const markerId = 'arrowMarker';
-    const markerSize = 20;
-  
+    const markerSize = 10;
+
+    const curveRadius = 50; // Adjust this value to control the curvature of the edges
+
     return (
       <svg style={{ position: 'absolute', zIndex: 0, width: '100%', height: '100%' }}>
         <defs>
@@ -27,43 +29,45 @@ class SquareRenderer extends React.Component {
         {edges.map((edge) => {
           const fromNode = nodes.find((node) => node.id === edge.fromNode);
           const toNode = nodes.find((node) => node.id === edge.toNode);
-  
+
           const fromX = (point.x + fromNode.x + fromNode.width / 2) * zoomLevel;
           const fromY = (point.y + fromNode.y + fromNode.height / 2) * zoomLevel;
-  
-          const posNodeX = 
+
+          const posNodeX =
             ((point.x + toNode.x) * zoomLevel) + (toNode.width * zoomLevel) / 2;
-          const posNodeY = 
+          const posNodeY =
             ((point.y + toNode.y) * zoomLevel) + (toNode.height * zoomLevel) / 2;
-            
 
           let toX, toY;
           if (edge.toSide === 'left') {
-            toX = (posNodeX - (toNode.width* zoomLevel)/ 2) - 10; // Adjusted to the left edge of the node
+            toX = (posNodeX - (toNode.width * zoomLevel) / 2) - 10; // Adjusted to the left edge of the node
             toY = (point.y + toNode.y + toNode.height / 2) * zoomLevel;
           } else if (edge.toSide === 'right') {
-            toX = (posNodeX + (toNode.width* zoomLevel)/ 2) - 10;  // Adjusted to the right edge of the node
+            toX = (posNodeX + (toNode.width * zoomLevel) / 2) - 10;  // Adjusted to the right edge of the node
             toY = (point.y + toNode.y + toNode.height / 2) * zoomLevel;
           } else if (edge.toSide === 'top') {
             toX = (point.x + toNode.x + toNode.width / 2) * zoomLevel;
             toY = posNodeY - (toNode.height * zoomLevel) / 2 - 38;  // Adjusted to the top edge of the node
           } else if (edge.toSide === 'bottom') {
-            toX = (point.x + toNode.x + ((toNode.width / 2)) ) * zoomLevel;
+            toX = (point.x + toNode.x + ((toNode.width / 2))) * zoomLevel;
             toY = posNodeY + (toNode.height * zoomLevel) / 2 - 30;  // Adjusted to the bottom edge of the node
           }
-  
+
           const arrowFromX = fromX;
           const arrowFromY = fromY;
           const arrowToX = toX;
           const arrowToY = toY;
-  
+
+          const controlPointX1 = fromX + (toX - fromX) / 2 - curveRadius; // Control point on the x-axis
+          const controlPointY1 = fromY + (toY - fromY) / 2 - curveRadius; // Control point on the y-axis
+          const controlPointX2 = fromX + (toX - fromX) / 2 + curveRadius; // Control point on the x-axis
+          const controlPointY2 = fromY + (toY - fromY) / 2 + curveRadius; // Control point on the y-axis
+
           return (
-            <line
+            <path
               key={edge.id}
-              x1={arrowFromX}
-              y1={arrowFromY}
-              x2={arrowToX}
-              y2={arrowToY}
+              d={`M ${arrowFromX},${arrowFromY} C ${controlPointX1},${controlPointY1} ${controlPointX2},${controlPointY2} ${arrowToX},${arrowToY}`}
+              fill="none"
               stroke="#989"
               strokeWidth={3 * zoomLevel}
               markerEnd={`url(#${markerId})`}
@@ -75,13 +79,6 @@ class SquareRenderer extends React.Component {
       </svg>
     );
   }
-  
-  
-  
-  
-  
-  
-  
 
   render() {
     const { nodes } = JSON.parse(this.props.canvasData);

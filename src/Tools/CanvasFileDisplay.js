@@ -102,7 +102,6 @@ class CanvasFileDisplay extends React.Component {
 
   };
   
-
   componentDidUpdate(prevProps) {
     if (prevProps.path !== this.props.path) {
       this.fetchImageData();
@@ -120,6 +119,52 @@ class CanvasFileDisplay extends React.Component {
       console.error('Error fetching Markdown data:', error);
     }
   };
+
+  findNodeClosestToMiddle = () => {
+    const { nodes } = JSON.parse(this.state.canvasData);
+  
+    if (!this.state.canvasData || !nodes.length) {
+      return;
+    }
+  
+    const canvasElement = document.getElementsByClassName("canvas-file-display")[0];
+    const canvasWidth = canvasElement.offsetWidth;
+    const canvasHeight = canvasElement.offsetHeight;
+    const middleX = canvasWidth / 2;
+    const middleY = canvasHeight / 2;
+    const { zoomLevel } = this.state;
+  
+    let closestNode = nodes[0];
+    let closestDistance = this.getDistance(middleX, middleY, closestNode.x, closestNode.y);
+  
+    for (let i = 1; i < nodes.length; i++) {
+      const node = nodes[i];
+      const distance = this.getDistance(middleX, middleY, node.x, node.y);
+  
+      if (distance < closestDistance) {
+        closestNode = node;
+        closestDistance = distance;
+      }
+    }
+  
+    const offsetX = (middleX - closestNode.x * zoomLevel) + canvasWidth / 2; // Add half the width of CanvasFileDisplay
+    const offsetY = (middleY - closestNode.y * zoomLevel) + canvasHeight / 2; // Add half the height of CanvasFileDisplay
+  
+    this.setState({
+      visiblePoint: {
+        x: offsetX,
+        y: offsetY,
+      },
+    });
+  };
+  
+  
+  getDistance = (x1, y1, x2, y2) => {
+    const dx = x2 - x1;
+    const dy = y2 - y1;
+    return Math.sqrt(dx * dx + dy * dy);
+  };
+
 
   render() {
     const { canvasData, visiblePoint, zoomLevel, zoomRatio } = this.state;
@@ -144,6 +189,9 @@ class CanvasFileDisplay extends React.Component {
           </button>
           <button className="floating-button">
             <i className="fas fa-expand-arrows-alt"></i>
+          </button>
+          <button className="floating-button" onClick={() => this.findNodeClosestToMiddle()}>
+            <i className="fas fa-arrows-to-dot"></i>
           </button>
         </div>
       </div>

@@ -12,6 +12,7 @@
   - Gaster Master
    - Hyperlink Blocked
     - Ch-Ch-Ch-Choices.png
+    - Link Blocked 1.png
   - Who is C.png
   - Susie gets chalk.png
 - Test.md

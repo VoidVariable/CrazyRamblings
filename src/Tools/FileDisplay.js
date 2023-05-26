@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import termsFrPath from './file.md';
 import './FileDisplay.css';
-import { handleButtonClick, handleFileClick, removeLeadingHyphens, logSpaces } from './buttonUtils';
+import { handleButtonClick, handleFileClick, removeLeadingHyphens, logSpaces,setGlobalTerms } from './buttonUtils';
 
 class MarkdownDisplay extends Component {
   constructor(props) {
@@ -24,6 +24,8 @@ class MarkdownDisplay extends Component {
       .catch((error) => {
         console.error('Error fetching file:', error);
       });
+
+      setGlobalTerms(this.state.terms);
   }
 
   handleClick(type,spacesCount, text) {  

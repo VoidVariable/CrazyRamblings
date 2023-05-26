@@ -1,21 +1,38 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import { getFilePathByName } from './buttonUtils';
+import MiddleContent from './MiddleContent';
 
 const MarkdownRenderer = ({ terms }) => {
   
-    const renderTextWithLinks = (text) => {
-    const linkRegex = /(https?:\/\/[^\s]+)/g;
-    return text[0].split(linkRegex).map((part, index) => {
-      if (part.match(linkRegex)) {
-        return (
-          <a href={part} className="links" key={index}>
-            {part}
-          </a>
-        );
-      }
-      return part;
-    });
+  const renderText = (text) => {
+    const linkRegex = /(https?:\/\/[^\cs]+)/g;
+    const customRegex = /!\[\[.+?\.\w+\]\]/g; // Custom regex for ![[Link Blocked 1.png]] and [[Spamton Dialogue#Hyperlink Blocked]]
+    return text[0]
+      .split(linkRegex)
+      .map((part, index) => {
+        if (part.match(customRegex)) {
+         
+          const substring = part.replace(/^!\[\[(.+?)\]\]$/, '$1');
+          // Remove the ![[]] from the string
+          // Use that string to get a path by calling the getFilePath(logSpaces(substring), substring) function
+          const filePath = getFilePathByName(substring);
+  
+          return (
+            <MiddleContent path={'/Obsidian' + filePath} />
+          );
+        } else if (part.match(linkRegex)) {
+          // Render links
+          return (
+            <a href={part} className="links" key={index}>
+              {part}
+            </a>
+          );
+        }
+        return part;
+      });
   };
+  
 
   const customComponents = {
     h1: ({ children }) => <h1 style={{ color: 'red',marginTop: '-5px' }}>{children}</h1>,
@@ -74,7 +91,7 @@ const MarkdownRenderer = ({ terms }) => {
       </blockquote>
     ),
     p: ({ children }) => {
-      return renderTextWithLinks(children); // Custom rendering for plain text with links
+      return renderText(children); // Custom rendering for plain text with links
     }, 
     em: ({ children }) => (
       <em style={{ fontStyle: 'italic' }}>{children}</em>

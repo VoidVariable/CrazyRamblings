@@ -1,3 +1,5 @@
+var thisTerms;
+
 export function logSpaces(line){
     const trimmedLine = line.replace('-',' ')
     const spacesBeforeDash = trimmedLine.search(/\S/);
@@ -15,19 +17,32 @@ export function removeLeadingHyphens(str) {
   return str;
 }
 
+export function setGlobalTerms(terms){
+  thisTerms = terms;
+}
 
-function getIndexInLines(lines, spacesCount ,text)
+function getIndexInLines(lines, text , spacesCount = -99)
 {
+  if(spacesCount !== -99){
    return lines.findIndex((line) => {
        const lineSpacesCount = logSpaces(line)
         const btnText = removeLeadingHyphens(line);
     return lineSpacesCount === spacesCount && btnText === text;
     });
+  }
+  else
+  {
+    return lines.findIndex((line) => {
+       const btnText = removeLeadingHyphens(line).trimStart();
+    return btnText === text;
+    });
+  }
 }
 
 // buttonUtils.js
-export function handleButtonClick(state, spacesCount, text) {
+export function handleButtonClick(state, spacesCount, text) {  
     const { closed, hiddenItems, terms } = state;
+    thisTerms = terms;
     const newClosed = [...closed];
     const newHiddenItems = [...hiddenItems];
     const lines = terms.split('\n');
@@ -35,7 +50,7 @@ export function handleButtonClick(state, spacesCount, text) {
     // Check if the clicked button is already closed
     const isClosed = closed.some((item) => item.spacesCount === spacesCount && item.text === text);
 
-    const currentIndex = getIndexInLines(lines, spacesCount, text);
+    const currentIndex = getIndexInLines(lines,text,spacesCount);
 
     if (isClosed) {
       // Remove the clicked button's entry from the closed list
@@ -89,36 +104,83 @@ export function handleButtonClick(state, spacesCount, text) {
   }
   
 export function handleFileClick(state, spacesCount, text) 
-  {
-
+{
     const {terms} = state;
-    
+    thisTerms = terms;
+    return getFilePath(spacesCount, text);
+}
 
-    const lines = terms.split('\n');
-    const nonEmptyLines = lines.filter((line) => line !== ''); // Filter out empty lines
-    const index = getIndexInLines(nonEmptyLines,spacesCount,text)
+export function  getFilePath(spacesCount, text)
+{
+  const lines = thisTerms.split('\n');
+  const nonEmptyLines = lines.filter((line) => line !== ''); // Filter out empty lines
+  const index = getIndexInLines(nonEmptyLines,text,spacesCount)
 
-    const path = [];
+  if(index < 0)
+    return "No path";
 
-    var currentlog = logSpaces(text);
+  const path = [];
 
-    for (let i = index; i >= 0; i--) {
-      const line = nonEmptyLines[i]; // Remove leading empty spaces
-      // Perform any desired operations with the modified line
-      // ...
-      if(logSpaces(removeLeadingHyphens(line)) >= currentlog &&
-      i !== index) continue;
+  var currentlog = logSpaces(text);
 
-      currentlog = logSpaces(removeLeadingHyphens(line));
+  for (let i = index; i >= 0; i--) {
+    const line = nonEmptyLines[i]; // Remove leading empty spaces
+    // Perform any desired operations with the modified line
+    // ...
+    if(logSpaces(removeLeadingHyphens(line)) >= currentlog &&
+    i !== index) continue;
+
+    currentlog = logSpaces(removeLeadingHyphens(line));
 
 
-      path.push(removeLeadingHyphens(line).replace(/^\s+/, ''));
-      if (logSpaces(line) === 0) break;
-      path.push('/');
-    }
-    
-    const reversedPath = path.reverse();
-    const pathString = reversedPath.join('');
-        
-    return "/" + pathString;
+    path.push(removeLeadingHyphens(line).replace(/^\s+/, ''));
+    if (logSpaces(line) === 0) break;
+    path.push('/');
   }
+  
+  const reversedPath = path.reverse();
+  const pathString = reversedPath.join('');
+      
+  return "/" + pathString;
+
+}
+
+export function getFilePathByName (name)
+{
+  const lines = thisTerms.split('\n');
+  const nonEmptyLines = lines.filter((line) => line !== ''); // Filter out empty lines
+  
+  const index = getIndexInLines(nonEmptyLines,name); 
+
+  if(index < 0)
+    return "No path";
+
+  const text = nonEmptyLines[index];
+
+  const path = [];
+
+  var currentlog = logSpaces(text);
+
+  for (let i = index; i >= 0; i--) {
+    const line = nonEmptyLines[i]; // Remove leading empty spaces
+    // Perform any desired operations with the modified line
+    // ...
+    if(logSpaces(removeLeadingHyphens(line)) >= currentlog &&
+    i !== index) continue;
+
+    currentlog = logSpaces(removeLeadingHyphens(line));
+
+
+    path.push(removeLeadingHyphens(line).replace(/^\s+/, ''));
+    if (logSpaces(line) === 0) break;
+    path.push('/');
+  }
+  
+  const reversedPath = path.reverse();
+  const pathString = reversedPath.join('');
+      
+  return "/" + pathString;
+}
+
+
+  

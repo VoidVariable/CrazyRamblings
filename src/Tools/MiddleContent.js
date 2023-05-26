@@ -37,9 +37,9 @@ const MiddleContent = ({ path }) => {
       ) : fileExtension === 'canvas' ? (
         <CanvasFileDisplay path={path} />
       ) : fileExtension === 'No file extension' ? (
-        <div>No file extension component</div>
+        <div style={{color:'red'}}>Cant Load</div>
       ) : (
-        <div>Other file extension component</div>
+        <div style={{color:'red'}}>File Extention not suported</div>
       )}
     </div>
   );
