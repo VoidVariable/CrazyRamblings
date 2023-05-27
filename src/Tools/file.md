@@ -15,7 +15,7 @@
     - Link Blocked 1.png
   - Who is C.png
   - Susie gets chalk.png
-- Test.md
+- Other Stuff.canvas
 - Goats are bad.canvas
 - Deltarune and Undertale.canvas
 - Gaster Master.canvas

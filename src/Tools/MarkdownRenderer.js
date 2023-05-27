@@ -6,98 +6,81 @@ import MiddleContent from './MiddleContent';
 const MarkdownRenderer = React.memo(({ terms }) => {
   
   const renderText = (text) => {
-    const linkRegex = /(https?:\/\/[^\cs]+)/g;
+    const linkRegex = /(https?:\/\/[^\s]+)/g;
     const customRegex = /!\[\[.+?\.\w+\]\]/g;
     const obsLinkRegex = /\[\[.+?\]\]/g;
-    
+    const youtubeRegex = /https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})/g;
+
     const boldoneRegex = /\*\*.+?\*\*/g;
     const boldtwoRegex = /__.+?__/g;
 
     var splitValues = "";
 
-    for (var i = 0; i < text.length; i++) 
-    {
-
-      if(text[i]?.type === "strong" || text[i]?.type?.name === 'em')
-      {
-        if( text[i]?.props?.children[0])
-        {
-            splitValues += "**" + text[i]?.props?.children[0] + "**";
-
-            continue;
+    for (var i = 0; i < text.length; i++) {
+      if (text[i]?.type === "strong" || text[i]?.type?.name === 'em') {
+        if (text[i]?.props?.children[0]) {
+          splitValues += "**" + text[i]?.props?.children[0] + "**";
+          continue;
         }
       }
-
-        splitValues += text[i];
+      splitValues += text[i];
     }
-   
 
-    if(splitValues.includes("https")){
+    if (splitValues.includes("https")) {
       splitValues = splitValues.split(linkRegex);
-    }
-    else if(splitValues.includes("![[")){
-      splitValues = splitValues.split();
-    }
-    else if (splitValues.includes("[[")){
+    } else if (splitValues.includes("![[")) {
       splitValues = splitValues.split(/(?=\[\[)/);
-    }
-    else if (splitValues.includes("**"))
-    {
+    } else if (splitValues.includes("[[")) {
+      splitValues = splitValues.split(/(?=\[\[)/);
+    } else if (splitValues.includes("**")) {
       splitValues = splitValues.split(/(?<=\*\*.+?\*\*)|(?=\*\*.+?\*\*)/);
-    }
-    else if (splitValues.includes("__")){
+    } else if (splitValues.includes("__")) {
       splitValues = splitValues.split(/(?=__)/);
-    }
-    else{
+    } else {
       splitValues = splitValues.split();
     }
-    
-    return splitValues
-      .map((part, index) => {
-        if (part.match(customRegex)) {
-         
-          const substring = part.replace(/^!\[\[(.+?)\]\]$/, '$1');
-          // Remove the ![[]] from the string
-          // Use that string to get a path by calling the getFilePath(logSpaces(substring), substring) function
-          const filePath = getFilePathByName(substring);
-  
+
+    return splitValues.map((part, index) => {
+      if (part.match(customRegex)) {
+        const substring = part.replace(/^!\[\[(.+?)\]\]$/, '$1');
+        const filePath = getFilePathByName(substring);
+        return <MiddleContent path={'/Obsidian' + filePath} />;
+      } else if (part.match(linkRegex)) {
+        if (part.match(youtubeRegex)) {
+          const videoId = part.match(youtubeRegex)[0].split('=')[1];
           return (
-            <MiddleContent path={'/Obsidian' + filePath} />
+            <iframe
+              width="100%"
+              height="250"
+              src={`https://www.youtube.com/embed/${videoId}`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
           );
-        } 
-        else if (part.match(linkRegex)) {
-          // Render links
+        } else {
           return (
             <a href={part} className="links" key={index}>
               {part}
             </a>
           );
         }
-        else if (part.match(obsLinkRegex)) {          
-          // Render links
-         
-          return ( 
-            <span
+      } else if (part.match(obsLinkRegex)) {
+        return (
+          <span
             style={{ color: 'purple', cursor: 'pointer' }}
             key={index}
             onClick={() => alert('links between files not working yet :C')}
           >
             {part}
           </span>
-          
-          );
-        }
-        else if (part.match(boldoneRegex) || part.match(boldtwoRegex)) {          
-          // Render links
-         
-          return ( 
-            <strong>
-              {part.substring(2, part.length - 2)}
-            </strong>        
-          );
-        }
-        return part;
-      });
+        );
+      } else if (part.match(boldoneRegex) || part.match(boldtwoRegex)) {
+        return <strong>{part.substring(2, part.length - 2)}</strong>;
+      }
+      return part;
+    });
   };
   
 
