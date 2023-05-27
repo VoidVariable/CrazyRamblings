@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import { getFilePathByName } from './buttonUtils';
 import MiddleContent from './MiddleContent';
 
-const MarkdownRenderer = ({ terms }) => {
+const MarkdownRenderer = React.memo(({ terms }) => {
   
   const renderText = (text) => {
     const linkRegex = /(https?:\/\/[^\cs]+)/g;
@@ -104,6 +104,6 @@ const MarkdownRenderer = ({ terms }) => {
   };
 
   return <ReactMarkdown components={customComponents}>{terms}</ReactMarkdown>;
-};
+});
 
 export default MarkdownRenderer;

@@ -48,7 +48,15 @@ class GIFDisplay extends Component {
 
     return (
       <img
-        style={{ overflow: 'auto',maxWidth: '100%', height: '800px', boxSizing: 'border-box' }}
+        style={
+        {  
+          overflowY: 'auto',
+          maxWidth: '100%',
+          maxHeight: '800px',
+          boxSizing: 'border-box',
+          padding: '10px',
+          paddingTop: '2%' 
+        }}
         src={`data:image/gif;base64,${base64Image}`}
         alt=""
       />
