@@ -10,16 +10,43 @@ const MarkdownRenderer = React.memo(({ terms }) => {
     const customRegex = /!\[\[.+?\.\w+\]\]/g;
     const obsLinkRegex = /\[\[.+?\]\]/g;
     
-    var splitValues = text[0];
+    const boldoneRegex = /\*\*.+?\*\*/g;
+    const boldtwoRegex = /__.+?__/g;
+
+    var splitValues = "";
+
+    for (var i = 0; i < text.length; i++) 
+    {
+
+      if(text[i]?.type === "strong" || text[i]?.type?.name === 'em')
+      {
+        if( text[i]?.props?.children[0])
+        {
+            splitValues += "**" + text[i]?.props?.children[0] + "**";
+
+            continue;
+        }
+      }
+
+        splitValues += text[i];
+    }
+   
 
     if(splitValues.includes("https")){
-      //splitValues = splitValues.split(linkRegex);
+      splitValues = splitValues.split(linkRegex);
     }
     else if(splitValues.includes("![[")){
       splitValues = splitValues.split();
     }
     else if (splitValues.includes("[[")){
       splitValues = splitValues.split(/(?=\[\[)/);
+    }
+    else if (splitValues.includes("**"))
+    {
+      splitValues = splitValues.split(/(?<=\*\*.+?\*\*)|(?=\*\*.+?\*\*)/);
+    }
+    else if (splitValues.includes("__")){
+      splitValues = splitValues.split(/(?=__)/);
     }
     else{
       splitValues = splitValues.split();
@@ -60,14 +87,23 @@ const MarkdownRenderer = React.memo(({ terms }) => {
           
           );
         }
+        else if (part.match(boldoneRegex) || part.match(boldtwoRegex)) {          
+          // Render links
+         
+          return ( 
+            <strong>
+              {part.substring(2, part.length - 2)}
+            </strong>        
+          );
+        }
         return part;
       });
   };
   
 
   const customComponents = {
-    h1: ({ children }) => <h1 style={{ color: 'red',marginTop: '-5px' }}>{children}</h1>,
-    h2: ({ children }) => <h2 style={{ color: 'blue', marginTop: '-5px'}}>{children}</h2>,
+    h1: ({ children }) => <h1 style={{ marginTop: '-5px' }}>{children}</h1>,
+    h2: ({ children }) => <h2 style={{ marginTop: '-5px'}}>{children}</h2>,
     h3: ({ children }) => <h3 style={{ marginTop: '-5px' }}>{children}</h3>,
     h4: ({ children }) => <h4 style={{ marginTop: '-5px' }}>{children}</h4>,
     code: ({ node, inline, className, children, ...props }) => {
@@ -124,11 +160,7 @@ const MarkdownRenderer = React.memo(({ terms }) => {
     em: ({ children }) => {
       return <em style={{ fontStyle: 'italic' }}>{children}</em>;
     }, 
-    strong: ({ children }) => {
-      return <strong style={{ fontWeight: 'bold' }}>{children}</strong>;
-    },
     p: ({ children }) => {
-      console.log(children);
       return renderText(children); // Custom rendering for plain text with links
     }, 
 
