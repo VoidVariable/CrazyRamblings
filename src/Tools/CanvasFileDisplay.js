@@ -168,7 +168,8 @@ class CanvasFileDisplay extends React.Component {
 
   render() {
     const { canvasData, visiblePoint, zoomLevel, zoomRatio } = this.state;
-
+    const zoomPercentage = Math.round(zoomLevel * 100);
+  
     return (
       <div
         className="canvas-file-display"
@@ -180,6 +181,7 @@ class CanvasFileDisplay extends React.Component {
         {canvasData !== null && (
           <SquareRenderer canvasData={this.state.canvasData} point={visiblePoint} zoomLevel={zoomLevel} zoomRatio={zoomRatio} />
         )}
+        <div className="zoom-level-text">{zoomPercentage}%</div> {/* Added zoom level text */}
         <div className="floating-buttons">
           <button className="floating-button">
             <i className="fas fa-search"></i>
@@ -197,6 +199,7 @@ class CanvasFileDisplay extends React.Component {
       </div>
     );
   }
+  
 }
 
 export default CanvasFileDisplay;
