@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from "rehype-raw";
 import { getFilePathByName } from './buttonUtils';
 import MiddleContent from './MiddleContent';
+import EmbeddedIframe from './EmbeddedIframe';
 
 const MarkdownRenderer = React.memo(({ terms }) => {
   
@@ -12,6 +14,7 @@ const MarkdownRenderer = React.memo(({ terms }) => {
     
     const boldoneRegex = /\*\*.+?\*\*/g;
     const boldtwoRegex = /__.+?__/g;
+    const iframeRegex = /<iframe.+?<\/iframe>/g;
 
     var splitValues = "";
 
@@ -29,8 +32,7 @@ const MarkdownRenderer = React.memo(({ terms }) => {
       }
 
         splitValues += text[i];
-    }
-   
+    }  
 
     if(splitValues.includes("https")){
       splitValues = splitValues.split(linkRegex);
@@ -48,10 +50,18 @@ const MarkdownRenderer = React.memo(({ terms }) => {
     else if (splitValues.includes("__")){
       splitValues = splitValues.split(/(?=__)/);
     }
+    else if (splitValues.includes("<iframe"))
+    {
+      
+      splitValues = splitValues.split(iframeRegex);
+    }
     else{
+    
       splitValues = splitValues.split();
     }
     
+
+
     return splitValues
       .map((part, index) => {
         if (part.match(customRegex)) {
@@ -88,13 +98,16 @@ const MarkdownRenderer = React.memo(({ terms }) => {
           );
         }
         else if (part.match(boldoneRegex) || part.match(boldtwoRegex)) {          
-          // Render links
-         
+          // Render links         
           return ( 
             <strong>
               {part.substring(2, part.length - 2)}
             </strong>        
           );
+        }
+        else if (part.match(iframeRegex))
+        {
+         <EmbeddedIframe iframeCode={part}></EmbeddedIframe>
         }
         return part;
       });
@@ -162,12 +175,10 @@ const MarkdownRenderer = React.memo(({ terms }) => {
     }, 
     p: ({ children }) => {
       return renderText(children); // Custom rendering for plain text with links
-    }, 
-
-    
+    }
   };
 
-  return <ReactMarkdown components={customComponents}>{terms}</ReactMarkdown>;
+  return <ReactMarkdown components={customComponents} rehypePlugins={rehypeRaw}>{terms}</ReactMarkdown>;
 });
 
 export default MarkdownRenderer;
