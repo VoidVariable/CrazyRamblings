@@ -104,8 +104,8 @@ const MarkdownRenderer = React.memo(({ terms }) => {
         );
       }
     },
-    blockquote: ({ children }) => (
-      <blockquote
+    blockquote: ({ children }) => {
+      return <blockquote
         style={{
           borderLeft: '2px solid #ccc',
           paddingLeft: '10px',
@@ -119,18 +119,16 @@ const MarkdownRenderer = React.memo(({ terms }) => {
         }}
       >
         {children}
-      </blockquote>
-    ),
+      </blockquote>;
+    },
     em: ({ children }) => {
-      console.log('Children:', children);
       return <em style={{ fontStyle: 'italic' }}>{children}</em>;
     }, 
     strong: ({ children }) => {
-      console.log('Children:', children);
       return <strong style={{ fontWeight: 'bold' }}>{children}</strong>;
     },
     p: ({ children }) => {
-      
+      console.log(children);
       return renderText(children); // Custom rendering for plain text with links
     }, 
 
