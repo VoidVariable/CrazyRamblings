@@ -175,7 +175,27 @@ const MarkdownRenderer = React.memo(({ terms }) => {
     }, 
     p: ({ children }) => {
       return renderText(children); // Custom rendering for plain text with links
-    }
+    },
+    iframe: ({ src }) => {
+      console.log(src)
+      try {
+        return (
+          <div>
+            <iframe
+              width="100%"
+              height="250"
+              src={src}
+              title="Embedded Content"
+              frameBorder="0"        
+              allowFullScreen
+            ></iframe>
+          </div>
+        );
+      } catch (error) {
+        // Handle or ignore the error
+        return null; // or display an error message
+      }
+    },
   };
 
   return <ReactMarkdown components={customComponents} rehypePlugins={rehypeRaw}>{terms}</ReactMarkdown>;
