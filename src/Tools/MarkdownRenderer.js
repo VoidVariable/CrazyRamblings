@@ -7,9 +7,25 @@ const MarkdownRenderer = React.memo(({ terms }) => {
   
   const renderText = (text) => {
     const linkRegex = /(https?:\/\/[^\cs]+)/g;
-    const customRegex = /!\[\[.+?\.\w+\]\]/g; // Custom regex for ![[Link Blocked 1.png]] and [[Spamton Dialogue#Hyperlink Blocked]]
-    return text[0]
-      .split(linkRegex)
+    const customRegex = /!\[\[.+?\.\w+\]\]/g;
+    const obsLinkRegex = /\[\[.+?\]\]/g;
+    
+    var splitValues = text[0];
+
+    if(splitValues.includes("https")){
+      //splitValues = splitValues.split(linkRegex);
+    }
+    else if(splitValues.includes("![[")){
+      splitValues = splitValues.split();
+    }
+    else if (splitValues.includes("[[")){
+      splitValues = splitValues.split(/(?=\[\[)/);
+    }
+    else{
+      splitValues = splitValues.split();
+    }
+    
+    return splitValues
       .map((part, index) => {
         if (part.match(customRegex)) {
          
@@ -21,12 +37,27 @@ const MarkdownRenderer = React.memo(({ terms }) => {
           return (
             <MiddleContent path={'/Obsidian' + filePath} />
           );
-        } else if (part.match(linkRegex)) {
+        } 
+        else if (part.match(linkRegex)) {
           // Render links
           return (
             <a href={part} className="links" key={index}>
               {part}
             </a>
+          );
+        }
+        else if (part.match(obsLinkRegex)) {          
+          // Render links
+         
+          return ( 
+            <span
+            style={{ color: 'purple', cursor: 'pointer' }}
+            key={index}
+            onClick={() => alert('links between files not working yet :C')}
+          >
+            {part}
+          </span>
+          
           );
         }
         return part;
@@ -90,17 +121,20 @@ const MarkdownRenderer = React.memo(({ terms }) => {
         {children}
       </blockquote>
     ),
+    em: ({ children }) => {
+      console.log('Children:', children);
+      return <em style={{ fontStyle: 'italic' }}>{children}</em>;
+    }, 
+    strong: ({ children }) => {
+      console.log('Children:', children);
+      return <strong style={{ fontWeight: 'bold' }}>{children}</strong>;
+    },
     p: ({ children }) => {
+      
       return renderText(children); // Custom rendering for plain text with links
     }, 
-    em: ({ children }) => (
-      <em style={{ fontStyle: 'italic' }}>{children}</em>
-    ),  
-    // Bold text component
-    strong: ({ children }) => 
-    (
-      <strong style={{ fontWeight: 'bold' }}>{children}</strong>
-    ),
+
+    
   };
 
   return <ReactMarkdown components={customComponents}>{terms}</ReactMarkdown>;
