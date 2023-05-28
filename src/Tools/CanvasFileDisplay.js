@@ -23,6 +23,7 @@ class CanvasFileDisplay extends React.Component {
     this.setState({ visiblePoint: newPoint });
   };
 
+
   componentDidMount() {
     this.fetchImageData();
     document.addEventListener('mousedown', this.handleMouseDown);
@@ -37,6 +38,7 @@ class CanvasFileDisplay extends React.Component {
     document.removeEventListener('mouseup', this.handleMouseUp);
     document.removeEventListener('wheel', this.handleWheel);
   }
+
 
   handleMouseDown = (event) => {
     if (event.button === 1) { // Check if middle mouse button (wheel) is clicked
@@ -74,37 +76,51 @@ class CanvasFileDisplay extends React.Component {
     }
   };
 
+
   handleWheel = (event) => {
     event.preventDefault();
   
     const zoomFactor = 0.1; // Adjust the zoom speed as desired
     let newZoomLevel = this.state.zoomLevel;
   
-    if (event.deltaY < 0) {
-      // Zoom in
-      newZoomLevel += zoomFactor;
+    if (event.ctrlKey) {
+      // Zoom in or out
+      if (event.deltaY < 0) {
+        // Zoom in
+        newZoomLevel += zoomFactor;
+      } else {
+        // Zoom out
+        newZoomLevel -= zoomFactor;
+        newZoomLevel = Math.max(newZoomLevel, 0.1); // Prevent zooming out beyond a certain level
+      }
+  
+      const zoomDelta = newZoomLevel - this.state.zoomLevel;
+      const newZoomRatio = newZoomLevel / this.state.zoomLevel;
+  
+      const mouseX = event.clientX - event.target.getBoundingClientRect().left;
+      const mouseY = event.clientY - event.target.getBoundingClientRect().top;
+  
+      // Adjust the visible point based on zooming and mouse position
+      this.setState((prevState) => ({
+        visiblePoint: {
+          x: prevState.visiblePoint.x - mouseX * zoomDelta,
+          y: prevState.visiblePoint.y - mouseY * zoomDelta,
+        },
+        zoomLevel: newZoomLevel,
+        zoomRatio: newZoomRatio, // Update the zoomRatio in the state
+      }));
     } else {
-      // Zoom out
-      newZoomLevel -= zoomFactor;
-      newZoomLevel = Math.max(newZoomLevel, 0.1); // Prevent zooming out beyond a certain level
+      // Scroll the screen up or down
+      const scrollFactor = 50; // Adjust the scroll speed as desired
+      const scrollAmount = event.deltaY > 0 ? scrollFactor : -scrollFactor;
+  
+      this.setState((prevState) => ({
+        visiblePoint: {
+          x: prevState.visiblePoint.x,
+          y: prevState.visiblePoint.y + scrollAmount / prevState.zoomLevel,
+        },
+      }));
     }
-  
-    const zoomDelta = newZoomLevel - this.state.zoomLevel;
-    const newZoomRatio = newZoomLevel / this.state.zoomLevel;
-
-    const mouseX = event.clientX - event.target.getBoundingClientRect().left;
-    const mouseY = event.clientY - event.target.getBoundingClientRect().top;
-  
-    // Adjust the visible point based on zooming and mouse position
-    this.setState((prevState) => ({
-      visiblePoint: {
-        x: prevState.visiblePoint.x - (mouseX * zoomDelta),
-        y: prevState.visiblePoint.y - (mouseY * zoomDelta),
-      },
-      zoomLevel: newZoomLevel,
-      zoomRatio: newZoomRatio, // Update the zoomRatio in the state
-    }));
-
   };
   
   componentDidUpdate(prevProps) {

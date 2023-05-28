@@ -7,9 +7,11 @@
   max-height: 92.3vh; /* Adjust the height as needed */
 }
 
-/* .button-line {
- 
-} */
+.content-displayFile {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Set the height of the container or adjust as need*/
+} 
 
 .fileButton {
   border: 0.5px solid #00000033;
@@ -97,4 +99,19 @@
 
 .context-button:hover {
   background-color: #14171b;
+}
+
+.footer-displayFile {
+  width: 15.1%;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+  color: rgb(88, 95, 100);
+  background-color: #1f2329;
+  border: 1px solid #000000;
 }

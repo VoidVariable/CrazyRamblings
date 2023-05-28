@@ -89,7 +89,10 @@ class MarkdownDisplay extends Component {
     const nonEmptyLines = lines.filter((line) => line !== ''); // Filter out empty lines
 
     return (
-      <div>
+      <div className='content-displayFile'>
+         <div className="footer-displayFile">
+            <a href='https://github.com/VoidVariable/CrazyRamblings'>GitHub</a>
+        </div>
         <div className="header-displayFile">
           <span className="header-title">Deltarune Data</span>
           <button className="gear-button" onClick={this.handleGearButtonClick}>
@@ -169,7 +172,8 @@ class MarkdownDisplay extends Component {
             </button> */}
           </div>
         )}
-      </div>
+       
+      </div>   
     );
   }
 }
