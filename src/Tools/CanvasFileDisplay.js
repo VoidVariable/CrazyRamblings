@@ -18,6 +18,11 @@ class CanvasFileDisplay extends React.Component {
     };
   }
 
+
+  updateVisiblePoint = (newPoint) => {
+    this.setState({ visiblePoint: newPoint });
+  };
+
   componentDidMount() {
     this.fetchImageData();
     document.addEventListener('mousedown', this.handleMouseDown);
@@ -179,7 +184,12 @@ class CanvasFileDisplay extends React.Component {
         onWheel={this.handleWheel}
       >
         {canvasData !== null && (
-          <SquareRenderer canvasData={this.state.canvasData} point={visiblePoint} zoomLevel={zoomLevel} zoomRatio={zoomRatio} />
+          <SquareRenderer 
+          canvasData={this.state.canvasData} 
+          point={visiblePoint} 
+          zoomLevel={zoomLevel} 
+          zoomRatio={zoomRatio}
+          onVisiblePointChange={this.updateVisiblePoint} />
         )}
         <div className="zoom-level-text">{zoomPercentage}%</div> {/* Added zoom level text */}
         <div className="floating-buttons">

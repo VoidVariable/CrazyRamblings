@@ -1,7 +1,47 @@
 import React from 'react';
 import MarkdownRenderer from './MarkdownRenderer';
+import './Nodes.css'
 
 class SquareRenderer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedNode : null
+    };
+  }
+
+
+  selectNode(node) 
+  {
+    const {selectedNode} = this.state;
+
+    const isSelected = selectedNode === node.id;
+    
+    if(!isSelected)
+      this.setState({ selectedNode: node.id });
+    else
+    {
+      this.props.onVisiblePointChange(this.getVPNodeCenter(node));
+    }
+  }
+
+
+  getVPNodeCenter(node) 
+  {
+    const {zoomLevel } = this.props;
+  
+    const scaledX = node.x * zoomLevel;
+    const scaledY = node.y * zoomLevel;
+
+    const scaledWidth = node.width * zoomLevel;
+    const scaledHeight = node.height * zoomLevel;
+  
+    return { 
+      x: -scaledX + (1920/2) - (scaledWidth/2),
+      y: -scaledY + (1080/2) - (scaledHeight/2) };
+  }
+
+
   renderEdges() {
     const { edges, nodes } = JSON.parse(this.props.canvasData);
     const { point, zoomLevel } = this.props;
@@ -81,6 +121,7 @@ class SquareRenderer extends React.Component {
   }
 
   renderNodes() {
+    const {selectedNode} = this.state;
     const { nodes } = JSON.parse(this.props.canvasData);
     const { point, zoomLevel, zoomRatio } = this.props;
 
@@ -92,38 +133,35 @@ class SquareRenderer extends React.Component {
       const leftPosition = `${scaledX + scaledWidth / 2}px`;
       const topPosition = `${scaledY + scaledHeight / 2}px`;
 
+
+      var buttonClassName = selectedNode !== node.id ? 'node' : 'node selected';
+
       return (
-        <div
+        <span
+          onClick={() => this.selectNode(node)}
           key={node.id}
+          className={buttonClassName}
           style={{
-            borderRadius: 7,
-            borderWidth: 1,
-            borderColor: '#989',
-            position: 'absolute',
-            borderStyle: 'solid',
             left: leftPosition,
             top: topPosition,
-            transform: 'translate(-50%, -50%)',
             fontSize: 18 * zoomLevel,
             width: `${scaledWidth}px`,
             height: `${scaledHeight}px`,
-            backgroundColor: '#191721',
-            color: '#aaa',
-            zIndex: 1,
             padding: 20 * zoomLevel * zoomRatio,
-            boxSizing: 'border-box',
           }}
         >
           <MarkdownRenderer terms={node.text} />
-        </div>
+        </span>
       );
     });
   }
   
 
   render() {
+  
    return (
-      <div>
+    <div>
+       
       {this.renderNodes()}
       {this.renderEdges()}
     </div>

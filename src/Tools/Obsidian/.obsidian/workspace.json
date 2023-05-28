@@ -13,11 +13,11 @@
             "state": {
               "type": "canvas",
               "state": {
-                "file": "Other Stuff.canvas",
+                "file": "Gaster Master.canvas",
                 "viewState": {
-                  "x": -430,
-                  "y": -287,
-                  "zoom": -0.18901424928481564
+                  "x": -1510,
+                  "y": -2133.2,
+                  "zoom": -1.6
                 }
               }
             }
@@ -88,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Other Stuff.canvas",
+                "file": "Gaster Master.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Other Stuff.canvas",
+                "file": "Gaster Master.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Other Stuff.canvas"
+                "file": "Gaster Master.canvas"
               }
             }
           }
@@ -150,13 +150,13 @@
   },
   "active": "f06533e3290f9bed",
   "lastOpenFiles": [
+    "Resources/Gaster Master/Spamton Dialogue.md",
+    "Other Stuff.canvas",
     "Goats are bad.canvas",
     "Kris is Gamer?.png.md",
     "Kris Cross Apllesauce.canvas",
-    "Other Stuff.canvas",
     "Deltarune and Undertale.canvas",
     "Gaster Master.canvas",
-    "Resources/Gaster Master/Spamton Dialogue.md",
     "DONTSHIP/Combat System V2.md",
     "Spamton/Links to good shit.md",
     "Spamton/Hyperlink Blocked.md",
