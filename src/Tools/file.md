@@ -4,7 +4,7 @@
  - Gaster Master
   - Spamton Dialogue.md
  - Links to good shit.md
-- Images
+- [Hide] Images
  - Goats are Bad
   - Actually your choices do matter.png
   - nomnom.gif

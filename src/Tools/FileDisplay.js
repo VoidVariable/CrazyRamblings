@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import termsFrPath from './file.md';
 import './FileDisplay.css';
-import { handleButtonClick, handleFileClick, removeLeadingHyphens, logSpaces,setGlobalTerms } from './buttonUtils';
+import { handleButtonClick, handleFileClick, removeLeadingHyphens, logSpaces,setGlobalTerms, getFilePath } from './buttonUtils';
 
 class MarkdownDisplay extends Component {
   constructor(props) {
@@ -58,6 +58,7 @@ const nonEmptyLines = lines.filter((line) => line !== ''); // Filter out empty l
 return (
 <div className="button-contents">
   {nonEmptyLines.map((line, index) => {
+    setGlobalTerms(this.state.terms);
     const spacesCount = logSpaces(line);
     const trimmedLine = removeLeadingHyphens(line);
 
@@ -71,6 +72,8 @@ return (
 
     var spacePadding = '\u00A0'.repeat((Math.max(spacesCount - 1, 0) * 4));
     var arrow = '';
+
+    const hideFile = !getFilePath(logSpaces(line),trimmedLine).includes("[Hide]");
 
     if(spacesCount !== 0){
       spacePadding += "\u00A0\u00A0\u00A0\u00A0"
@@ -95,7 +98,7 @@ return (
 
     return (
       <div key={index} className="button-line">
-        {shouldDisplayButton && (
+        {shouldDisplayButton && hideFile && (
           <button
             className={buttonClassName}
             onClick={() => {
