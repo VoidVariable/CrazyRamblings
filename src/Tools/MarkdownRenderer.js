@@ -198,7 +198,6 @@ const MarkdownRenderer = React.memo(({ terms }) => {
       }
     },
   };
-  console.log(terms);
   return <ReactMarkdown components={customComponents} rehypePlugins={rehypeRaw}>{terms}</ReactMarkdown>;
 });
 

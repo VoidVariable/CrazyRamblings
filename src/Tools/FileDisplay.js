@@ -33,14 +33,17 @@ class MarkdownDisplay extends Component {
 
   componentDidMount() 
   {  
-    fetchingData();
+    this.fetchFileData();
     setGlobalTerms(this.state.terms);
   }
 
 
   fetchFileData = async () => {
     try {
-      const markdownData = await fetchingData('text', 'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools/MetaInfo/Obsidian.md');
+      const markdownData = await fetchingData('text', 'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools/MetaInfo/ObsidianDir.md');
+      
+      console.log(markdownData);
+
       this.setState({ terms: markdownData });
       // Do something with the markdownData, such as displaying it in the component state or rendering it.
     } catch (error) {

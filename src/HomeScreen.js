@@ -24,7 +24,7 @@ function HomeScreen() {
   const textEnter = "## Hi! Welcome to ... this.  <h4>This site stores a bunch of data related to video game theories in a obsidian vault like format.</h4> <br> You can look around connection boards of info and other simple files.";
   // Array of vault button data
   const vaultButtons = [
-    { id: 1, label: 'Deltarune', link: "https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools/Obsidian" },
+    { id: 1, label: 'Deltarune', link: "https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools/Vaults/Obsidian" },
     { id: 2, label: 'Test', link: "https//" },
     { id: 3, label: 'Other Game IDK', link: "" }
     // Add more vault buttons as needed

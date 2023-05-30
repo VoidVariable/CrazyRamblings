@@ -4,7 +4,7 @@ import axios from 'axios';
 
 //I probably shouldnt be storing data in a file 
 //But screw the rules
-var selectedRep = 'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools/Obsidian';
+var selectedRep = 'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools/Vaults/Obsidian';
 export var selectedVault = 'Obsidian';
 
 export function setRep(link){
