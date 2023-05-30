@@ -2,10 +2,19 @@
 // dataFetcher.js
 import axios from 'axios';
 
+//I probably shouldnt be storing data in a file 
+//But screw the rules
+var selectedRep = 'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools/Obsidian';
+export var selectedVault = 'Obsidian';
+
+export function setRep(link){
+  selectedRep = link;
+}
+
 const fetchingData = async (responseType, path) => {
   try {
     const response = await axios.get(
-      'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools' + path,
+      selectedRep + path,
       { 
         responseType: responseType
       }

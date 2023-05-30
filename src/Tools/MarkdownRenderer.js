@@ -72,7 +72,7 @@ const MarkdownRenderer = React.memo(({ terms }) => {
           const filePath = getFilePathByName(substring);
   
           return (
-            <MiddleContent path={'/Obsidian' + filePath} />
+            <MiddleContent path={filePath} />
           );
         } 
         else if (part.match(linkRegex)) {
@@ -198,7 +198,7 @@ const MarkdownRenderer = React.memo(({ terms }) => {
       }
     },
   };
-
+  console.log(terms);
   return <ReactMarkdown components={customComponents} rehypePlugins={rehypeRaw}>{terms}</ReactMarkdown>;
 });
 

@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 
-const directoryPath = './src/Tools/Obsidian';
-const filePath = 'src/Tools/file.md';
+const directoryPath = './src/Tools/Vaults';
+const filePath = 'src/Tools/MetaInfo';
 
 try {
   const getAllItems = (path, indentation = '') => {

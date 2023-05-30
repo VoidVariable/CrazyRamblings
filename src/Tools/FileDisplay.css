@@ -10,7 +10,7 @@
 .content-displayFile {
   display: flex;
   flex-direction: column;
-  height: 100%; /* Set the height of the container or adjust as need*/
+  height: 94.8vh; /* Set the height of the container or adjust as need*/
 } 
 
 .fileButton {

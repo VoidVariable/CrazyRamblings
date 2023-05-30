@@ -1,0 +1,16 @@
+.vault-button {
+  background-color: #282c34;
+  color: #333;
+  border: 2px solid #333;
+  height: 150px;
+  width: 300px;
+  padding: 10px 20px;
+  color: antiquewhite;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.vault-button:hover {
+  background-color: #363b47;
+  color: #fff;
+}

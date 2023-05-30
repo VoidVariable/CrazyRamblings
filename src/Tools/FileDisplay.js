@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import termsFrPath from './file.md';
+import fetchingData, { selectedVault } from './dataFetcher';
 import './FileDisplay.css';
 import { handleButtonClick, handleFileClick, removeLeadingHyphens, logSpaces, setGlobalTerms, getFilePath } from './buttonUtils';
 
@@ -23,8 +23,6 @@ class MarkdownDisplay extends Component {
     const gearButtonRect = event.target.getBoundingClientRect(); // Get the position of the gear button
     const windowTop = gearButtonRect.top ; // Calculate the top position of the context window
     const windowLeft = gearButtonRect.left+ gearButtonRect.width + (window.innerWidth * 0.01); // Calculate the left position of the context window
-  
-    console.log(window.innerWidth);
 
     this.setState((prevState) => ({
       showContextWindow: !prevState.showContextWindow,
@@ -33,19 +31,24 @@ class MarkdownDisplay extends Component {
     }));
   };
 
-  componentDidMount() {
-    // Read the file created during the build
-    fetch(termsFrPath)
-      .then((response) => response.text())
-      .then((text) => {
-        this.setState({ terms: text });
-      })
-      .catch((error) => {
-        console.error('Error fetching file:', error);
-      });
-
+  componentDidMount() 
+  {  
+    fetchingData();
     setGlobalTerms(this.state.terms);
   }
+
+
+  fetchFileData = async () => {
+    try {
+      const markdownData = await fetchingData('text', 'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools/MetaInfo/Obsidian.md');
+      this.setState({ terms: markdownData });
+      // Do something with the markdownData, such as displaying it in the component state or rendering it.
+    } catch (error) {
+      // Handle any errors that occur during the fetch.
+      console.error('Error fetching Markdown data:', error);
+    }
+  };
+
 
   handleClick(type, spacesCount, text) {
     if (type === 'fileButton darker') {
@@ -57,7 +60,7 @@ class MarkdownDisplay extends Component {
 
       const path = handleFileClick(this.state, spacesCount, text);
 
-      const newPath = '/Obsidian' + path;
+      const newPath = path;
       this.props.handlePathChange(newPath);
     }
   }

@@ -1,35 +1,21 @@
-import {useState} from 'react';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomeScreen from './HomeScreen';
+import VaultVisualizer from './VaultVisualizer';
 import Header from './Tools/Header';
-import MiddleContent from './Tools/MiddleContent';
-import FileDisplay from './Tools/FileDisplay';
 
-const App = () => {
-  const [path, setPath] = useState('null');
-
-  const handlePathChange = (newPath) => {
-
-    setPath(newPath);
-  };
-
-
+function App() {
   return (
-    <div className="container">
-    
-    <div className='Header'>
-      <Header />
-    </div>
-
-    <div className="middle-section">
-      <div className="left-section">
-        <FileDisplay handlePathChange={handlePathChange} />
+    <Router>
+      <div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/vault-visualizer" element={<VaultVisualizer />} />
+        </Routes>
       </div>
-  
-      <div className="middle-markdown">
-          <MiddleContent path={path} />
-      </div>
-    </div>   
-  </div>
+    </Router>
   );
-};
+}
+
 export default App;

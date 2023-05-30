@@ -30,7 +30,10 @@
   font-weight: bold;
   margin-right: auto;
   font-size: large;
+  text-decoration: none; /* Remove underline */
+  color: #ccedea; /* Set a lighter color */
 }
+
 
 .header-button {
   margin-right: 2%;
