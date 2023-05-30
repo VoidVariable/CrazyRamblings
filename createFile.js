@@ -11,9 +11,6 @@ try {
     const fileName = path.join(filePath, `${folderName}Dir.md`);
 
     fs.writeFileSync(fileName, content);
-    console.log(`Created file: ${fileName}`);
-    console.log(`Content of ${fileName}:`);
-    console.log(content);
   };
 
   const getAllItems = (folderPath, indentation = '') => {

@@ -18,14 +18,10 @@ const fetchingData = async (responseType, path, useExtra = false) => {
   {
     var thisTemp = '';
     if(useExtra)
-       thisTemp = selectedRep + temp + selectedVault;
-    else
-    {
-      thisTemp = path;
-    }
+       thisTemp = temp + selectedVault;
 
     const response = await axios.get(
-      thisTemp,
+      selectedRep + thisTemp + path,
       { 
         responseType: responseType
       }
