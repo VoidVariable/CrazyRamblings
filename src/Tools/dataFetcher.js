@@ -4,17 +4,24 @@ import axios from 'axios';
 
 //I probably shouldnt be storing data in a file 
 //But screw the rules
-var selectedRep = 'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools/Vaults/Obsidian';
+var selectedRep = 'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools';
 export var selectedVault = 'Obsidian';
+var temp = "/Vaults/"
 
-export function setRep(link){
+export function setRep(link, repName){
   selectedRep = link;
+  selectedVault = repName;
 }
 
-const fetchingData = async (responseType, path) => {
-  try {
+const fetchingData = async (responseType, path, useExtra = false) => {
+  try 
+  {
+    var thisTemp = '';
+    if(useExtra)
+       thisTemp = temp + selectedVault;
+
     const response = await axios.get(
-      selectedRep + path,
+      selectedRep + thisTemp + path,
       { 
         responseType: responseType
       }

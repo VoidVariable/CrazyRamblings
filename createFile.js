@@ -1,18 +1,28 @@
 const fs = require('fs-extra');
+const path = require('path');
 
 const directoryPath = './src/Tools/Vaults';
 const filePath = 'src/Tools/MetaInfo';
 
 try {
-  const getAllItems = (path, indentation = '') => {
-    const items = fs.readdirSync(path, { withFileTypes: true });
+  const createDirectoryStructureFile = (folderPath) => {
+    const folderName = path.basename(folderPath);
+    const content = getAllItems(folderPath);
+    const fileName = path.join(filePath, `${folderName + "Dir"}.md`);
+
+    fs.writeFileSync(fileName, content);
+    console.log(`Created file: ${fileName}`);
+  };
+
+  const getAllItems = (folderPath, indentation = '') => {
+    const items = fs.readdirSync(folderPath, { withFileTypes: true });
     let content = '';
 
     items.forEach((dirent) => {
-      if (!dirent.name.startsWith('.') && dirent.name !== 'DONTSHIP') { // Ignore hidden files and folders with the name 'DONTSHIP'
+      if (!dirent.name.startsWith('.') && dirent.name !== 'DONTSHIP') {
         if (dirent.isDirectory()) {
-          const folderPath = `${path}/${dirent.name}`;
-          const subContent = getAllItems(folderPath, `${indentation}\t`);
+          const subFolderPath = path.join(folderPath, dirent.name);
+          const subContent = getAllItems(subFolderPath, `${indentation}\t`);
           content += `${indentation}- ${dirent.name}\n${subContent}`;
         } else if (dirent.isFile()) {
           content += `${indentation}- ${dirent.name}\n`;
@@ -23,11 +33,13 @@ try {
     return content;
   };
 
-  const content = getAllItems(directoryPath);
+  const topLevelFolders = fs.readdirSync(directoryPath, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => path.join(directoryPath, dirent.name));
 
-  fs.writeFileSync(filePath, content);
+  topLevelFolders.forEach((folderPath) => createDirectoryStructureFile(folderPath));
 
-  console.log(`List of folders and files saved to ${filePath}`);
+  console.log(`Directory structures created for top-level folders in ${directoryPath}`);
 } catch (error) {
-  console.error('Error reading directory:', error);
+  console.error('Error:', error);
 }

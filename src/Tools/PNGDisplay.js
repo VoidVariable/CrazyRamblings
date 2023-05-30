@@ -22,7 +22,7 @@ class PNGDisplay extends Component {
 
   fetchImageData = async () => { 
     try {
-      const imageData = await fetchingData('arraybuffer', this.props.path);
+      const imageData = await fetchingData('arraybuffer', this.props.path, true);
       this.setState({ imageData });
     } catch (error) {
       console.error('Error fetching image data:', error);

@@ -21,7 +21,7 @@ class MarkdownDisplay extends React.Component {
 
   fetchMarkdownData = async () => {
     try {
-      const markdownData = await fetchingData('text', this.props.path);
+      const markdownData = await fetchingData('text', this.props.path, true);
       this.setState({ terms: markdownData });
       // Do something with the markdownData, such as displaying it in the component state or rendering it.
     } catch (error) {

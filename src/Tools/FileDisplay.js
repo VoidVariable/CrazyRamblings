@@ -40,10 +40,7 @@ class MarkdownDisplay extends Component {
 
   fetchFileData = async () => {
     try {
-      const markdownData = await fetchingData('text', 'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools/MetaInfo/ObsidianDir.md');
-      
-      console.log(markdownData);
-
+      const markdownData = await fetchingData('text', '/MetaInfo/' + selectedVault + 'Dir.md');
       this.setState({ terms: markdownData });
       // Do something with the markdownData, such as displaying it in the component state or rendering it.
     } catch (error) {
