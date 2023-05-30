@@ -8,7 +8,7 @@ try {
   const createDirectoryStructureFile = (folderPath) => {
     const folderName = path.basename(folderPath);
     const content = getAllItems(folderPath);
-    const fileName = path.join(filePath, `${folderName}.txt`);
+    const fileName = path.join(filePath, `${folderName}Dir.md`);
 
     fs.writeFileSync(fileName, content);
     console.log(`Created file: ${fileName}`);
