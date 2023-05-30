@@ -1,0 +1,144 @@
+- Deltarune and Undertale.canvas
+- Gaster Master.canvas
+- Goats are bad.canvas
+- Kris Cross Apllesauce.canvas
+- Other Stuff.canvas
+- Resources
+	- Gaster Master
+		- Spamton Dialogue.md
+	- Links to good shit.md
+- Spamton
+	- Hyperlink Blocked.md
+- Test
+	- Test.md
+- [Hide] Images
+	- Goats are Bad
+		- ASRIEL.png
+		- Actually your choices do matter.png
+		- Ball of stuff.png
+		- DELTAWARRIORS.png
+		- Darkners normally need help to move between worlds.png
+		- Green Crayon.png
+		- Headband.png
+		- It looks kinda like....png
+		- Knows Names.png
+		- Kris is Gamer.png
+		- Lancer and the prophecy 2.png
+		- Lancer know the lenged.png
+		- Ralsei knows the outsied world.png
+		- Ralsei.png
+		- Red Scarf wat this.png
+		- Seam knows the prophecy.png
+		- THEY KNOW
+			- Bar to the left.png
+			- Fruit in Tree with C.png
+			- Jevil knows HP.png
+			- Press C to open Menu.png
+			- Queen knows keyboardkeys.png
+			- Ralsei knows how to Press Z.png
+			- RatMouseRoom Instructions.png
+			- Susie doesn't know how to press Z.png
+		- Two fountain.png
+		- What are you talking about.png
+		- Where the handband.png
+		- WierdBehaviour
+			- Screenshot from 2023-05-20 22-42-57.png
+			- Screenshot from 2023-05-20 22-43-05.png
+			- Screenshot from 2023-05-20 22-43-11.png
+			- Screenshot from 2023-05-20 22-43-15.png
+			- Screenshot from 2023-05-20 22-43-21.png
+			- Screenshot from 2023-05-20 22-43-26.png
+		- Yeah sure Dark Presence.png
+		- fulfilled.png
+		- nomnom.gif
+		- wierd porpuse talk.png
+	- Other Stuff
+		- Chalk in the darkworld FAKE.png
+		- Chalk is LightCandy in the darkworld.png
+		- Delta Rune
+			- Angel art by Noelle and Ness.png
+			- Angel religion.png
+			- Angel's Heaven.png
+			- Bedroom.png
+			- CatPetters under bed.png
+			- Church Angel.png
+			- Dess smack.png
+			- Noelle is nostalgic.png
+			- Screenshot from 2023-05-20 22-12-12.png
+			- Screenshot from 2023-05-20 22-12-37.png
+			- Screenshot from 2023-05-20 22-13-08.png
+			- Screenshot from 2023-05-20 22-24-31.png
+			- Screenshot from 2023-05-20 22-39-48.png
+		- Food don't matter.png
+		- Gaster Master
+			- Bunker Chapter 1.png
+			- Hyperlink Blocked
+				- Ch-Ch-Ch-Choices.png
+				- Link Blocked 1.png
+				- Link Blocked 2.png
+				- Link Blocked 3.png
+				- Link Blocked 5.png
+				- Link Blocked 6.png
+				- Link Blocked 7.png
+				- Link Blocked 8.png
+				- Link Blocked 9.png
+			- Little Wierd man.png
+			- Man behind the tree.png
+			- Room 142 is the tree.png
+			- Room in Between Chap 2.png
+			- Screenshot from 2023-05-20 22-05-04.png
+			- Screenshot from 2023-05-20 22-05-16.png
+			- Screenshot from 2023-05-20 22-06-13.png
+			- Screenshot from 2023-05-20 22-09-42.png
+			- Tree 1.png
+		- ICE-E and Everyman Grafitti.png
+		- Kris
+			- Before Save.png
+			- Cage foreshadowing.png
+			- Heart in cage.png
+			- Heart in hand.png
+			- Just the description.png
+			- Kris Cares about Susie 2.png
+			- Kris Save in Chapter 2.png
+			- Kris and pianos.png
+			- Kris cares about Susie 1.png
+			- Kris cares about Susie 3.png
+			- Kris is Zombie.png
+			- Kris is corpse.png
+			- Kris is normally talkative.png
+			- Kris plugged on the TV.png
+			- Kris used to play piano.png
+			- MY soul.png
+			- Red eye + Stuff.png
+			- Screenshot from 2023-05-20 22-26-50.png
+			- Screenshot from 2023-05-20 22-33-51.png
+			- TV Plugged in.png
+			- They call you you.png
+			- They seem sick.png
+			- Your're not yourself when you are hungry.png
+		- Leads on Susie (probably jokes).png
+		- Medical Foreshadowing.png
+		- Only you can see.png
+		- Pasted image 20230521012828.png
+		- Strange Knight.png
+		- Susie gets chalk.png
+		- The Past
+			- Getting Mad like everyone else.png
+			- King and the knight.png
+			- King in the dark.png
+			- King talks about the past.png
+			- Who's the him and his strange son.png
+		- Undertale
+			- ANOTHER UNDERTALE REFERENCE.png
+			- Are monsters bloody or not.png
+			- Color Flowers.png
+			- Everybody bleeds.png
+			- GERSON BOOM MENTION.png
+			- Gerson was a teacher.png
+			- No Magic Curious.png
+			- Sans Friends.png
+			- Sans knows Alphys.png
+			- Talk to Undine about Alphys.png
+			- UNDERTALE REFERENCE.png
+			- Undine doen's knows Alphys.png
+		- Who is C.png
