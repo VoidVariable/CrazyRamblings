@@ -28,17 +28,20 @@ class SquareRenderer extends React.Component {
 
   getVPNodeCenter(node) 
   {
-    const {zoomLevel } = this.props;
+   // const {zoomLevel } = this.props;
   
-    const scaledX = node.x * zoomLevel;
-    const scaledY = node.y * zoomLevel;
+    const scaledX = node.x;
+    const scaledY = node.y;
 
-    const scaledWidth = node.width * zoomLevel;
-    const scaledHeight = node.height * zoomLevel;
+    const scaledWidth = node.width;
+    const scaledHeight = node.height;
   
-    return { 
-      x: -scaledX + (1920/2) - (scaledWidth/2),
-      y: -scaledY + (1080/2) - (scaledHeight/2) };
+    const centerCoordinates = {
+      x: -scaledX + (1920 / 2) - (scaledWidth / 2),
+      y: -scaledY + (1080 / 2) - (scaledHeight / 2),
+    };
+    
+    return { coordinates: centerCoordinates, zoom: 1};
   }
 
 

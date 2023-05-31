@@ -19,8 +19,8 @@ class CanvasFileDisplay extends React.Component {
   }
 
 
-  updateVisiblePoint = (newPoint) => {
-    this.setState({ visiblePoint: newPoint });
+  updateVisiblePoint = (result) => {
+    this.setState({ visiblePoint: result.coordinates, zoomLevel: result.zoom });
   };
 
 
