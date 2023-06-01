@@ -7,7 +7,7 @@
 	- Links to good shit.md
 - [Hide] Images
 	- Goats are Bad
-		- ASRIEL.png
+		- ASRIEL.jpeg
 		- Actually your choices do matter.png
 		- Ball of stuff.png
 		- DELTAWARRIORS.png
