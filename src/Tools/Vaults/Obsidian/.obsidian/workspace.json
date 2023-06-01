@@ -13,11 +13,11 @@
             "state": {
               "type": "canvas",
               "state": {
-                "file": "Goats are bad.canvas",
+                "file": "Gaster Master.canvas",
                 "viewState": {
-                  "x": -1485.562518906697,
-                  "y": -1263.2883877303732,
-                  "zoom": -1.0044146804073928
+                  "x": -1550.5490358022334,
+                  "y": -2076.511755101984,
+                  "zoom": 1
                 }
               }
             }
@@ -88,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Goats are bad.canvas",
+                "file": "Gaster Master.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Goats are bad.canvas",
+                "file": "Gaster Master.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Goats are bad.canvas"
+                "file": "Gaster Master.canvas"
               }
             }
           }
@@ -150,9 +150,9 @@
   },
   "active": "f06533e3290f9bed",
   "lastOpenFiles": [
+    "Goats are bad.canvas",
     "Resources/Links to good shit.md",
     "Gaster Master.canvas",
-    "Goats are bad.canvas",
     "Kris Cross Apllesauce.canvas",
     "DONTSHIP/Ideias.md",
     "[Hide] Images/Other Stuff/Gaster Master/Hyperlink Blocked/Link Blocked 9.png",
@@ -199,7 +199,6 @@
     "crazy/node_modules/@types/jest/node_modules/@jest/types/README.md",
     "crazy/node_modules/@types/jest/node_modules/@jest/schemas/README.md",
     "crazy/node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md",
-    "crazy/node_modules/@testing-library/react/node_modules/@testing-library/dom/CHANGELOG.md",
-    "crazy/node_modules/@rollup/pluginutils/node_modules/@types/estree/README.md"
+    "crazy/node_modules/@testing-library/react/node_modules/@testing-library/dom/CHANGELOG.md"
   ]
 }

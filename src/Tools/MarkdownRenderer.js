@@ -8,6 +8,8 @@ import EmbeddedIframe from './EmbeddedIframe';
 const MarkdownRenderer = React.memo(({ terms }) => {
   
   const renderText = (text) => {
+    
+    //#region Regex
     const linkRegex = /(https?:\/\/[^\cs]+)/g;
     const customRegex = /!\[\[.+?\.\w+\]\]/g;
     const obsLinkRegex = /\[\[.+?\]\]/g;
@@ -15,9 +17,13 @@ const MarkdownRenderer = React.memo(({ terms }) => {
     const boldoneRegex = /\*\*.+?\*\*/g;
     const boldtwoRegex = /__.+?__/g;
     const iframeRegex = /<iframe.+?<\/iframe>/g;
+    const weblinkRegex = /<a>.+?<\/a>/g;
+
+    //#endregion
 
     var splitValues = "";
 
+    //#region Convert obj into text
     for (var i = 0; i < text.length; i++) 
     {
 
@@ -30,11 +36,22 @@ const MarkdownRenderer = React.memo(({ terms }) => {
             continue;
         }
       }
+      else if(text[i]?.type === 'a')
+      {
+        splitValues += "<a>[" + text[i]?.props.children[0] + "]("+
+        text[i]?.props.href +")</a> ";
+        continue;
+      }
 
         splitValues += text[i];
     }  
+    //#endregion
 
-    if(splitValues.includes("https")){
+    //#region Splits
+    if (splitValues.includes("<a>")){
+      splitValues = splitValues.split(/(<a>.*?<\/a>)/);
+    }
+    else if(splitValues.includes("https")){
       splitValues = splitValues.split(linkRegex);
     }
     else if(splitValues.includes("![[")){
@@ -51,16 +68,15 @@ const MarkdownRenderer = React.memo(({ terms }) => {
       splitValues = splitValues.split(/(?=__)/);
     }
     else if (splitValues.includes("<iframe"))
-    {
-      
+    {   
       splitValues = splitValues.split(iframeRegex);
     }
-    else{
-    
+    else{    
       splitValues = splitValues.split();
     }
     
 
+    //#endregion
 
     return splitValues
       .map((part, index) => {
@@ -75,6 +91,15 @@ const MarkdownRenderer = React.memo(({ terms }) => {
             <MiddleContent path={filePath} />
           );
         } 
+        else if (weblinkRegex.test(part)) {
+          const linkText = part.match(/\[(.*?)\]/)[1];
+          const linkURL = part.match(/\((.*?)\)/)[1];
+          return (
+            <a href={linkURL} className="links" key={index}>
+              {linkText}
+            </a>
+          );
+        }
         else if (part.match(linkRegex)) {
           // Render links
           return (
@@ -173,7 +198,7 @@ const MarkdownRenderer = React.memo(({ terms }) => {
     em: ({ children }) => {
       return <em style={{ fontStyle: 'italic' }}>{children}</em>;
     }, 
-    p: ({ children }) => {
+    p: ({ children }) => {     
       return renderText(children); // Custom rendering for plain text with links
     },
     iframe: ({ src }) => {
