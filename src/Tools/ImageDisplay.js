@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import fetchingData from './dataFetcher';
 
-class PNGDisplay extends Component {
+class ImageDisplay extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,26 +41,32 @@ class PNGDisplay extends Component {
       return <div>Loading image...</div>;
     }
 
+    let mimeType = 'image/png';
+    if (this.props.path.endsWith('.jpeg') || this.props.path.endsWith('.jpg')) {
+      mimeType = 'image/jpeg';
+    }
+    // Add more conditions for other image formats if necessary
+
     const base64Image = btoa(
       new Uint8Array(imageData)
         .reduce((data, byte) => data + String.fromCharCode(byte), '')
     );
 
     return (
-        <img
-          style={{
-            overflowY: 'auto',
-            maxWidth: '100%',
-            maxHeight: '800px',
-            boxSizing: 'border-box',
-            padding: '10px',
-            paddingTop: '2%'
-          }}
-          src={`data:image/png;base64,${base64Image}`}
-          alt=""
-        />
-      );
+      <img
+        style={{
+          overflowY: 'auto',
+          maxWidth: '100%',
+          maxHeight: '800px',
+          boxSizing: 'border-box',
+          padding: '10px',
+          paddingTop: '2%'
+        }}
+        src={`data:${mimeType};base64,${base64Image}`}
+        alt=""
+      />
+    );
   }
 }
 
-export default PNGDisplay;
+export default ImageDisplay;
