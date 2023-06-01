@@ -1,6 +1,7 @@
 - Gaster Master.canvas
 - Goats are bad.canvas
-- Kris Cross Apllesauce.canvas
+- Home.md
+- Kris Cross Applesauce.canvas
 - Resources
 	- Gaster Master
 		- Spamton Dialogue.md
