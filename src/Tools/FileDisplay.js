@@ -37,7 +37,6 @@ class MarkdownDisplay extends Component {
     setGlobalTerms(this.state.terms);
   }
 
-
   fetchFileData = async () => {
     try {
       const markdownData = await fetchingData('text', '/MetaInfo/' + selectedVault + 'Dir.md');
@@ -48,7 +47,6 @@ class MarkdownDisplay extends Component {
       console.error('Error fetching Markdown data:', error);
     }
   };
-
 
   handleClick(type, spacesCount, text) {
     if (type === 'fileButton darker') {
