@@ -2,15 +2,19 @@
   background-color: #282c34;
   color: #333;
   border: 2px solid #333;
+  border-radius: 15px;
   height: 150px;
   width: 300px;
   padding: 10px 20px;
-  color: antiquewhite;
+  color: rgba(250, 235, 215, 0);
   font-size: 16px;
   cursor: pointer;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('./deltarune.jpg'); 
+  background-size: cover;
 }
 
 .vault-button:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('./deltarune.jpg'); 
   background-color: #363b47;
   color: #fff;
 }

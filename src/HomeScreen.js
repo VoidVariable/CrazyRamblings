@@ -25,8 +25,8 @@ function HomeScreen() {
   // Array of vault button data
   const vaultButtons = [
     { id: 1, label: 'Deltarune', link: "https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools", name: 'Obsidian' },
-    { id: 2, label: 'Test', link: "https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools" , name: 'Undertale' },
-    { id: 3, label: 'Other Game IDK', llink: "https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools", name: 'Test' }
+   // { id: 2, label: 'Test', link: "https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools" , name: 'Undertale' },
+   // { id: 3, label: 'Other Game IDK', llink: "https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools", name: 'Test' }
     // Add more vault buttons as needed
   ];
 
