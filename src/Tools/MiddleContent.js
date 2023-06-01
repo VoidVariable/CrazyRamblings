@@ -7,12 +7,13 @@ import GIFDisplay from './GIFDisplay';
 const MiddleContent = ({ path }) => {
 
     const getFileExtension = () => {
-        
+      
         if (path.endsWith('.md')) {
           return 'md';
         } else if (path.endsWith('.canvas')) {
           return 'canvas';
         } else if (path.match(/\.(jpeg|jpg|png)$/i)) {
+          console.log(path);
           return 'img';
         } else if (path.endsWith('.gif')) {
             return 'gif';
