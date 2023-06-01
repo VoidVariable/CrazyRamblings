@@ -7,6 +7,9 @@ import EmbeddedIframe from './EmbeddedIframe';
 
 const MarkdownRenderer = React.memo(({ terms }) => {
   
+
+  const rehypePlugins = [rehypeRaw];
+
   const renderText = (text) => {
     
     //#region Regex
@@ -88,7 +91,7 @@ const MarkdownRenderer = React.memo(({ terms }) => {
           const filePath = getFilePathByName(substring);
   
           return (
-            <MiddleContent path={filePath} />
+            <MiddleContent path={filePath} key={index}/>
           );
         } 
         else if (weblinkRegex.test(part)) {
@@ -124,15 +127,11 @@ const MarkdownRenderer = React.memo(({ terms }) => {
         }
         else if (part.match(boldoneRegex) || part.match(boldtwoRegex)) {          
           // Render links         
-          return ( 
-            <strong>
-              {part.substring(2, part.length - 2)}
-            </strong>        
-          );
+          return <strong key={index}>{part.substring(2, part.length - 2)}</strong>;
         }
         else if (part.match(iframeRegex))
         {
-         <EmbeddedIframe iframeCode={part}></EmbeddedIframe>
+         <EmbeddedIframe key={index} iframeCode={part}></EmbeddedIframe>
         }
         return part;
       });
@@ -228,7 +227,7 @@ const MarkdownRenderer = React.memo(({ terms }) => {
 
     
   };
-  return <ReactMarkdown components={customComponents} rehypePlugins={rehypeRaw}>{terms}</ReactMarkdown>;
+  return <ReactMarkdown components={customComponents} rehypePlugins={rehypePlugins}>{terms}</ReactMarkdown>;
 });
 
 export default MarkdownRenderer;

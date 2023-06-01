@@ -9,7 +9,8 @@
   display: flex;
   background-color: var(--background-color);
   color: #fff;
-  padding: 20px;
+  padding: 10px;
+  height: 6vh;
   position: fixed;
   top: 0;
   left: 0;

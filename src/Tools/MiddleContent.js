@@ -13,7 +13,6 @@ const MiddleContent = ({ path }) => {
         } else if (path.endsWith('.canvas')) {
           return 'canvas';
         } else if (path.match(/\.(jpeg|jpg|png)$/i)) {
-          console.log(path);
           return 'img';
         } else if (path.endsWith('.gif')) {
             return 'gif';
@@ -27,23 +26,23 @@ const MiddleContent = ({ path }) => {
 
       const fileExtension = getFileExtension();
 
-  return (
-    <div>
-      {fileExtension === 'md' ? (
-        <MarkdownDisplay path={path} />
-      ) : fileExtension === 'img' ? (
-        <ImageDisplay path={path} />
-        ) : fileExtension === 'gif' ? (
+      return (
+        <>
+          {fileExtension === 'md' ? (
+            <MarkdownDisplay path={path} />
+          ) : fileExtension === 'img' ? (
+            <ImageDisplay path={path} />
+          ) : fileExtension === 'gif' ? (
             <GIFDisplay path={path} />
-      ) : fileExtension === 'canvas' ? (
-        <CanvasFileDisplay path={path} />
-      ) : fileExtension === 'No file extension' ? (
-        <div style={{color:'red'}}>Cant Load</div>
-      ) : (
-        <div style={{color:'red'}}>File Extention not suported</div>
-      )}
-    </div>
-  );
+          ) : fileExtension === 'canvas' ? (
+            <CanvasFileDisplay path={path} />
+          ) : fileExtension === 'No file extension' ? (
+            <div style={{ color: 'red' }}>Can't Load</div>
+          ) : (
+            <div style={{ color: 'red' }}>File Extension not supported</div>
+          )}
+        </>
+      );
 };
 
 export default MiddleContent;

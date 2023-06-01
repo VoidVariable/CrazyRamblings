@@ -10,7 +10,7 @@
 .content-displayFile {
   display: flex;
   flex-direction: column;
-  height: 94.8vh; /* Set the height of the container or adjust as need*/
+  height: 93.8vh; /* Set the height of the container or adjust as need*/
 } 
 
 .fileButton {
@@ -45,7 +45,6 @@
   color: #dfdfdf;
 }
 .header-displayFile {
-  margin-top: 20px;
   border-bottom: 1px solid #b8d4f3;
   width: 100%;
   display: flex;

@@ -20,7 +20,9 @@ const VaultVisualizer = () => {
 
   return (
     <div className="vault-visualizer">
-      <Header />
+      <div style={{height: '6vh'}}>
+      <Header/>
+      </div>
       <div className="middle-section">
         <div className="left-section">
           <FileDisplay handlePathChange={handlePathChange} />

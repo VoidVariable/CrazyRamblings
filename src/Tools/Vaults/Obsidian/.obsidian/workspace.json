@@ -13,11 +13,11 @@
             "state": {
               "type": "canvas",
               "state": {
-                "file": "Goats are bad.canvas",
+                "file": "Gaster Master.canvas",
                 "viewState": {
-                  "x": -288,
-                  "y": 70,
-                  "zoom": 0
+                  "x": -947.5737959541676,
+                  "y": -2081.64772623192,
+                  "zoom": 0.17136338842422416
                 }
               }
             }
@@ -88,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Goats are bad.canvas",
+                "file": "Gaster Master.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Goats are bad.canvas",
+                "file": "Gaster Master.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Goats are bad.canvas"
+                "file": "Gaster Master.canvas"
               }
             }
           }
@@ -150,8 +150,8 @@
   },
   "active": "d467da9085b22fe7",
   "lastOpenFiles": [
-    "ASRIEL.png.md",
     "Goats are bad.canvas",
+    "ASRIEL.png.md",
     "Gaster Master.canvas",
     "[Hide] Images/Goats are Bad/ASRIEL.jpeg",
     "[Hide] Images/Goats are Bad/ASRIEL.jped",
