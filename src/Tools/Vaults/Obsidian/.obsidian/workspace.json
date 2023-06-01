@@ -26,14 +26,11 @@
             "id": "df2fcbdb171b1075",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Kris Cross Applesauce.canvas",
-                "viewState": {
-                  "x": -127.77037549404349,
-                  "y": -184.9762061327839,
-                  "zoom": -1.9227830556962684
-                }
+                "file": "Home.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -67,7 +64,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#G",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -84,7 +81,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -104,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kris Cross Applesauce.canvas",
+                "file": "Home.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kris Cross Applesauce.canvas",
+                "file": "Home.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kris Cross Applesauce.canvas"
+                "file": "Home.md"
               }
             }
           }
@@ -166,8 +164,8 @@
   },
   "active": "df2fcbdb171b1075",
   "lastOpenFiles": [
-    "Goats are bad.canvas",
     "Kris Cross Applesauce.canvas",
+    "Goats are bad.canvas",
     "Home.md",
     "Gaster Master.canvas",
     "Untitled",

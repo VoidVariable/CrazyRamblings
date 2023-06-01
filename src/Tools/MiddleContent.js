@@ -7,9 +7,10 @@ import GIFDisplay from './GIFDisplay';
 const MiddleContent = ({ path }) => {
 
     const getFileExtension = () => {
-      
         if (path.endsWith('.md')) {
           return 'md';
+        } else if (path === 'null') {
+          return 'empty';
         } else if (path.endsWith('.canvas')) {
           return 'canvas';
         } else if (path.match(/\.(jpeg|jpg|png)$/i)) {

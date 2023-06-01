@@ -36,11 +36,15 @@ class MarkdownDisplay extends Component
   };
 
   componentDidMount() 
-  {     
+  {        
     if(selectedRep === ' '){
       setRep(getSingleVaultByLabel(selectedVault)?.link,selectedVault);
     }
     this.fetchFileData();
+    
+    //For now I'm doing this here
+    this.props.handlePathChange("/Home.md");
+
     setGlobalTerms(this.state.terms);
   }
 
