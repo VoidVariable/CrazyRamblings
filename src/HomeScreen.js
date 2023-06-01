@@ -4,6 +4,7 @@ import { setRep } from './Tools/dataFetcher';
 import MarkdownRenderer from './Tools/MarkdownRenderer';
 import VaultButton from './Tools/VaultButton';
 import './Tools/HomeScreen.css';
+import { vaultButtons } from './Tools/buttonsDef';
 
 function HomeScreen() {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ function HomeScreen() {
   const handleButtonClick = (link, name) => {
     setRep(link, name);
     
-    navigate('/vault-visualizer');
+    navigate('/vault-visualizer/'+ name);
   };
 
   const calculateGridPosition = (index) => {
@@ -22,13 +23,7 @@ function HomeScreen() {
   };
 
   const textEnter = "## Hi! Welcome to ... this.  <h4>This site stores a bunch of data related to video game theories in a obsidian vault like format.</h4> <br> You can look around connection boards of info and other simple files.";
-  // Array of vault button data
-  const vaultButtons = [
-    { id: 1, label: 'Deltarune', link: "https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools", name: 'Obsidian' },
-   // { id: 2, label: 'Test', link: "https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools" , name: 'Undertale' },
-   // { id: 3, label: 'Other Game IDK', llink: "https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools", name: 'Test' }
-    // Add more vault buttons as needed
-  ];
+  
 
   return (
     <div className="home-screen" style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>

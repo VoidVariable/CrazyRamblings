@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Tools/Header';
 import MiddleContent from './Tools/MiddleContent';
 import FileDisplay from './Tools/FileDisplay';
 import './App.css'
+import { useParams } from 'react-router-dom';
+import { setVault } from './Tools/dataFetcher';
 
 const VaultVisualizer = () => {
   const [path, setPath] = useState('null');
+  const { vault } = useParams();
+
+  useEffect(() => {
+    setVault(vault);
+  }, [vault]);
 
   const handlePathChange = (newPath) => {
     setPath(newPath);

@@ -11,7 +11,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomeScreen />} />
-          <Route path="/vault-visualizer/*" element={<VaultVisualizer />} />
+          <Route path="/vault-visualizer/:vault" element={<VaultVisualizer />} />
          
         </Routes>
       </div>

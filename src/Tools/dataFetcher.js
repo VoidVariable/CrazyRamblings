@@ -4,13 +4,17 @@ import axios from 'axios';
 
 //I probably shouldnt be storing data in a file 
 //But screw the rules
-var selectedRep = 'https://raw.githubusercontent.com/VoidVariable/CrazyRamblings/main/src/Tools';
+export var selectedRep = ' ';
 export var selectedVault = 'Obsidian';
 var temp = "/Vaults/"
 
 export function setRep(link, repName){
   selectedRep = link;
-  selectedVault = repName;
+  setVault(repName);
+}
+
+export function setVault(vaultName){
+  selectedVault = vaultName;
 }
 
 const fetchingData = async (responseType, path, useExtra = false) => {

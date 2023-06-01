@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import fetchingData, { selectedVault } from './dataFetcher';
+import fetchingData, { selectedVault, setRep, selectedRep } from './dataFetcher';
 import './FileDisplay.css';
 import { handleButtonClick, handleFileClick, removeLeadingHyphens, logSpaces, setGlobalTerms, getFilePath } from './buttonUtils';
+import { getSingleVaultByLabel } from './buttonsDef';
 
-class MarkdownDisplay extends Component {
+class MarkdownDisplay extends Component
+{
   constructor(props) {
     super(props);
 
@@ -19,6 +21,8 @@ class MarkdownDisplay extends Component {
     };
   }
 
+
+  
   handleGearButtonClick = (event) => {
     const gearButtonRect = event.target.getBoundingClientRect(); // Get the position of the gear button
     const windowTop = gearButtonRect.top ; // Calculate the top position of the context window
@@ -32,7 +36,10 @@ class MarkdownDisplay extends Component {
   };
 
   componentDidMount() 
-  {  
+  {     
+    if(selectedRep === ' '){
+      setRep(getSingleVaultByLabel(selectedVault)?.link,selectedVault);
+    }
     this.fetchFileData();
     setGlobalTerms(this.state.terms);
   }
