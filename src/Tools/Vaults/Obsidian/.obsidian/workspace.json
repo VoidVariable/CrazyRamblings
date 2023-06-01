@@ -15,14 +15,27 @@
               "state": {
                 "file": "Gaster Master.canvas",
                 "viewState": {
-                  "x": -947.5737959541676,
-                  "y": -2081.64772623192,
-                  "zoom": 0.17136338842422416
+                  "x": -1422.5872646764149,
+                  "y": -1897.2308801435438,
+                  "zoom": -1.4286366115757758
                 }
               }
             }
+          },
+          {
+            "id": "df2fcbdb171b1075",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Home.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -88,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Gaster Master.canvas",
+                "file": "Home.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Gaster Master.canvas",
+                "file": "Home.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Gaster Master.canvas"
+                "file": "Home.md"
               }
             }
           }
@@ -148,15 +161,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d467da9085b22fe7",
+  "active": "df2fcbdb171b1075",
   "lastOpenFiles": [
-    "Goats are bad.canvas",
-    "ASRIEL.png.md",
     "Gaster Master.canvas",
+    "Home.md",
+    "Untitled",
+    "Goats are bad.canvas",
+    "Kris Cross Apllesauce.canvas",
+    "ASRIEL.png.md",
     "[Hide] Images/Goats are Bad/ASRIEL.jpeg",
     "[Hide] Images/Goats are Bad/ASRIEL.jped",
     "Resources/Links to good shit.md",
-    "Kris Cross Apllesauce.canvas",
     "DONTSHIP/Ideias.md",
     "[Hide] Images/Other Stuff/Gaster Master/Hyperlink Blocked/Link Blocked 9.png",
     "[Hide] Images/Other Stuff/Gaster Master/Hyperlink Blocked/Link Blocked 8.png",
@@ -175,7 +190,6 @@
     "[Hide] Images/Other Stuff/Delta Rune",
     "[Hide] Images/Goats are Bad/WierdBehaviour",
     "[Hide] Images/Goats are Bad/THEY KNOW",
-    "[Hide] Images/Other Stuff",
     "Resources/Gaster Master/Spamton Dialogue.md",
     "DONTSHIP/Other Stuff.canvas",
     "Kris is Gamer?.png.md",
@@ -198,7 +212,6 @@
     "crazy/node_modules/@types/jest/node_modules/@types/yargs/README.md",
     "crazy/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md",
     "crazy/node_modules/@types/jest/node_modules/@jest/types/README.md",
-    "crazy/node_modules/@types/jest/node_modules/@jest/schemas/README.md",
-    "crazy/node_modules/@testing-library/react/node_modules/@testing-library/dom/README.md"
+    "crazy/node_modules/@types/jest/node_modules/@jest/schemas/README.md"
   ]
 }

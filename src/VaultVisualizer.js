@@ -20,7 +20,7 @@ const VaultVisualizer = () => {
 
   return (
     <div className="vault-visualizer">
-      <div style={{height: '6vh'}}>
+      <div style={{height: '60px'}}>
       <Header/>
       </div>
       <div className="middle-section">

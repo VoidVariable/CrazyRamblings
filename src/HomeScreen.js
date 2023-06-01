@@ -31,7 +31,7 @@ function HomeScreen() {
         {
           flexDirection: 'column',
           backgroundColor: '#282c34',
-          flex: 0.3, marginTop: '63px',
+          flex: 0.3,
           paddingTop: '30px',
           color: '#fff',
           display: 'flex',
