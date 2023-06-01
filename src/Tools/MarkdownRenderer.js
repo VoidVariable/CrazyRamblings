@@ -221,7 +221,12 @@ const MarkdownRenderer = React.memo(({ terms }) => {
         // Handle or ignore the error
         return null; // or display an error message
       }
-    },
+    },   
+    ul: ({ children }) => (
+      <ul style={{ marginLeft: '0', paddingLeft: '1.5em' }}>{children}</ul>
+    ),
+
+    
   };
   return <ReactMarkdown components={customComponents} rehypePlugins={rehypeRaw}>{terms}</ReactMarkdown>;
 });
