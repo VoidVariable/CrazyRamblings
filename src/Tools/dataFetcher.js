@@ -38,4 +38,17 @@ const fetchingData = async (responseType, path, useExtra = false) => {
     throw error;
   }
 };
+
+
+export const checkFetchability = async () => {
+  try {
+    const response = await axios.head(selectedRep + temp + selectedVault + "/Home.md");
+    return response.status === 200 || response.data === true; // Returns true if the status is 200 OK and the fetched value is true
+  } catch (error) {
+    // Handle the error if needed
+    
+    return false; // Return false in case of error
+  }
+};
+
 export default fetchingData;
