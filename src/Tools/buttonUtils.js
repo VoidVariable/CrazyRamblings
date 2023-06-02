@@ -1,3 +1,4 @@
+import React from 'react';
 var thisTerms;
 
 export function logSpaces(line){
@@ -182,5 +183,47 @@ export function getFilePathByName (name)
   return "/" + pathString;
 }
 
+export function removeFormat(text) {
+  const lastDotIndex = text.lastIndexOf(".");
+  if (lastDotIndex !== -1) {
+    return text.substring(0, lastDotIndex);
+  }
+  return text;
+}
 
-  
+
+export function getIconfromFormat(text) {
+   const formatRegex = /\.([a-zA-Z0-9]+)$/; // Regular expression to match file format
+
+  const matches = text.match(formatRegex);
+  if (matches && matches.length > 1) {
+    const format = matches[1];
+
+    if(text.trim() === "Home.md") return <i class="fa-solid fa-house" style={{ float: 'right' }}></i>
+
+    switch (format.toLowerCase()) {
+      case 'png':
+        return <i className="fa-solid fa-image" style={{ float: 'right' }}></i>;
+      case 'md':
+        return <i class="fa-solid fa-t" style={{ float: 'right' }}></i>;
+      case 'canvas':
+        return <i class="fa-sharp fa-solid fa-network-wired" style={{ float: 'right' }}></i>;
+      default:
+        return <i className="fa-solid fa-file" style={{ float: 'right' }}></i>;
+    }
+  }
+
+  return null; // Return null if format not found
+}
+
+export default {
+  removeFormat,
+  handleButtonClick,
+  handleFileClick,
+  removeLeadingHyphens,
+  getFilePath,
+  logSpaces,
+  setGlobalTerms,
+  getIconfromFormat,
+  getFilePathByName
+};

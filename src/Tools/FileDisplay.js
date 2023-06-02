@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import fetchingData, { selectedVault, setRep, selectedRep } from './dataFetcher';
 import './FileDisplay.css';
-import { handleButtonClick, handleFileClick, removeLeadingHyphens, logSpaces, setGlobalTerms, getFilePath } from './buttonUtils';
+import buttonUtils from './buttonUtils';
 import { getSingleVaultByLabel } from './buttonsDef';
 
 class MarkdownDisplay extends Component
@@ -45,7 +45,7 @@ class MarkdownDisplay extends Component
     //For now I'm doing this here
     this.props.handlePathChange("/Home.md");
 
-    setGlobalTerms(this.state.terms);
+    buttonUtils.setGlobalTerms(this.state.terms);
   }
 
   fetchFileData = async () => {
@@ -61,13 +61,13 @@ class MarkdownDisplay extends Component
 
   handleClick(type, spacesCount, text) {
     if (type === 'fileButton darker') {
-      const newState = handleButtonClick(this.state, spacesCount, text);
+      const newState = buttonUtils.handleButtonClick(this.state, spacesCount, text);
       this.setState(newState);
     } else {
       const newState = { selected: { spacesCount: spacesCount, text: text } };
       this.setState(newState);
 
-      const path = handleFileClick(this.state, spacesCount, text);
+      const path = buttonUtils.handleFileClick(this.state, spacesCount, text);
 
       const newPath = path;
       this.props.handlePathChange(newPath);
@@ -113,9 +113,9 @@ class MarkdownDisplay extends Component
         </div>
         <div className="button-contents">
           {nonEmptyLines.map((line, index) => {
-            setGlobalTerms(this.state.terms);
-            const spacesCount = logSpaces(line);
-            const trimmedLine = removeLeadingHyphens(line);
+            buttonUtils.setGlobalTerms(this.state.terms);
+            const spacesCount = buttonUtils.logSpaces(line);
+            const trimmedLine = buttonUtils.removeLeadingHyphens(line);
 
             var buttonClassName = trimmedLine.includes('.') ? 'fileButton' : 'fileButton darker';
 
@@ -126,7 +126,7 @@ class MarkdownDisplay extends Component
             var spacePadding = '\u00A0'.repeat((Math.max(spacesCount - 1, 0) * 4));
             var arrow = '';
 
-            const hideFile =  !shouldHide || !getFilePath(logSpaces(line), trimmedLine).includes('[Hide]');
+            const hideFile =  !shouldHide || !buttonUtils.getFilePath(buttonUtils.logSpaces(line), trimmedLine).includes('[Hide]');
 
             if (spacesCount !== 0) {
               spacePadding += '\u00A0\u00A0\u00A0\u00A0';
@@ -161,7 +161,8 @@ class MarkdownDisplay extends Component
                   >
                     {spacePadding}
                     {arrow && <span className="arrow">{arrow}</span>}
-                    {trimmedLine}
+                    {buttonUtils.removeFormat(trimmedLine)}
+                    {buttonUtils.getIconfromFormat(trimmedLine)}
                   </button>
                 )}
               </div>
