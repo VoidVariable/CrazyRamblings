@@ -11,14 +11,11 @@
             "id": "d467da9085b22fe7",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Gaster Master.canvas",
-                "viewState": {
-                  "x": -1422.5872646764149,
-                  "y": -1897.2308801435438,
-                  "zoom": -1.4286366115757758
-                }
+                "file": "Resources/Gaster Master/Tea.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
@@ -34,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -81,12 +77,12 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 283.5
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "425c45384295493e",
@@ -102,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Home.md",
+                "file": "Resources/Gaster Master/Tea.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Home.md",
+                "file": "Resources/Gaster Master/Tea.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.md"
+                "file": "Resources/Gaster Master/Tea.md"
               }
             }
           }
@@ -162,13 +158,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "df2fcbdb171b1075",
+  "active": "d467da9085b22fe7",
   "lastOpenFiles": [
+    "Resources/Gaster Master/Spamton Dialogue.md",
+    "Resources/Gaster Master/Tea.md",
+    "Gaster Master.canvas",
+    "Home.md",
     "Home copy.md",
     "Kris Cross Applesauce.canvas",
     "Goats are bad.canvas",
-    "Home.md",
-    "Gaster Master.canvas",
     "Untitled",
     "ASRIEL.png.md",
     "[Hide] Images/Goats are Bad/ASRIEL.jpeg",
@@ -192,7 +190,6 @@
     "[Hide] Images/Other Stuff/Delta Rune",
     "[Hide] Images/Goats are Bad/WierdBehaviour",
     "[Hide] Images/Goats are Bad/THEY KNOW",
-    "Resources/Gaster Master/Spamton Dialogue.md",
     "DONTSHIP/Other Stuff.canvas",
     "Kris is Gamer?.png.md",
     "DONTSHIP/Deltarune and Undertale.canvas",
@@ -213,7 +210,6 @@
     "crazy/node_modules/hpack.js/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md",
     "crazy/node_modules/@types/jest/node_modules/@types/yargs/README.md",
     "crazy/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md",
-    "crazy/node_modules/@types/jest/node_modules/@jest/types/README.md",
-    "crazy/node_modules/@types/jest/node_modules/@jest/schemas/README.md"
+    "crazy/node_modules/@types/jest/node_modules/@jest/types/README.md"
   ]
 }

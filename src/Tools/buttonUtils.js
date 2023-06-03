@@ -199,15 +199,15 @@ export function getIconfromFormat(text) {
   if (matches && matches.length > 1) {
     const format = matches[1];
 
-    if(text.trim() === "Home.md") return <i class="fa-solid fa-house" style={{ float: 'right' }}></i>
+    if(text.trim() === "Home.md") return <i className="fa-solid fa-house" style={{ float: 'right' }}></i>
 
     switch (format.toLowerCase()) {
       case 'png':
         return <i className="fa-solid fa-image" style={{ float: 'right' }}></i>;
       case 'md':
-        return <i class="fa-solid fa-t" style={{ float: 'right' }}></i>;
+        return <i className="fa-solid fa-t" style={{ float: 'right' }}></i>;
       case 'canvas':
-        return <i class="fa-sharp fa-solid fa-network-wired" style={{ float: 'right' }}></i>;
+        return <i className="fa-sharp fa-solid fa-network-wired" style={{ float: 'right' }}></i>;
       default:
         return <i className="fa-solid fa-file" style={{ float: 'right' }}></i>;
     }
