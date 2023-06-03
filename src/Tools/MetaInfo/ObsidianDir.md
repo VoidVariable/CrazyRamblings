@@ -5,6 +5,7 @@
 - Resources
 	- Gaster Master
 		- Spamton Dialogue.md
+		- Tea.md
 	- Links to good shit.md
 - [Hide] Images
 	- Goats are Bad

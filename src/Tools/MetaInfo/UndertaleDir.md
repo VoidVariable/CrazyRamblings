@@ -1,1 +1,2 @@
 - Dumb.md
+- Home.md
