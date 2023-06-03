@@ -4,6 +4,7 @@ import rehypeRaw from "rehype-raw";
 import { getFilePathByName } from './buttonUtils';
 import MiddleContent from './MiddleContent';
 import EmbeddedIframe from './EmbeddedIframe';
+import remarkGfm  from 'remark-gfm';
 
 const MarkdownRenderer = React.memo(({ terms }) => {
   
@@ -165,10 +166,14 @@ const MarkdownRenderer = React.memo(({ terms }) => {
         return (
           <pre style={
             {
+              padding: '1em',
+              fontSize: '0.8em',
               overflowX: 'auto',
-              backgroundColor: '#161a1f',
-              borderRadius: '4px',
-              whiteSpace: 'pre-wrap'  
+              backgroundColor: '#0007',
+              borderRadius: '10px',
+              whiteSpace: 'pre-wrap',
+              boxSizing: 'border-box',
+              marginLeft: '1em'
             }}>
             <code className={`language-${language}`} style={{ color: '#abb2bf' }} {...props}>
               {children}
@@ -222,12 +227,51 @@ const MarkdownRenderer = React.memo(({ terms }) => {
       }
     },   
     ul: ({ children }) => (
-      <ul style={{ marginLeft: '0', paddingLeft: '1.5em' }}>{children}</ul>
-    ),
+      <ul style={{ marginLeft: '0',paddingLeft: '1.5em' }}>{children}</ul>
+    ),    
+    table: ({ children }) => (
+      <div style={{ 
+        flexDirection: 'column',
+        display:'flex',
 
-    
+         }}>
+        <table
+          style={{
+            marginTop: '1em',
+            borderCollapse: 'collapse',  
+            alignSelf: 'center'
+          }}
+        >
+          <tbody>{children}</tbody>
+        </table>
+      </div>
+    ),
+    th: ({ children }) => (
+      <th
+        style={{
+          border: '1px solid #000',
+          padding: '8px',
+          textAlign: 'center',
+          backgroundColor: '#0008',
+        }}
+      >
+        {children}
+      </th>
+    ),
+    td: ({ children }) => (
+      <td
+        style={{
+          border: '1px solid #000',
+          padding: '8px',
+          textAlign: 'center',
+          backgroundColor: '#0003'
+        }}
+      >
+        {children}
+      </td>
+    ),
   };
-  return <ReactMarkdown components={customComponents} rehypePlugins={rehypePlugins}>{terms}</ReactMarkdown>;
+  return <ReactMarkdown components={customComponents} remarkPlugins={remarkGfm} rehypePlugins={rehypePlugins}>{terms}</ReactMarkdown>;
 });
 
 export default MarkdownRenderer;

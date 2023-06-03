@@ -81,8 +81,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "425c45384295493e",
@@ -160,8 +159,8 @@
   },
   "active": "d467da9085b22fe7",
   "lastOpenFiles": [
-    "Resources/Gaster Master/Spamton Dialogue.md",
     "Resources/Gaster Master/Tea.md",
+    "Resources/Gaster Master/Spamton Dialogue.md",
     "Gaster Master.canvas",
     "Home.md",
     "Home copy.md",

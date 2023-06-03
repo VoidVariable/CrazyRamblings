@@ -8,7 +8,7 @@
 
 	* 10HP outside of battle, 40HP in battle.
 
-
+<br>
 ### Kris
 
 > Kris Tea
@@ -46,7 +46,7 @@ Ralsei: (I'm happy!)
 ```
 
 
-
+<br>
 ### Susie
 
 > Kris Tea
@@ -80,7 +80,7 @@ Ralsei: D-don't drink so fast!
 ```
 
 
-
+<br>
 ### Noelle
 
 > Kris Tea
@@ -109,7 +109,7 @@ Noelle: There's nothing in here!
 ```
 
 
-
+<br>
 ### Ralsei
 
 > Kris Tea
