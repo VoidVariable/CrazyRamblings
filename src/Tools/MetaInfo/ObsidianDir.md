@@ -5,8 +5,9 @@
 - Resources
 	- Gaster Master
 		- Spamton Dialogue.md
-		- Tea.md
 	- Links to good shit.md
+	- Tea.md
+	- The Legend of Deltarune.md
 - [Hide] Images
 	- Goats are Bad
 		- ASRIEL.jpeg
