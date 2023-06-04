@@ -237,7 +237,7 @@ const MarkdownRenderer = React.memo(({ terms }) => {
          }}>
         <table
           style={{
-            marginTop: '1em',
+            marginBottom: '1em',
             borderCollapse: 'collapse',  
             alignSelf: 'center'
           }}
