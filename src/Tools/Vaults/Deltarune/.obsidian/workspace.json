@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Resources/Tea.md",
+                "file": "Home.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Resources/Tea.md",
+                "file": "Home.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Resources/Tea.md",
+                "file": "Home.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Resources/Tea.md"
+                "file": "Home.md"
               }
             }
           }
@@ -147,15 +147,17 @@
   },
   "active": "df2fcbdb171b1075",
   "lastOpenFiles": [
-    "Resources/Links to good shit.md",
     "Kris Cross Applesauce.canvas",
-    "Goats are bad.canvas",
     "Home.md",
-    "DONTSHIP/Goats are bad.md",
+    "DONTSHIP/Other Stuff.canvas",
     "DONTSHIP/Ideias.md",
+    "DONTSHIP/Goats are bad.md",
+    "DONTSHIP/Deltarune and Undertale.canvas",
+    "Resources/Tea.md",
+    "Resources/Links to good shit.md",
+    "Goats are bad.canvas",
     "Gaster Master.canvas",
     "Resources/The Legend of Deltarune.md",
-    "DONTSHIP/Deltarune and Undertale.canvas",
     "[Hide] Images/Goats are Bad/THEY KNOW/Ralsei Knowing/Screenshot from 2023-06-05 17-50-00.png",
     "[Hide] Images/Goats are Bad/THEY KNOW/Ralsei Knowing/Screenshot from 2023-06-05 17-57-07.png",
     "[Hide] Images/Goats are Bad/THEY KNOW/Ralsei Knowing/Screenshot from 2023-06-05 17-55-53.png",
@@ -168,7 +170,6 @@
     "[Hide] Images/Goats are Bad/THEY KNOW/Jevil knows HP.png",
     "[Hide] Images/Goats are Bad/THEY KNOW/Ralsei Knowing",
     "2023-06-05.md",
-    "Resources/Tea.md",
     "Resources/Gaster Master/Spamton Dialogue.md",
     "Home copy.md",
     "Untitled",
@@ -181,7 +182,6 @@
     "[Hide] Images/Other Stuff/Gaster Master",
     "[Hide] Images/Other Stuff/Delta Rune",
     "[Hide] Images/Goats are Bad/WierdBehaviour",
-    "DONTSHIP/Other Stuff.canvas",
     "Kris is Gamer?.png.md",
     "DONTSHIP/Combat System V2.md",
     "Spamton/Links to good shit.md",

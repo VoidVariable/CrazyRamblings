@@ -7,11 +7,10 @@
 | Ralsei | 120HP  | 120HP  | 50HP | 10HP/40HP*  |   
 
 	* 10HP outside of battle, 40HP in battle.
-
+---
 <br>
 
-### Kris
-
+### Kris 
 > Kris Tea
 
 ```
@@ -143,3 +142,5 @@ Ralsei: It's soft and sweet.
 ```
 Ralsei: Um... isn't this water?
 ```
+
+`

@@ -1,10 +1,8 @@
 {
 	"nodes":[
 		{"type":"text","text":"Could this \"you\" be the player","id":"ade90174e085d3dd","x":-590,"y":-140,"width":400,"height":50},
-		{"type":"file","file":"Images/Other Stuff/Kris/Before Save.png","id":"33eae1ec15c2d7f0","x":-160,"y":-460,"width":400,"height":296},
 		{"type":"text","text":"Kris already has a save there though","id":"ce9566115197822b","x":-160,"y":-140,"width":400,"height":50},
 		{"type":"text","text":"Garbage noise. Just wanted to test how to embed videos","id":"300b1929fdd0328d","x":-1100,"y":-140,"width":485,"height":50},
-		{"type":"file","file":"Images/Other Stuff/Only you can see.png","id":"7bcfeb5da968b8aa","x":-590,"y":-484,"width":400,"height":296},
 		{"type":"text","text":"\n<iframe width=\"100%\" height=\"250\" src=\"https://www.youtube.com/embed/9jU6SIC8rRg\" title=\"YouTube video player\" frameborder=\"0\" allowfullscreen></iframe>","id":"7afde4c1a3fb7b5a","x":-1100,"y":-560,"width":485,"height":396}
 	],
 	"edges":[]
