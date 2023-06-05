@@ -11,14 +11,11 @@
             "id": "df2fcbdb171b1075",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Goats are bad.canvas",
-                "viewState": {
-                  "x": -967.0966306256248,
-                  "y": -1526.0171054337372,
-                  "zoom": 0.15710128475968632
-                }
+                "file": "Home.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -88,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Goats are bad.canvas",
+                "file": "Home.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Goats are bad.canvas",
+                "file": "Home.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Goats are bad.canvas"
+                "file": "Home.md"
               }
             }
           }
@@ -150,11 +147,11 @@
   },
   "active": "df2fcbdb171b1075",
   "lastOpenFiles": [
+    "Goats are bad.canvas",
     "Home.md",
     "Kris Cross Applesauce.canvas",
     "DONTSHIP/Goats are bad.md",
     "DONTSHIP/Ideias.md",
-    "Goats are bad.canvas",
     "Gaster Master.canvas",
     "Resources/The Legend of Deltarune.md",
     "DONTSHIP/Deltarune and Undertale.canvas",
