@@ -1,6 +1,6 @@
 import React from 'react';
 import MarkdownRenderer from './MarkdownRenderer';
-import './MarkdownDisplay.css';
+
 import fetchingData from './dataFetcher';
 
 class MarkdownDisplay extends React.Component {

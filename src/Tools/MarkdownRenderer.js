@@ -5,10 +5,12 @@ import { getFilePathByName } from './buttonUtils';
 import MiddleContent from './MiddleContent';
 import EmbeddedIframe from './EmbeddedIframe';
 import remarkGfm  from 'remark-gfm';
+import './MarkdownRenderer.css';
+
 
 const MarkdownRenderer = React.memo(({ terms }) => {
   
-
+  const remarkPlugins = [remarkGfm];
   const rehypePlugins = [rehypeRaw];
 
   const renderText = (text) => {
@@ -22,6 +24,7 @@ const MarkdownRenderer = React.memo(({ terms }) => {
     const boldtwoRegex = /__.+?__/g;
     const iframeRegex = /<iframe.+?<\/iframe>/g;
     const weblinkRegex = /<a>.+?<\/a>/g;
+    const breakRegex = /<br>/g;
 
     //#endregion
 
@@ -30,7 +33,6 @@ const MarkdownRenderer = React.memo(({ terms }) => {
     //#region Convert obj into text
     for (var i = 0; i < text.length; i++) 
     {
-
       if(text[i]?.type === "strong" || text[i]?.type?.name === 'em')
       {
         if( text[i]?.props?.children[0])
@@ -39,6 +41,10 @@ const MarkdownRenderer = React.memo(({ terms }) => {
 
             continue;
         }
+      }
+      else if(text[i]?.type === "br"){
+        splitValues += " <br> ";
+        continue;
       }
       else if(text[i]?.type === 'a')
       {
@@ -54,6 +60,11 @@ const MarkdownRenderer = React.memo(({ terms }) => {
     //#region Splits
     if (splitValues.includes("<a>")){
       splitValues = splitValues.split(/(<a>.*?<\/a>)/);
+    }
+    else if (splitValues.includes("<br>")){
+      const regex = /(<br>)/g;
+      const result = splitValues.split(regex).map(item => item === '<br>' ? item : item.trim());
+      splitValues = result;
     }
     else if(splitValues.includes("https")){
       splitValues = splitValues.split(linkRegex);
@@ -95,6 +106,9 @@ const MarkdownRenderer = React.memo(({ terms }) => {
             <MiddleContent path={filePath} key={index}/>
           );
         } 
+        else if (part.match(breakRegex)){
+          return <br key={index} />;
+        }
         else if (weblinkRegex.test(part)) {
           const linkText = part.match(/\[(.*?)\]/)[1];
           const linkURL = part.match(/\((.*?)\)/)[1];
@@ -138,7 +152,6 @@ const MarkdownRenderer = React.memo(({ terms }) => {
       });
   };
   
-
   const customComponents = {
     h1: ({ children }) => <h1 style={{ marginTop: '-5px' }}>{children}</h1>,
     h2: ({ children }) => <h2 style={{ marginTop: '-5px'}}>{children}</h2>,
@@ -182,21 +195,28 @@ const MarkdownRenderer = React.memo(({ terms }) => {
         );
       }
     },
-    blockquote: ({ children }) => {
-      return <blockquote
-        style={{
-          borderLeft: '2px solid #ccc',
-          paddingLeft: '10px',
+    blockquote: ({ children }) => 
+    {
+      const values = children[1].props.children;
+
+      return <blockquote 
+      style=
+      {{
+          borderLeft: '4px solid #648',
+          paddingLeft: '15px',
           fontStyle: 'italic',
-          color: '#555',
+          color: '#ccc',
           marginLeft: '0',
           marginRight: '0',
           marginBottom: '0',
-          marginTop: '1em', // Use '1em' instead of '1px' to create space between blockquotes
-          borderTop: 'none', // Add this line to remove the top border of the current blockquote
-        }}
-      >
-        {children}
+          marginTop: '1em', 
+          borderTop: 'none', 
+      }}>
+      {values.map((line, index) => (
+        <React.Fragment key={index}>
+          <p>{line}</p>
+        </React.Fragment>
+      ))}
       </blockquote>;
     },
     em: ({ children }) => {
@@ -271,7 +291,7 @@ const MarkdownRenderer = React.memo(({ terms }) => {
       </td>
     ),
   };
-  return <ReactMarkdown components={customComponents} remarkPlugins={remarkGfm} rehypePlugins={rehypePlugins}>{terms}</ReactMarkdown>;
+  return <ReactMarkdown components={customComponents} remarkPlugins={remarkPlugins} rehypePlugins={rehypePlugins}>{terms}</ReactMarkdown>;
 });
 
 export default MarkdownRenderer;
