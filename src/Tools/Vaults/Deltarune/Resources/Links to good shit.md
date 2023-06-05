@@ -7,6 +7,10 @@
 > (Outdated I thing but just for double checking vvv)
 > https://www.reddit.com/r/Underminers/comments/9wjwyg/all_deltarune_items_weapons_etc_with_quotes_from/
 
+
+> Ralsei unused manual
+> https://takaia.github.io/deltarune/guide/
+
 > Deltarune wiki
 > https://deltarune.fandom.com/wiki/Main_Page
 

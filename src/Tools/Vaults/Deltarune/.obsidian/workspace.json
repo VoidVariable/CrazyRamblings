@@ -11,11 +11,14 @@
             "id": "df2fcbdb171b1075",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Resources/Tea.md",
-                "mode": "source",
-                "source": false
+                "file": "Goats are bad.canvas",
+                "viewState": {
+                  "x": -967.0966306256248,
+                  "y": -1526.0171054337372,
+                  "zoom": 0.15710128475968632
+                }
               }
             }
           }
@@ -69,7 +72,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 372.5
   },
   "right": {
     "id": "425c45384295493e",
@@ -85,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Resources/Tea.md",
+                "file": "Goats are bad.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Resources/Tea.md",
+                "file": "Goats are bad.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Resources/Tea.md"
+                "file": "Goats are bad.canvas"
               }
             }
           }
@@ -147,29 +150,33 @@
   },
   "active": "df2fcbdb171b1075",
   "lastOpenFiles": [
-    "Resources/The Legend of Deltarune.md",
-    "Resources/Gaster Master/Spamton Dialogue.md",
-    "Resources/Tea.md",
+    "Home.md",
+    "Kris Cross Applesauce.canvas",
+    "DONTSHIP/Goats are bad.md",
+    "DONTSHIP/Ideias.md",
     "Goats are bad.canvas",
     "Gaster Master.canvas",
-    "Kris Cross Applesauce.canvas",
-    "Home.md",
+    "Resources/The Legend of Deltarune.md",
+    "DONTSHIP/Deltarune and Undertale.canvas",
     "Resources/Links to good shit.md",
+    "[Hide] Images/Goats are Bad/THEY KNOW/Ralsei Knowing/Screenshot from 2023-06-05 17-50-00.png",
+    "[Hide] Images/Goats are Bad/THEY KNOW/Ralsei Knowing/Screenshot from 2023-06-05 17-57-07.png",
+    "[Hide] Images/Goats are Bad/THEY KNOW/Ralsei Knowing/Screenshot from 2023-06-05 17-55-53.png",
+    "[Hide] Images/Goats are Bad/THEY KNOW/Ralsei Knowing/Screenshot from 2023-06-05 17-55-44.png",
+    "[Hide] Images/Goats are Bad/THEY KNOW/Ralsei Knowing/Screenshot from 2023-06-05 17-55-27.png",
+    "[Hide] Images/Goats are Bad/THEY KNOW/Ralsei Knowing/Screenshot from 2023-06-05 17-55-11.png",
+    "[Hide] Images/Goats are Bad/THEY KNOW/Ralsei Knowing/Screenshot from 2023-06-05 17-54-29.png",
+    "[Hide] Images/Other Stuff/Screenshot from 2023-06-05 17-18-51.png",
+    "[Hide] Images/Other Stuff/Screenshot from 2023-06-05 17-18-30.png",
+    "[Hide] Images/Goats are Bad/THEY KNOW/Jevil knows HP.png",
+    "[Hide] Images/Goats are Bad/THEY KNOW/Ralsei Knowing",
+    "2023-06-05.md",
+    "Resources/Tea.md",
+    "Resources/Gaster Master/Spamton Dialogue.md",
     "Home copy.md",
     "Untitled",
     "ASRIEL.png.md",
-    "[Hide] Images/Goats are Bad/ASRIEL.jpeg",
     "[Hide] Images/Goats are Bad/ASRIEL.jped",
-    "DONTSHIP/Ideias.md",
-    "[Hide] Images/Other Stuff/Gaster Master/Hyperlink Blocked/Link Blocked 9.png",
-    "[Hide] Images/Other Stuff/Gaster Master/Hyperlink Blocked/Link Blocked 8.png",
-    "[Hide] Images/Other Stuff/Gaster Master/Hyperlink Blocked/Link Blocked 7.png",
-    "[Hide] Images/Other Stuff/Gaster Master/Hyperlink Blocked/Link Blocked 6.png",
-    "[Hide] Images/Other Stuff/Gaster Master/Hyperlink Blocked/Link Blocked 5.png",
-    "[Hide] Images/Other Stuff/Gaster Master/Hyperlink Blocked/Link Blocked 3.png",
-    "[Hide] Images/Other Stuff/Gaster Master/Hyperlink Blocked/Link Blocked 2.png",
-    "[Hide] Images/Other Stuff/Gaster Master/Hyperlink Blocked/Link Blocked 1.png",
-    "[Hide] Images/Other Stuff/Gaster Master/Hyperlink Blocked/Ch-Ch-Ch-Choices.png",
     "[Hide] Images/Other Stuff/Gaster Master/Hyperlink Blocked",
     "[Hide] Images/Other Stuff/Undertale",
     "[Hide] Images/Other Stuff/The Past",
@@ -177,10 +184,8 @@
     "[Hide] Images/Other Stuff/Gaster Master",
     "[Hide] Images/Other Stuff/Delta Rune",
     "[Hide] Images/Goats are Bad/WierdBehaviour",
-    "[Hide] Images/Goats are Bad/THEY KNOW",
     "DONTSHIP/Other Stuff.canvas",
     "Kris is Gamer?.png.md",
-    "DONTSHIP/Deltarune and Undertale.canvas",
     "DONTSHIP/Combat System V2.md",
     "Spamton/Links to good shit.md",
     "DONTSHIP/Spamton/Hyperlink Blocked.md",
@@ -194,9 +199,6 @@
     "crazy/node_modules/jest-watch-typeahead/node_modules/pretty-format/node_modules/ansi-styles/readme.md",
     "crazy/node_modules/jest-watch-typeahead/node_modules/jest-watcher/node_modules/strip-ansi/readme.md",
     "crazy/node_modules/jest-watch-typeahead/node_modules/jest-watcher/node_modules/string-length/readme.md",
-    "crazy/node_modules/jest-watch-typeahead/node_modules/jest-message-util/node_modules/slash/readme.md",
-    "crazy/node_modules/hpack.js/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md",
-    "crazy/node_modules/@types/jest/node_modules/@types/yargs/README.md",
-    "crazy/node_modules/@types/jest/node_modules/@sinclair/typebox/readme.md"
+    "crazy/node_modules/jest-watch-typeahead/node_modules/jest-message-util/node_modules/slash/readme.md"
   ]
 }

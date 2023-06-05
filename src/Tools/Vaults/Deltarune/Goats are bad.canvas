@@ -1,13 +1,5 @@
 {
 	"nodes":[
-		{"type":"text","text":"Chapter 2\n\n","id":"fbd9e330333c585a","x":-693,"y":-920,"width":530,"height":55},
-		{"type":"text","text":"Points\n\nWierd Abilities ","id":"48cfe2b86f50b96e","x":-693,"y":-855,"width":250,"height":220},
-		{"type":"text","text":"Counters","id":"8f5a52ed1981ac03","x":-413,"y":-855,"width":250,"height":220},
-		{"type":"text","text":"Chapter 1\n","id":"7f59f665c2958c8f","x":-1353,"y":-920,"width":526,"height":50},
-		{"type":"text","text":"Points\n- Knows about the prophecy\n- Knows about *game things*\n- Is Asriel\n\n","id":"007a650f0597d4fe","x":-1353,"y":-855,"width":263,"height":220},
-		{"type":"text","text":"Counters\n- Lancer also talks about *game* stuff\n","id":"f857086ccd6bb03f","x":-1073,"y":-855,"width":246,"height":220},
-		{"type":"text","text":"## Anagrams\n\nRalsei -> Asriel\n\nThere is obviously a connection between the two. There's no debate on that. If this means \"Asriel is dead and Ralsei is actually a darkener created by a dust infused object\" or if \"Asriel is simply a manisfestations of Kris's inferiority complex\" is hard to say at this point. \n\n\n","id":"916da02b005d6da1","x":-600,"y":-480,"width":743,"height":240},
-		{"type":"text","text":"AYOOO ASRIEL??\n\n![[ASRIEL.jpeg]]\n\nWho could have thunked.","id":"2c36f3febdeb46b8","x":-548,"y":-180,"width":520,"height":500},
 		{"type":"text","text":"## Just Knows Alot\n\nHe just know alot. He is the one who first talks about the Deltarune legend. Only very few characters talk even mention the prophecy and only Ralsei really talks about the specifics.\n\nHe knows about Kris' and Susie's names even before they tell him:\n\n![[Knows Names.png]]\n\nThe prophecy in itself is also kinda wierd. There can only be a certain amount of dark fountains? And only the one Ralsei is from? \n\n![[Two fountain.png]]\n\n","id":"7ec1188a78759cb1","x":-2340,"y":-1297,"width":520,"height":1075},
 		{"type":"text","text":"![[What are you talking about.png]]\n\nIn chapter 1, after we follow Susie prision break, Ralsie is seen telling something to Kris. \n\n","id":"089f56c1c83ae656","x":-1040,"y":-2160,"width":520,"height":480},
 		{"type":"text","text":"If the Wooden Sword is a pencil what is the Red Scarf?\n\n![[Red Scarf wat this.png]]","id":"560402791460a56f","x":1101,"y":-565,"width":520,"height":465},
@@ -19,7 +11,6 @@
 		{"type":"text","text":"### Moving Strangely\n\nDuring chapter 2, Ralsei appears on the Cyberworld out of nowhere. \n\n![[Yeah sure Dark Presence.png]]\n\nWe see other darkners be transported by Kris from the chapter 1 darkworld to hometown.\n\n![[Darkners normally need help to move between worlds.png]]\n\n![[Ball of stuff.png]]\n\nIt is a characteristic only Ralsei exhibits.\n","id":"91ce9cf843c22bf5","x":160,"y":-2400,"width":532,"height":1364},
 		{"type":"text","text":"Wierd popuse talk. \n\nAlso implies Ralsei is, or is pretending to be, a Darkener.\n\n![[wierd porpuse talk.png]]\n\n![[fulfilled.png]]","id":"21d99cc1ac326925","x":-413,"y":-1892,"width":520,"height":856},
 		{"type":"text","text":"In Chapter 2 Ralsei talks about how the outside world looks like despite being in the darkworld for all his life.\n\n![[Ralsei knows the outsied world.png]]","id":"4d4ebee473720eab","x":-2600,"y":-1920,"width":520,"height":481},
-		{"type":"text","text":"## Ralsie alone with Kris\n\nIn some sections our souls leaves Kris' body and goes somewhere else. Everytime this happens it is prompted by Ralsei\n\nDoes Ralsei stay alone with the soulsess body of Kris?\n\n","id":"5e97305d18e59537","x":-1708,"y":-1760,"width":487,"height":220},
 		{"type":"text","text":"Seam also knows the prophecy.\n\n![[Seam knows the prophecy.png]]\n\nBut strangely enough, they don't really mention if its a good or a bad thing that we are the heroes. And the word heroes is in quotations. They just tells us that the prophecy doesn't really matter to them because of their condition.","id":"b50f729a482870b8","x":-2985,"y":-568,"width":520,"height":570},
 		{"type":"text","text":"Lancer also knows about the prophecy. If we say \"No\" when Ralsei asks if we want to hear the prophecy, later, when, Lancer appears, he mentions it:\n\n![[Lancer know the lenged.png]]\n\nHe also seems to know some details:\n\n![[Lancer and the prophecy 2.png]]\n\nBut in the end he actually mentions he doesn't know why they need to seal the fountains. He simply thinks of himself as the \"bad guy\" who needs to fight us, the \"good guys\".\n\n\n","id":"a9725e138a2d3a41","x":-2985,"y":70,"width":520,"height":1015},
 		{"type":"text","text":"There's also the implication that the legend is more detailed than Ralsei tells us.\n\nBecause, for some reason, Lancer appears in it.\n\nIt's probably just jokes though.","id":"95b76acb2c6a2839","x":-3560,"y":574,"width":350,"height":240,"color":"6"},
@@ -29,11 +20,14 @@
 		{"type":"text","text":"Howhever, some characters, ones that don't seem privy to the goings on of the mysterys of the game, also talk about the systems. Making this point less powerful\n\nThis is a sign written by lancer:\n\n![[Fruit in Tree with C.png]]\n","id":"946cee1aaff3f6b9","x":-2220,"y":137,"width":526,"height":327},
 		{"type":"text","text":"Queen references keyboardkeys.\n\n![[Queen knows keyboardkeys.png]]\n\nThough this is while playing an arcade machine, so it could be explained to be the machine's buttons.","id":"42769270a48b9914","x":-880,"y":370,"width":520,"height":536},
 		{"type":"text","text":"During the chapter 2 the mouse puzzle instructions say this:\n\n![[RatMouseRoom Instructions.png]]\n\nThis is a note posted in a wall. It is played as a normal thing in the world, like a sign board explaining the puzzle to the inhabitants of CyberCity. \n\nThe theory that claims Darkners experince the world as a diagetical representation of a videogame while the lightners don'r, keeps getting more plausible.","id":"f7938d79e0b40eab","x":-1200,"y":1020,"width":520,"height":640},
-		{"type":"text","text":"## Non Diagetic Knowledge\n\nRalsei know about the game systems and talks about them, knowledge that most people in the game don't have. \n\nMentions :\n\n![[Bar to the left.png]]\n\nWhile is wierd that he talks about UI elements like the bar, the buttons and the values we have no confirmation they aren't just diegetic things.\n\n![[Press C to open Menu.png]]\n\nKeyboard keys are harder to justify.\n\n","id":"2af68282122c01fa","x":-1540,"y":-500,"width":547,"height":870}
+		{"type":"text","text":"## Non Diagetic Knowledge\n\nRalsei know about the game systems and talks about them, knowledge that most people in the game don't have. \n\nMentions :\n\n![[Bar to the left.png]]\n\nWhile is wierd that he talks about UI elements like the bar, the buttons and the values we have no confirmation they aren't just diegetic things.\n\n![[Press C to open Menu.png]]\n\nKeyboard keys are harder to justify.\n\n","id":"2af68282122c01fa","x":-1540,"y":-500,"width":547,"height":870},
+		{"id":"293981382b8dd3d5","x":-1464,"y":-1087,"width":845,"height":247,"type":"text","text":"# What's the deal with Ralsei\n\nThis canvas details all theories related to Ralsei's nature. This includes what he is hiding, who is he and what does he know. Most of the community agrees that he is hiding something, maybe on propose maybe not, but there's something there. He knows a lot of things that he shouldn't know and does some things that we aren't certain why/how. Here  you will be able to see all theories I could find and their analysis in conjunction with a all evidence I can find."},
+		{"id":"8036b1201b101da9","x":-1360,"y":-1396,"width":507,"height":256,"type":"text","text":"## Ralsei and the Player\n\n==What does this do== \n$$What this$$\n~~What about this~~\n"},
+		{"type":"text","text":"## Ralsie alone with Kris\n\nIn some sections our souls leaves Kris' body and goes somewhere else. Everytime this happens it is prompted by Ralsei\n\nDoes Ralsei stay alone with the soulsess body of Kris?\n\n","id":"5e97305d18e59537","x":-1707,"y":-1920,"width":487,"height":220},
+		{"type":"text","text":"## Anagrams\n\nRalsei -> Asriel\n\nThere is obviously a connection between the two. There's no debate on that. If this means \"Asriel is dead and Ralsei is actually a darkener created by a dust infused object\" or if \"Asriel is simply a manisfestations of Kris's inferiority complex\" is hard to say at this point. \n\n\n","id":"916da02b005d6da1","x":-620,"y":-620,"width":743,"height":240},
+		{"type":"text","text":"AYOOO ASRIEL??\n\n![[ASRIEL.jpeg]]\n\nWho could have thunked.","id":"2c36f3febdeb46b8","x":-548,"y":-225,"width":520,"height":500}
 	],
 	"edges":[
-		{"id":"58a26c8bd7f56e78","fromNode":"007a650f0597d4fe","fromSide":"bottom","toNode":"2af68282122c01fa","toSide":"top"},
-		{"id":"7aebe67c67536e3f","fromNode":"007a650f0597d4fe","fromSide":"bottom","toNode":"916da02b005d6da1","toSide":"top"},
 		{"id":"a1387d64e7d9c5ce","fromNode":"916da02b005d6da1","fromSide":"right","toNode":"3b5fcfbc7bc7d735","toSide":"left"},
 		{"id":"2614e4044f23ecb6","fromNode":"3b5fcfbc7bc7d735","fromSide":"bottom","toNode":"8cf9fe0cce24ac25","toSide":"top"},
 		{"id":"23552d9d4e87622d","fromNode":"3b5fcfbc7bc7d735","fromSide":"bottom","toNode":"8cf60f19de71e8c2","toSide":"top"},
@@ -44,11 +38,8 @@
 		{"id":"c22e2623c81d5ade","fromNode":"2af68282122c01fa","fromSide":"left","toNode":"946cee1aaff3f6b9","toSide":"top"},
 		{"id":"ba5f0be0415c940a","fromNode":"7ec1188a78759cb1","fromSide":"top","toNode":"21d99cc1ac326925","toSide":"left"},
 		{"id":"34bc19fa50207d99","fromNode":"3b5fcfbc7bc7d735","fromSide":"top","toNode":"21d99cc1ac326925","toSide":"bottom"},
-		{"id":"60a9e4574d7846e2","fromNode":"007a650f0597d4fe","fromSide":"left","toNode":"7ec1188a78759cb1","toSide":"right"},
 		{"id":"5e23e7a45c56f93c","fromNode":"946cee1aaff3f6b9","fromSide":"bottom","toNode":"67da204acf83b6cf","toSide":"left"},
 		{"id":"f1322df1a8463bca","fromNode":"5e97305d18e59537","fromSide":"right","toNode":"089f56c1c83ae656","toSide":"left"},
-		{"id":"ae3003b937ba151b","fromNode":"7f59f665c2958c8f","fromSide":"top","toNode":"5e97305d18e59537","toSide":"bottom"},
-		{"id":"af3eb6ec0516b3e9","fromNode":"fbd9e330333c585a","fromSide":"top","toNode":"5e97305d18e59537","toSide":"bottom"},
 		{"id":"3cd10e32ede479a5","fromNode":"946cee1aaff3f6b9","fromSide":"bottom","toNode":"2789f258f77cca6e","toSide":"top"},
 		{"id":"2d9dedd5e7d13af5","fromNode":"916da02b005d6da1","fromSide":"bottom","toNode":"2c36f3febdeb46b8","toSide":"top"},
 		{"id":"a419e07cd64aaff0","fromNode":"7ec1188a78759cb1","fromSide":"top","toNode":"4d4ebee473720eab","toSide":"bottom"},
@@ -57,6 +48,11 @@
 		{"id":"d5dab03a6203063e","fromNode":"7ec1188a78759cb1","fromSide":"left","toNode":"fd46a3b9fe56538d","toSide":"right"},
 		{"id":"dec59ad8877bf8f8","fromNode":"2af68282122c01fa","fromSide":"right","toNode":"42769270a48b9914","toSide":"top"},
 		{"id":"67a4e1ac6640f164","fromNode":"42769270a48b9914","fromSide":"left","toNode":"f7938d79e0b40eab","toSide":"top"},
-		{"id":"4c01f60ea706469e","fromNode":"67da204acf83b6cf","fromSide":"right","toNode":"f7938d79e0b40eab","toSide":"top"}
+		{"id":"4c01f60ea706469e","fromNode":"67da204acf83b6cf","fromSide":"right","toNode":"f7938d79e0b40eab","toSide":"top"},
+		{"id":"20a15b0d55838c01","fromNode":"293981382b8dd3d5","fromSide":"bottom","toNode":"2af68282122c01fa","toSide":"top"},
+		{"id":"be9f3b89ca26f69a","fromNode":"293981382b8dd3d5","fromSide":"left","toNode":"7ec1188a78759cb1","toSide":"right"},
+		{"id":"852cc11ef3f570c3","fromNode":"293981382b8dd3d5","fromSide":"top","toNode":"8036b1201b101da9","toSide":"bottom"},
+		{"id":"f125ba3e26c3212b","fromNode":"8036b1201b101da9","fromSide":"top","toNode":"5e97305d18e59537","toSide":"bottom"},
+		{"id":"378393384a9176fa","fromNode":"293981382b8dd3d5","fromSide":"right","toNode":"916da02b005d6da1","toSide":"top"}
 	]
 }
